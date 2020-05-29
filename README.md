@@ -1,4 +1,4 @@
-# Villa for Rent - Website
+# Cook from it - Website
    It is a website based on technologies: PHP, JS, SQL, CSS (SCSS preprocessor), HTML. In progress
 ## Getting Started
 1. You can download the page from the attachment or from my repository:
