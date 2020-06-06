@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="127.864" height="113.824" viewBox="0 0 127.864 113.824">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: none;
+      }
+
+      .cls-2 {
+        stroke: #8593ae;
+        stroke-width: 4px;
+      }
+
+      .cls-3, .cls-4 {
+        stroke: none;
+      }
+
+      .cls-4 {
+        fill: #8593ae;
+      }
+    </style>
+  </defs>
+  <g id="Arrow" transform="translate(0 0.354)">
+    <g id="Polygon_6" data-name="Polygon 6" class="cls-1" transform="translate(0 28.715) rotate(-30)">
+      <path class="cls-3" d="M10.5,0,21,18H0Z"/>
+      <path class="cls-4" d="M 10.5 7.938543319702148 L 6.964150428771973 14 L 14.03585052490234 14 L 10.5 7.938543319702148 M 10.5 0 L 21 18 L 0 18 L 10.5 0 Z"/>
+    </g>
+    <path id="Path_96" data-name="Path 96" class="cls-2" d="M5364,440.271s67.619,6.421,83.651-76.5" transform="translate(-2282.24 -4827.24) rotate(60)"/>
+  </g>
+</svg>
