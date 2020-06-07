@@ -153,7 +153,7 @@ li {
   transform: scale(1.1);
 }
 
-.pointer {
+.pointer-hero {
   height: 150px;
   width: 315px;
   position: absolute;
@@ -161,12 +161,12 @@ li {
   margin-top: 200px !important;
   margin-left: 20px !important;
 }
-.pointer img {
+.pointer-hero img {
   position: absolute;
   left: 0;
   top: 20px;
 }
-.pointer h2 {
+.pointer-hero h2 {
   position: absolute;
   right: 0;
   top: 40px;
