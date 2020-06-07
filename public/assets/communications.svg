@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="58.406" height="55.972" viewBox="0 0 58.406 55.972">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #8593ae;
+      }
+    </style>
+  </defs>
+  <g id="communications" transform="translate(0 0)">
+    <path id="Path_68" data-name="Path 68" class="cls-1" d="M8.75,17.612V28.9a1.824,1.824,0,0,0,3.3,1.08l6.6-8.985Z" transform="translate(12.544 25.248)"/>
+    <path id="Path_69" data-name="Path 69" class="cls-1" d="M57.639.338a1.826,1.826,0,0,0-1.9-.131L.981,28.8a1.826,1.826,0,0,0,.253,3.346l15.222,5.2L48.873,9.632,23.788,39.855,49.3,48.574a1.868,1.868,0,0,0,.589.1,1.824,1.824,0,0,0,1.806-1.555L58.386,2.1A1.828,1.828,0,0,0,57.639.338Z" transform="translate(0 0)"/>
+  </g>
+</svg>

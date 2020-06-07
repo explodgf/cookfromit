@@ -1,0 +1,180 @@
+.registration {
+    width: 100vw;
+    height: auto;
+    background:#5A4E4D;
+}
+.reg-container {
+    width: 700px;
+    height: 100%;
+    margin: 0 auto !important;
+    padding-top: 150px !important;
+    h1 {
+        font-size: 4em;
+        text-align: center;
+        font-family: 'Manjari', sans-serif;
+        font-weight: 100;
+        color: #DDA288;
+        letter-spacing: 2px;
+    }
+    img {
+        height: 40px;
+    }
+    h2 {
+        color: #F5F1F1;
+        text-align: center;
+        font-family: 'Manjari', sans-serif;
+        font-weight: 100;
+        font-size: 1.2em;
+        letter-spacing: 3px;
+        padding-top: 10px;
+    }
+}
+
+.reg-info-box {
+    width: 100%;
+    height: 200px;
+    margin: 0 auto !important;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: -25px !important;
+    .reg-info-circle {
+        width: 80px;
+        height: 80px;
+        background: #DDA288;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        -webkit-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.8);
+        -moz-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.8);
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.8);
+        img {
+            width: 45px;
+            height: 45px;
+        }
+        &:nth-of-type(2) {
+            margin: 0 5em !important;
+        }
+    }
+    .reg-info-pointer {
+        height: 170px;
+        width: 170px;
+        position: absolute;
+        margin-top: 70px !important;
+        margin-left: -390px !important;
+        img {
+            position: absolute;
+            right: 0;
+            height: 7em;
+            transform: rotate(110deg);
+        }
+        h2 {
+            position: absolute;
+            bottom: 0;
+            font-family: 'Covered By Your Grace', cursive;
+            color: #DDA288;
+        }
+        &:nth-last-child(1) {
+            margin-top: 120px !important;
+            margin-left: 30px !important;
+            img {
+                transform: rotate(10deg);
+            }
+            h2 {
+                width: 200px;
+                top: 2em;
+                left: 8em;
+            }
+        }
+        &:nth-last-child(2) {
+            margin-top: 0px !important;
+            margin-left: 350px !important;
+            img {
+                transform: rotate(300deg);
+            }
+            h2 {
+                width: 200px;
+                top: -3em;
+                left: 4em;
+            }
+        }
+    }
+}
+
+.reg-form {
+    height: auto;
+    width: 50%;
+    padding-top: 50px;
+    margin: 0 auto !important;
+    display: block;
+    color: #F5F1F1;
+    .form-group {
+        padding: 10px 0px;
+        label {
+            display: block;
+            padding: 5px 0px;
+            font-family: 'Manjari', sans-serif;
+            font-weight: 400;
+            font-size: 1.2em;
+        }
+        input {
+            line-height: 20px;
+            width: 100%;
+            height: 30px;
+            border-radius: 10px;
+            border: inherit;
+            -webkit-box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.8);
+            -moz-box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.8);
+            box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.8);
+            color: #F5F1F1;
+            padding: 0px 10px;
+            font-size: 1.1em;
+            font-family: 'Manjari', sans-serif;
+            background: #8593ae;
+            outline: none;
+        }
+        .even {
+            background: #DDA288;
+        }
+    }
+    p {
+        font-size: 0.75em;
+        line-height: 15px;
+        padding: 5px 0px;
+        font-family: 'Manjari', sans-serif;
+    }
+    input[type="submit"] {
+        padding: 15px 20px 10px 20px;
+        background: #DDA288;
+        color: #5A4E4D;
+        border: inherit;
+        outline: none;
+        border-radius: 10px;
+        font-family: 'Manjari', sans-serif;
+        font-weight: 700;
+        font-size: 1.5em;
+        -webkit-box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.8);
+        -moz-box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.8);
+        box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.8);
+        text-transform: uppercase;
+        margin: 0 auto !important;
+        margin-top: 10px !important;
+        display: block;
+        cursor: pointer;
+        transition: 0.2s;
+        &:hover {
+            background: #8593ae;
+            color: #F5F1F1;
+            transform: scale(1.1);
+        }
+    }
+    .privacy {
+        padding: 20px 0px;
+        position: relative;
+        z-index: 2;
+        span {
+            color: #DDA288;
+        }
+    }
+}
