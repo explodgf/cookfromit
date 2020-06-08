@@ -1,10 +1,14 @@
 body {
     margin: 0 !important;
     overflow-x: hidden;
+    height: 100%;
 }
 .wave {
     position: relative;
-    width: 100%;
-    height: auto;
+    height: 220px;
+    background-image: url('../public/assets/wave.svg');
+    background-size: cover;
+    background-position: bottom bottom;
+    background-repeat: no-repeat;
     margin-top: -100px !important;
 }

@@ -4,12 +4,16 @@
 body {
   margin: 0 !important;
   overflow-x: hidden;
+  height: 100%;
 }
 
 .wave {
   position: relative;
-  width: 100%;
-  height: auto;
+  height: 220px;
+  background-image: url("../public/assets/wave.svg");
+  background-size: cover;
+  background-position: bottom bottom;
+  background-repeat: no-repeat;
   margin-top: -100px !important;
 }
 
@@ -122,16 +126,23 @@ li {
 }
 .copyright .dot-copyright {
   background: #DDA288;
-  height: 25px;
-  width: 25px;
+  height: auto;
+  width: auto;
   border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.copyright .dot-copyright i {
+  color: #5A4E4D;
+  font-size: 1.3em;
+  padding: 4px;
 }
 .copyright p {
-  font-size: 1.4em;
   font-family: "Manjari", sans-serif;
-  font-weight: 700;
-  line-height: 35px;
-  padding-left: 15px;
+  font-weight: 400;
+  line-height: 30px;
+  padding-left: 10px;
   color: #F5F1F1;
 }
 
@@ -140,10 +151,10 @@ li {
   flex-direction: column;
 }
 .socials p {
-  font-size: 1.4em;
+  font-size: 1.2em;
   font-family: "Manjari", sans-serif;
-  font-weight: 700;
-  line-height: 35px;
+  font-weight: 400;
+  line-height: 20px;
   color: #F5F1F1;
 }
 .socials .socials-icons i {
@@ -161,6 +172,7 @@ li {
   /* Sizing */
   width: 100vw;
   height: 100vh;
+  overflow: hidden;
   /* Flexbox stuff */
   display: flex;
   justify-content: center;
@@ -223,7 +235,7 @@ li {
   width: 315px;
   position: absolute;
   display: inline-block;
-  margin-top: 200px !important;
+  margin-top: 180px !important;
   margin-left: 20px !important;
 }
 .pointer-hero img {
@@ -239,16 +251,16 @@ li {
 }
 
 .registration {
-  width: 100vw;
-  height: auto;
+  width: 100%;
+  height: 100%;
   background: #5A4E4D;
 }
 
 .reg-container {
-  width: 700px;
+  width: 100%;
   height: 100%;
   margin: 0 auto !important;
-  padding-top: 150px !important;
+  padding-top: 110px !important;
 }
 .reg-container h1 {
   font-size: 4em;
@@ -272,7 +284,7 @@ li {
 }
 
 .reg-info-box {
-  width: 100%;
+  width: 700px;
   height: 200px;
   margin: 0 auto !important;
   display: flex;
@@ -304,7 +316,7 @@ li {
   width: 170px;
   position: absolute;
   margin-top: 70px !important;
-  margin-left: -390px !important;
+  margin-left: -400px !important;
 }
 .reg-info-box .reg-info-pointer img {
   position: absolute;
@@ -332,7 +344,7 @@ li {
 }
 .reg-info-box .reg-info-pointer:nth-last-child(2) {
   margin-top: 0px !important;
-  margin-left: 350px !important;
+  margin-left: 370px !important;
 }
 .reg-info-box .reg-info-pointer:nth-last-child(2) img {
   transform: rotate(300deg);
@@ -344,8 +356,8 @@ li {
 }
 
 .reg-form {
-  height: auto;
-  width: 50%;
+  height: 100%;
+  width: 350px;
   padding-top: 50px;
   margin: 0 auto !important;
   display: block;
@@ -416,7 +428,7 @@ li {
   position: relative;
   z-index: 2;
 }
-.reg-form .privacy span {
+.reg-form .privacy a {
   color: #DDA288;
 }
 

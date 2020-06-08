@@ -10,3 +10,6 @@
             </div>
         </div>
     </section>
+</body>
+</html>
+<script> </script>  <!--BUG taransition fix for Chrome-->
