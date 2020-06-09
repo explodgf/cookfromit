@@ -27,7 +27,7 @@
 
 ## Make a contribution
 
-   I count on an honest opinion written in a nice mile: jakubwirfel@gmail.com. I am asking for some tips to make
+   I count on an honest opinion written in a nice email: jakubwirfel@gmail.com. I am asking for some tips to make
 the site worked better.
 ## Author
 > Jakub Wirfel
