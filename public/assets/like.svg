@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="42.405" height="40.638" viewBox="0 0 42.405 40.638">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #8593ae;
+      }
+    </style>
+  </defs>
+  <g id="like" transform="translate(0 -10.667)">
+    <g id="Group_12" data-name="Group 12" transform="translate(0 28.336)">
+      <g id="Group_11" data-name="Group 11" transform="translate(0 0)">
+        <path id="Path_54" data-name="Path 54" class="cls-1" d="M4.417,224A4.423,4.423,0,0,0,0,228.417v14.135a4.423,4.423,0,0,0,4.417,4.417h5.3a4.385,4.385,0,0,0,2.65-.894V224Z" transform="translate(0 -224)"/>
+      </g>
+    </g>
+    <g id="Group_14" data-name="Group 14" transform="translate(14.135 10.667)">
+      <g id="Group_13" data-name="Group 13" transform="translate(0 0)">
+        <path id="Path_55" data-name="Path 55" class="cls-1" d="M198.937,34.961a3.918,3.918,0,0,0-1.15-2.781,4.387,4.387,0,0,0,1.131-3.373,4.567,4.567,0,0,0-4.608-4.006H183.4a25.4,25.4,0,0,0,1.406-7.067c0-3.832-3.256-7.067-5.3-7.067a5.557,5.557,0,0,0-3.2,1.076.888.888,0,0,0-.33.691v5.991l-5.089,11.024-.212.108V48.494a11.576,11.576,0,0,0,4.417,1.044H191.3a4.064,4.064,0,0,0,4-3.087,3.975,3.975,0,0,0-.32-2.654,3.957,3.957,0,0,0,1.769-5.3A3.955,3.955,0,0,0,198.937,34.961Z" transform="translate(-170.667 -10.667)"/>
+      </g>
+    </g>
+  </g>
+</svg>

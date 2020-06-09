@@ -2,6 +2,7 @@
     /* Sizing */
     width: 100vw;
     height: 100vh;
+    overflow: hidden;
 
     /* Flexbox stuff */
     display: flex;
@@ -74,7 +75,7 @@
     width: 315px;
     position: absolute;
     display: inline-block;
-    margin-top: 200px !important;
+    margin-top: 180px !important;
     margin-left: 20px !important;
     img {
         position: absolute;

@@ -1,9 +1,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,700;1,300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Manjari:wght@100;400;700&display=swap");
 body {
   margin: 0 !important;
   overflow-x: hidden;
-  font-family: sans-serif;
+  height: 100%;
+}
+
+.wave {
+  position: relative;
+  height: 220px;
+  background-image: url("../public/assets/wave.svg");
+  background-size: cover;
+  background-position: bottom bottom;
+  background-repeat: no-repeat;
+  margin-top: -100px !important;
 }
 
 /* =============================================================================
@@ -92,10 +103,76 @@ li {
   margin: 0;
 }
 
+.footer {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  margin-top: -150px !important;
+  z-index: 2;
+}
+
+.footer-container {
+  width: 75%;
+  height: 150px;
+  margin: auto !important;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.copyright {
+  display: flex;
+  flex-direction: row;
+}
+.copyright .dot-copyright {
+  background: #DDA288;
+  height: auto;
+  width: auto;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.copyright .dot-copyright i {
+  color: #5A4E4D;
+  font-size: 1.3em;
+  padding: 4px;
+}
+.copyright p {
+  font-family: "Manjari", sans-serif;
+  font-weight: 400;
+  line-height: 30px;
+  padding-left: 10px;
+  color: #F5F1F1;
+}
+
+.socials {
+  display: flex;
+  flex-direction: column;
+}
+.socials p {
+  font-size: 1.2em;
+  font-family: "Manjari", sans-serif;
+  font-weight: 400;
+  line-height: 20px;
+  color: #F5F1F1;
+}
+.socials .socials-icons i {
+  font-size: 2em;
+  padding: 10px;
+  color: #DDA288;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.socials .socials-icons i:hover {
+  transform: scale(1.2);
+}
+
 .hero {
   /* Sizing */
   width: 100vw;
   height: 100vh;
+  overflow: hidden;
   /* Flexbox stuff */
   display: flex;
   justify-content: center;
@@ -158,7 +235,7 @@ li {
   width: 315px;
   position: absolute;
   display: inline-block;
-  margin-top: 200px !important;
+  margin-top: 180px !important;
   margin-left: 20px !important;
 }
 .pointer-hero img {
@@ -171,6 +248,188 @@ li {
   right: 0;
   top: 40px;
   font-family: "Covered By Your Grace", cursive;
+}
+
+.registration {
+  width: 100%;
+  height: 100%;
+  background: #5A4E4D;
+}
+
+.reg-container {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto !important;
+  padding-top: 110px !important;
+}
+.reg-container h1 {
+  font-size: 4em;
+  text-align: center;
+  font-family: "Manjari", sans-serif;
+  font-weight: 100;
+  color: #DDA288;
+  letter-spacing: 2px;
+}
+.reg-container img {
+  height: 40px;
+}
+.reg-container h2 {
+  color: #F5F1F1;
+  text-align: center;
+  font-family: "Manjari", sans-serif;
+  font-weight: 100;
+  font-size: 1.2em;
+  letter-spacing: 3px;
+  padding-top: 10px;
+}
+
+.reg-info-box {
+  width: 700px;
+  height: 200px;
+  margin: 0 auto !important;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: -25px !important;
+}
+.reg-info-box .reg-info-circle {
+  width: 80px;
+  height: 80px;
+  background: #DDA288;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -webkit-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.8);
+  -moz-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.8);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.8);
+}
+.reg-info-box .reg-info-circle img {
+  width: 45px;
+  height: 45px;
+}
+.reg-info-box .reg-info-circle:nth-of-type(2) {
+  margin: 0 5em !important;
+}
+.reg-info-box .reg-info-pointer {
+  height: 170px;
+  width: 170px;
+  position: absolute;
+  margin-top: 70px !important;
+  margin-left: -400px !important;
+}
+.reg-info-box .reg-info-pointer img {
+  position: absolute;
+  right: 0;
+  height: 7em;
+  transform: rotate(110deg);
+}
+.reg-info-box .reg-info-pointer h2 {
+  position: absolute;
+  bottom: 0;
+  font-family: "Covered By Your Grace", cursive;
+  color: #DDA288;
+}
+.reg-info-box .reg-info-pointer:nth-last-child(1) {
+  margin-top: 120px !important;
+  margin-left: 30px !important;
+}
+.reg-info-box .reg-info-pointer:nth-last-child(1) img {
+  transform: rotate(10deg);
+}
+.reg-info-box .reg-info-pointer:nth-last-child(1) h2 {
+  width: 200px;
+  top: 2em;
+  left: 8em;
+}
+.reg-info-box .reg-info-pointer:nth-last-child(2) {
+  margin-top: 0px !important;
+  margin-left: 370px !important;
+}
+.reg-info-box .reg-info-pointer:nth-last-child(2) img {
+  transform: rotate(300deg);
+}
+.reg-info-box .reg-info-pointer:nth-last-child(2) h2 {
+  width: 200px;
+  top: -3em;
+  left: 4em;
+}
+
+.reg-form {
+  height: 100%;
+  width: 350px;
+  padding-top: 50px;
+  margin: 0 auto !important;
+  display: block;
+  color: #F5F1F1;
+}
+.reg-form .form-group {
+  padding: 10px 0px;
+}
+.reg-form .form-group label {
+  display: block;
+  padding: 5px 0px;
+  font-family: "Manjari", sans-serif;
+  font-weight: 400;
+  font-size: 1.2em;
+}
+.reg-form .form-group input {
+  line-height: 20px;
+  width: 100%;
+  height: 30px;
+  border-radius: 10px;
+  border: inherit;
+  -webkit-box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.8);
+  -moz-box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.8);
+  box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.8);
+  color: #F5F1F1;
+  padding: 0px 10px;
+  font-size: 1.1em;
+  font-family: "Manjari", sans-serif;
+  background: #8593ae;
+  outline: none;
+}
+.reg-form .form-group .even {
+  background: #DDA288;
+}
+.reg-form p {
+  font-size: 0.75em;
+  line-height: 15px;
+  padding: 5px 0px;
+  font-family: "Manjari", sans-serif;
+}
+.reg-form input[type=submit] {
+  padding: 15px 20px 10px 20px;
+  background: #DDA288;
+  color: #5A4E4D;
+  border: inherit;
+  outline: none;
+  border-radius: 10px;
+  font-family: "Manjari", sans-serif;
+  font-weight: 700;
+  font-size: 1.5em;
+  -webkit-box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.8);
+  -moz-box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.8);
+  box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.8);
+  text-transform: uppercase;
+  margin: 0 auto !important;
+  margin-top: 10px !important;
+  display: block;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.reg-form input[type=submit]:hover {
+  background: #8593ae;
+  color: #F5F1F1;
+  transform: scale(1.1);
+}
+.reg-form .privacy {
+  padding: 20px 0px;
+  position: relative;
+  z-index: 2;
+}
+.reg-form .privacy a {
+  color: #DDA288;
 }
 
 /*# sourceMappingURL=styles.css.map */
