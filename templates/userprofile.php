@@ -27,7 +27,7 @@
             <div class="user-recipes-title">
                 <h2>My sent recipes</h2>
             </div>
-            <div class="user-recipes-box">
+            <div class="user-recipes-box" id="scroll">
                 <div class="user-recipe">
                     <P>Potatoes with vegetables and sausage</P>
                     <p>4 comments</p>

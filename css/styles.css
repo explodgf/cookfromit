@@ -17,6 +17,19 @@ body {
   margin-top: -100px !important;
 }
 
+body::-webkit-scrollbar-track {
+  background-color: #DDA288;
+}
+
+body::-webkit-scrollbar {
+  width: 10px;
+  background-color: #DDA288;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #8593ae;
+}
+
 /* =============================================================================
    HTML5 CSS Reset Minified - Eric Meyer
    ========================================================================== */
@@ -551,6 +564,23 @@ li {
   overflow-y: scroll;
   position: relative;
   z-index: 2;
+}
+
+#scroll::-webkit-scrollbar-track {
+  background: #DDA288;
+  border-left: 8px solid #5A4E4D;
+  border-right: 8px solid #5A4E4D;
+}
+
+#scroll::-webkit-scrollbar {
+  width: 20px;
+}
+
+#scroll::-webkit-scrollbar-thumb {
+  background: #8593ae;
+  border-left: 5px solid #5A4E4D;
+  border-right: 5px solid #5A4E4D;
+  border-radius: 8px;
 }
 
 .user-recipe {

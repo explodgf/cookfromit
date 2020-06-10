@@ -12,3 +12,15 @@ body {
     background-repeat: no-repeat;
     margin-top: -100px !important;
 }
+body::-webkit-scrollbar-track {
+    background-color: #DDA288;
+}
+body::-webkit-scrollbar
+{
+	width: 10px;
+	background-color: #DDA288;
+}
+body::-webkit-scrollbar-thumb
+{
+    background-color: #8593ae;
+}
