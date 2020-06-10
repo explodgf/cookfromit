@@ -1,5 +1,5 @@
 <?php include 'inc/header.php';?>
-    <main class="registration">
+    <main class="main">
         <div class="reg-container">
             <h1>Join to <img src="public/assets/logo_name.svg"></h1>
             <h2>Why should you join us?</h2>

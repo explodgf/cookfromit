@@ -1,5 +1,5 @@
 <?php include 'inc/header.php';?>
-    <main class="userprofile">
+    <main class="main">
         <div class="user-container">
             <h1>UserName profile</h1>
             <div class="user-info">
