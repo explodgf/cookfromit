@@ -59,6 +59,7 @@
                 &:hover {
                     transform: scale(1.1);
                     background: #8593ae;
+                    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5);
                 }
                 img {
                     width: 80px;
@@ -172,7 +173,7 @@
     }
     .third {
         top: 600px;
-        right: -150px;
+        right: -70px;
         h2 {
             top: -2em;
             left: 2em;
@@ -182,9 +183,9 @@
     }
     .ing-list-form {
         height: 500px;
-        width: 100%;
+        width: 80%;
         margin-top: 210px !important;
-        margin-bottom: 200px !important;
+        margin-bottom: 100px !important;
         position: relative;
         outline: 1px solid #8593ae;
         overflow-y: auto;
@@ -259,8 +260,126 @@
         letter-spacing: 4px;
         padding: 20px 0px 10px;
         cursor: pointer;
+        transition: 0.3s;
         &:hover {
             background: #DDA288;
+        }
+    }
+    .recipe-grid {
+        margin: 0 auto !important;
+        height:auto;
+        width: 75%;
+        position: relative;
+        h1 {
+            font-family: 'Manjari', sans-serif;
+            color: #DDA288;
+            font-size: 2.2em;
+            letter-spacing: 4px;
+            padding-bottom: 50px;
+        }
+        .grid {
+            width: 100%;
+            position: relative;
+            display: grid;
+            grid-auto-rows: auto;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            grid-gap: 4em;
+            z-index: 999;
+            padding-bottom: 50px;
+            .recipe-card {
+                color: #fff;
+                height: 300px;
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5);
+                transition: ease-in-out 0.5s;
+                display: flex;
+                flex-direction: column;
+                cursor: pointer;
+                &:hover {
+                    transform: scale(1.1);
+                }
+                &:hover .img-box:before {
+                    opacity: 0.8;
+                }
+                &:hover .img-box .reci-info {
+                    visibility: visible;
+                    opacity: 1;
+                }
+                .img-box {
+                    width: 100%;
+                    height: 230px;
+                    position: relative;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    img {
+                        width: 100%;
+                        height: 100%;
+                    }
+                    &:before {
+                        content: '';
+                        background: #8593ae;
+                        opacity: 0;
+                        z-index: 2;
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        transition: 0.5s;
+                    }
+                    .reci-info {
+                        position: absolute;
+                        width: 100%;
+                        height: 70px;
+                        z-index: 999;
+                        display: flex;
+                        justify-content: space-around;
+                        padding: 0px 15px;
+                        visibility: hidden;
+                        opacity: 0;
+                        transition: 0.5s;
+                        .icon-box {
+                            height: 100%;
+                            width: 70px;
+                            position: relative;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            img {
+                                width: 50%;
+                                height: 50%;
+                            }
+                            .first {
+                                width: 60%;
+                                height: 60%;
+                            }
+                        }
+                        p {
+                            margin-left: -20px !important;
+                            height: 20px;
+                            margin-top: 30px !important;
+                            font-family: 'Manjari', sans-serif;
+                            color: #DDA288;
+                            font-size: 1.2em;
+                        }
+                    }
+                }
+                .title {
+                    width: 100%;
+                    height: 70px;
+                    background-color: #7E675E;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    h3 {
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                        font-family: 'Manjari', sans-serif;
+                        color: #F5F1F1;
+                        font-size: 1.3em;
+                        padding: 15px;
+                    }
+                }
+            }
         }
     }
 }
