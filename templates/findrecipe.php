@@ -77,15 +77,15 @@
                             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSS1x1gSB2Um_jNMDFL5F1rzsO2IWg4OIspYPhHs33h9wmMO-lb&usqp=CAU" alt=recipe/>
                             <div class="reci-info">
                                 <div class="icon-box">
-                                    <img src="public/assets/speed.svg" alt="icon" class="first"/>
+                                    <img src="public/assets/iconsDDA288/speed.svg" alt="icon" class="first"/>
                                 </div>
                                 <p>45 min</p>
                                 <div class="icon-box">
-                                    <img src="public/assets/medium.svg" alt="icon"/>
+                                    <img src="public/assets/iconsDDA288/medium.svg" alt="icon"/>
                                 </div>
                                 <p>Medium</p>
                                 <div class="icon-box">
-                                    <img src="public/assets/like.svg" alt="icon"/>
+                                    <img src="public/assets/iconsDDA288/like.svg" alt="icon"/>
                                 </div>
                                 <p>1300</p>
                             </div>
