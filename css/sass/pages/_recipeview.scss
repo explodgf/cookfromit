@@ -1,0 +1,93 @@
+.recipe-container {
+    width: 75%;
+    height: 100vh;
+    margin: 0 auto !important;
+    padding-top: 150px !important;
+    display: flex;
+    .container {
+        width: 80%;
+        height: 100%;
+    }
+    .info-box {
+        width: 50%;
+        height: 600px;
+        position: relative;
+        .container {
+            h1 {
+                font-family: 'Manjari', sans-serif;
+                color: #DDA288;
+                font-size: 2em;
+                padding: 5px 0px;
+                height: auto;
+                max-height: 3.3em;
+                width: 100%;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                line-height: 1.1em;
+                letter-spacing: 1px;
+            }
+            h2 {
+                font-family: 'Manjari', sans-serif;
+                color: #DDA288;
+                padding-top: 20px;
+                font-size: 1.4em;
+                letter-spacing: 3px;
+            }
+            .info-container {
+                width: 100%;
+                height: 70px;
+                margin-top: 10px !important;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                .icon-box {
+                    height: 100%;
+                    width: 70px;
+                    position: relative;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    img, svg{
+                        width: 60%;
+                        height: 60%;
+                    }
+                    .first {
+                        width: 70%;
+                        height: 70%;
+                    }
+                    #like {
+                        cursor: pointer;
+                        fill: none;
+                    }
+                }
+                p {
+                    margin-left: -20px !important;
+                    height: 20px;
+                    font-family: 'Manjari', sans-serif;
+                    color: #DDA288;
+                    font-size: 1.4em;
+                }
+            }
+            .ingredients {
+                width: 100%;
+                height: 400px;
+                background: #000;
+                margin-top: 20px !important;
+            }
+        }
+    }
+    .line {
+        background: #DDA288;
+        width: 5px;
+        height: 600px;
+    }
+    .steps-img-box {
+        width: 50%;
+        height: 600px;
+        position: relative;
+        .container {
+            position: absolute;
+            right: 0;
+        }
+    }
+}
