@@ -71,30 +71,32 @@
         <section class="recipe-grid">
             <h1>Three most popular dishes</h1>
             <div class="grid pagination-results">
-                <div class="recipe-card">
-                    <div class="img-box">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSS1x1gSB2Um_jNMDFL5F1rzsO2IWg4OIspYPhHs33h9wmMO-lb&usqp=CAU" alt=recipe/>
-                        <div class="reci-info">
-                            <div class="icon-box">
-                                <img src="public/assets/speed.svg" alt="icon" class="first"/>
+                <a href="#">
+                    <div class="recipe-card">
+                        <div class="img-box">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSS1x1gSB2Um_jNMDFL5F1rzsO2IWg4OIspYPhHs33h9wmMO-lb&usqp=CAU" alt=recipe/>
+                            <div class="reci-info">
+                                <div class="icon-box">
+                                    <img src="public/assets/speed.svg" alt="icon" class="first"/>
+                                </div>
+                                <p>45 min</p>
+                                <div class="icon-box">
+                                    <img src="public/assets/medium.svg" alt="icon"/>
+                                </div>
+                                <p>Medium</p>
+                                <div class="icon-box">
+                                    <img src="public/assets/like.svg" alt="icon"/>
+                                </div>
+                                <p>1300</p>
                             </div>
-                            <p>45 min</p>
-                            <div class="icon-box">
-                                <img src="public/assets/medium.svg" alt="icon"/>
-                            </div>
-                            <p>Medium</p>
-                            <div class="icon-box">
-                                <img src="public/assets/like.svg" alt="icon"/>
-                            </div>
-                            <p>1300</p>
+                        </div>
+                        <div class="title">
+                            <h3>
+                                Potatoes with peppers in sauce
+                            </h3>
                         </div>
                     </div>
-                    <div class="title">
-                        <h3>
-                            Potatoes with peppers in sauce
-                        </h3>
-                    </div>
-                </div>
+                </a>
             </div>
         </section>
         <div class="wave"></div>
