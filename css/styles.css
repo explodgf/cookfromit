@@ -712,7 +712,6 @@ li {
   font-size: 1em;
   padding-top: 5px;
 }
-
 .recipe-container {
   width: 75%;
   height: 100%;
@@ -754,6 +753,43 @@ li {
   width: 100%;
   height: 70px;
   margin-top: 20px !important;
+.find-rec-container {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto !important;
+  padding-top: 110px !important;
+}
+.find-rec-container .center-box {
+  margin: 0 auto !important;
+  height: auto;
+  width: 840px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.find-rec-container .center-box h1 {
+  display: inline-block;
+  font-size: 4em;
+  text-align: center;
+  font-family: "Manjari", sans-serif;
+  padding-bottom: 20px !important;
+  color: #DDA288;
+  letter-spacing: 3px;
+}
+.find-rec-container .center-box h1:last-child {
+  padding-left: 10px;
+}
+.find-rec-container .center-box img {
+  margin-bottom: 50px !important;
+  width: 150px;
+  height: 150px;
+}
+.find-rec-container .category-choose {
+  margin: 0 auto !important;
+  height: 160px;
+  width: 900px;
+  margin-top: 50px !important;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -1077,6 +1113,349 @@ li {
 .comments .enter-comment input[type=submit]:hover {
   transform: scale(1.1);
   background: #8593ae;
+=======
+.find-rec-container .category-choose .category-box {
+  height: 100%;
+  width: 160px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.find-rec-container .category-choose .category-box .img-box {
+  width: 120px;
+  height: 120px;
+  background: #F5F1F1;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  transition: 0.1s;
+  border: inherit;
+  outline: none;
+  cursor: pointer;
+}
+.find-rec-container .category-choose .category-box .img-box:hover {
+  transform: scale(1.1);
+  background: #8593ae;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.5);
+}
+.find-rec-container .category-choose .category-box .img-box img {
+  width: 80px;
+  height: 80px;
+  margin-top: 15px !important;
+}
+.find-rec-container .category-choose .category-box h2 {
+  font-size: 1.5em;
+  font-family: "Manjari", sans-serif;
+  font-weight: 100;
+  color: #DDA288;
+  padding-top: 20px;
+  transition: 0.1s;
+}
+.find-rec-container .search-ing {
+  width: 100%;
+  height: auto;
+  margin-top: 100px !important;
+  position: relative;
+  display: inline-block;
+}
+.find-rec-container .search-ing input[type=text] {
+  background: none;
+  height: auto;
+  width: calc(100% - 20px);
+  padding: 10px 0px;
+  font-family: "Manjari", sans-serif;
+  font-size: 1.4em;
+  letter-spacing: 3px;
+  color: #F5F1F1;
+  border: none;
+  border-bottom: 2px solid #8593ae;
+  outline: none;
+}
+.find-rec-container .search-ing input[type=text]::placeholder {
+  color: #F5F1F1;
+}
+.find-rec-container .search-ing input[type=text] .result {
+  width: 100%;
+  box-sizing: border-box;
+}
+.find-rec-container .search-ing .result {
+  position: absolute;
+  z-index: 999;
+  top: 100%;
+  left: 0;
+  background: #8593ae;
+  width: 100%;
+  max-height: 160px;
+  overflow-y: auto;
+}
+.find-rec-container .search-ing .result p {
+  margin: 0;
+  padding: 10px;
+  border-bottom: 1px solid #DDA288;
+  border-top: none;
+  cursor: pointer;
+  font-family: "Manjari", sans-serif;
+  font-size: 1.2em;
+  color: #F5F1F1;
+}
+.find-rec-container .search-ing .result p:hover {
+  background: #DDA288;
+}
+.find-rec-container .find-info-pointer, .find-rec-container .second, .find-rec-container .third {
+  height: 170px;
+  width: 170px;
+  position: absolute;
+  top: 20px;
+  right: -130px;
+}
+.find-rec-container .find-info-pointer img, .find-rec-container .second img, .find-rec-container .third img {
+  position: absolute;
+  right: 0;
+  height: 7em;
+  transform: rotate(300deg);
+}
+.find-rec-container .find-info-pointer h2, .find-rec-container .second h2, .find-rec-container .third h2 {
+  width: 200px;
+  top: -2em;
+  left: 3em;
+  position: absolute;
+  bottom: 0;
+  font-size: 1.5em;
+  font-family: "Covered By Your Grace", cursive;
+  color: #DDA288;
+  letter-spacing: 3px;
+}
+.find-rec-container .find-info-pointer h2 span, .find-rec-container .second h2 span, .find-rec-container .third h2 span {
+  font-size: 0.7em !important;
+}
+.find-rec-container .second {
+  top: 100px;
+  left: -170px;
+}
+.find-rec-container .second img {
+  transform: rotate(110deg);
+}
+.find-rec-container .second h2 {
+  width: 200px;
+  top: 5.5em;
+  left: -2em;
+  text-align: center;
+}
+.find-rec-container .second h2 span {
+  font-size: 0.7em !important;
+}
+.find-rec-container .third {
+  top: 600px;
+  right: -70px;
+}
+.find-rec-container .third h2 {
+  top: -2em;
+  left: 2em;
+  text-align: center;
+  width: 250px;
+}
+.find-rec-container .ing-list-form {
+  height: 500px;
+  width: 80%;
+  margin-top: 210px !important;
+  margin-bottom: 100px !important;
+  position: relative;
+  outline: 1px solid #8593ae;
+  overflow-y: auto;
+  -webkit-box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.8);
+  -moz-box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.8);
+  box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.8);
+}
+.find-rec-container .ing-list-form .ing-box {
+  margin-top: 70px !important;
+  width: 100%;
+  height: calc(100% - 150px);
+  overflow-y: auto;
+  display: flex;
+  justify-content: center;
+}
+.find-rec-container .ing-list-form .ing-box .ingredient {
+  width: 80%;
+  height: 50px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.find-rec-container .ing-list-form .ing-box .ingredient div {
+  width: 50px;
+  height: 100%;
+  font-size: 1.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #DDA288;
+  font-family: "Manjari", sans-serif;
+  font-weight: 100;
+}
+.find-rec-container .ing-list-form .ing-box .ingredient h2 {
+  font-family: "Manjari", sans-serif;
+  font-weight: 100;
+  color: #DDA288;
+  font-size: 1.5em;
+  width: 300px;
+}
+.find-rec-container .ing-list-form .ing-box .ingredient i {
+  cursor: pointer;
+  margin-bottom: 10px !important;
+}
+.find-rec-container .ing-list-form .ing-box .ingredient i:hover {
+  transform: scale(1.2);
+  color: #8593ae;
+}
+.find-rec-container .ing-list-form h1 {
+  position: absolute;
+  top: 0 !important;
+  font-family: "Manjari", sans-serif;
+  font-weight: 100;
+  color: #F5F1F1;
+  font-size: 2em;
+  text-align: center;
+  width: 100%;
+  height: 70px;
+  padding: 20px 0px 10px;
+}
+.find-rec-container .submit {
+  position: absolute;
+  bottom: 0 !important;
+  outline: none;
+  border: none;
+  width: 100%;
+  height: 70px;
+  background: #8593ae;
+  font-family: "Manjari", sans-serif;
+  color: #F5F1F1;
+  font-size: 2em;
+  letter-spacing: 4px;
+  padding: 20px 0px 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.find-rec-container .submit:hover {
+  background: #DDA288;
+}
+.find-rec-container .recipe-grid {
+  margin: 0 auto !important;
+  height: auto;
+  width: 75%;
+  position: relative;
+}
+.find-rec-container .recipe-grid h1 {
+  font-family: "Manjari", sans-serif;
+  color: #DDA288;
+  font-size: 2.2em;
+  letter-spacing: 4px;
+  padding-bottom: 50px;
+}
+.find-rec-container .recipe-grid .grid {
+  width: 100%;
+  position: relative;
+  display: grid;
+  grid-auto-rows: auto;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  grid-gap: 4em;
+  z-index: 999;
+  padding-bottom: 50px;
+}
+.find-rec-container .recipe-grid .grid .recipe-card {
+  color: #fff;
+  height: 300px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.5);
+  transition: ease-in-out 0.5s;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+.find-rec-container .recipe-grid .grid .recipe-card:hover {
+  transform: scale(1.1);
+}
+.find-rec-container .recipe-grid .grid .recipe-card:hover .img-box:before {
+  opacity: 0.8;
+}
+.find-rec-container .recipe-grid .grid .recipe-card:hover .img-box .reci-info {
+  visibility: visible;
+  opacity: 1;
+}
+.find-rec-container .recipe-grid .grid .recipe-card .img-box {
+  width: 100%;
+  height: 230px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.find-rec-container .recipe-grid .grid .recipe-card .img-box img {
+  width: 100%;
+  height: 100%;
+}
+.find-rec-container .recipe-grid .grid .recipe-card .img-box:before {
+  content: "";
+  background: #8593ae;
+  opacity: 0;
+  z-index: 2;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition: 0.5s;
+}
+.find-rec-container .recipe-grid .grid .recipe-card .img-box .reci-info {
+  position: absolute;
+  width: 100%;
+  height: 70px;
+  z-index: 999;
+  display: flex;
+  justify-content: space-around;
+  padding: 0px 15px;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.5s;
+}
+.find-rec-container .recipe-grid .grid .recipe-card .img-box .reci-info .icon-box {
+  height: 100%;
+  width: 70px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.find-rec-container .recipe-grid .grid .recipe-card .img-box .reci-info .icon-box img {
+  width: 50%;
+  height: 50%;
+}
+.find-rec-container .recipe-grid .grid .recipe-card .img-box .reci-info .icon-box .first {
+  width: 60%;
+  height: 60%;
+}
+.find-rec-container .recipe-grid .grid .recipe-card .img-box .reci-info p {
+  margin-left: -20px !important;
+  height: 20px;
+  margin-top: 30px !important;
+  font-family: "Manjari", sans-serif;
+  color: #DDA288;
+  font-size: 1.2em;
+}
+.find-rec-container .recipe-grid .grid .recipe-card .title {
+  width: 100%;
+  height: 70px;
+  background-color: #7E675E;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.find-rec-container .recipe-grid .grid .recipe-card .title h3 {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-family: "Manjari", sans-serif;
+  color: #F5F1F1;
+  font-size: 1.3em;
+  padding: 15px;
 }
 
 /*# sourceMappingURL=styles.css.map */
