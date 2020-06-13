@@ -712,6 +712,7 @@ li {
   font-size: 1em;
   padding-top: 5px;
 }
+
 .recipe-container {
   width: 75%;
   height: 100%;
@@ -753,43 +754,6 @@ li {
   width: 100%;
   height: 70px;
   margin-top: 20px !important;
-.find-rec-container {
-  width: 100%;
-  height: 100%;
-  margin: 0 auto !important;
-  padding-top: 110px !important;
-}
-.find-rec-container .center-box {
-  margin: 0 auto !important;
-  height: auto;
-  width: 840px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-}
-.find-rec-container .center-box h1 {
-  display: inline-block;
-  font-size: 4em;
-  text-align: center;
-  font-family: "Manjari", sans-serif;
-  padding-bottom: 20px !important;
-  color: #DDA288;
-  letter-spacing: 3px;
-}
-.find-rec-container .center-box h1:last-child {
-  padding-left: 10px;
-}
-.find-rec-container .center-box img {
-  margin-bottom: 50px !important;
-  width: 150px;
-  height: 150px;
-}
-.find-rec-container .category-choose {
-  margin: 0 auto !important;
-  height: 160px;
-  width: 900px;
-  margin-top: 50px !important;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -1113,7 +1077,49 @@ li {
 .comments .enter-comment input[type=submit]:hover {
   transform: scale(1.1);
   background: #8593ae;
-=======
+}
+
+.find-rec-container {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto !important;
+  padding-top: 110px !important;
+}
+.find-rec-container .center-box {
+  margin: 0 auto !important;
+  height: auto;
+  width: 840px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.find-rec-container .center-box h1 {
+  display: inline-block;
+  font-size: 4em;
+  text-align: center;
+  font-family: "Manjari", sans-serif;
+  padding-bottom: 20px !important;
+  color: #DDA288;
+  letter-spacing: 3px;
+}
+.find-rec-container .center-box h1:last-child {
+  padding-left: 10px;
+}
+.find-rec-container .center-box img {
+  margin-bottom: 50px !important;
+  width: 150px;
+  height: 150px;
+}
+.find-rec-container .category-choose {
+  margin: 0 auto !important;
+  height: 160px;
+  width: 900px;
+  margin-top: 50px !important;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 .find-rec-container .category-choose .category-box {
   height: 100%;
   width: 160px;

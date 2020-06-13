@@ -4,7 +4,7 @@
             <h1>Join to <img src="public/assets/logo_name.svg"></h1>
             <h2>Why should you join us?</h2>
             <div class="reg-info-box">
-                <div class="reg-info-circle"><img src="public/assets/like.svg" alt="thumb up"></div>
+                <div class="reg-info-circle"><img src="public/assets/icons8593ae/like.svg" alt="thumb up"></div>
                 <div class="reg-info-circle"><img src="public/assets/comments.svg" alt="opinions"></div>
                 <div class="reg-info-circle"><img src="public/assets/communications.svg" alt="send recipe"></div>
                 <div class="reg-info-pointer">
