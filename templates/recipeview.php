@@ -2,7 +2,7 @@
     <main class="main">
         <section class="recipe recipe-container">
             <div class="info-box">
-                <div class="container">
+                <div class="container-first">
                     <h1>Potatoes with peppers in sauces</h1>
                     <h2>Author: Jakub Wirfel</h2>
                     <div class="info-container">
@@ -36,17 +36,82 @@
                         </div>
                         <p>4</p>
                     </div>
-                    <div class="ingredients">
 
+                </div>
+                <div class="ingredients-title">
+                    <h2>Ingredients</h2>
+                </div>
+                <div class="ingredients" id="scroll">
+                    <div class="box">
+                        <label class="checkbox">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                        <div class="info">
+                            <div class="name">
+                                <p>Potatoes</p>
+                            </div>
+                            <div class="value">
+                                <p>2535 pieces</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="line"></div>
             <div class="steps-img-box">
-                <div class="container">
-
+                <div class="area">
+                    <div class="container-first right">
+                        <div class="img-box">
+                            <img src="https://specials-images.forbesimg.com/imageserve/5ea81a72228117000681b815/960x0.jpg?fit=scale" alt="dish image"/>
+                        </div>
+                    </div>
+                    <div class="steps-title">
+                        <h2>Preparation step by step</h2>
+                    </div>
+                    <div class="steps" id="scroll">
+                        <div class="step">
+                            <div class="step-id">
+                                <span >Step 1</span>
+                            </div>
+                            <div class="step-content">
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, quasi expedita? Numquam, nobis tempora? Perspiciatis iusto non velit atque id illo. Iusto non rerum illo. Aliquam rerum officiis exercitationem veritatis.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
+        <section class="comments">
+            <div class="header">
+                <div class="icon">
+                    <img src="public/assets/comments.svg" alt="comments icon"/>
+                </div>
+                <div class="title">
+                    <h1>Your opinions</h1>
+                </div>
+            </div>
+            <div class="comments-container" id="scroll">
+                <div class="comment">
+                    <div class="user-avatar">
+                        <img src="https://www.w3schools.com/w3images/team2.jpg" alt="avatar"/>
+                    </div>
+                    <div class="user-comment">
+                        <p>Username</p>
+                        <p class="content">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fuga, nobis facere sapiente qui ratione cum fugiat totam autem omnis corrupti, rem voluptate et vitae, assumenda atque labore perferendis minus excepturi?</p>
+                    </div>
+                </div>
+            </div>
+            <div class="enter-comment">
+                <form>
+                    <textarea></textarea>
+                    <div class="submit-section">
+                        <input type="submit" value="Add comment"/>
+                    </div>
+                </form>
+            </div>
+        </section>
+        <div class="wave"></div>
     </main>
+<?php include 'inc/footer.php';?>
 <script> </script> <!--BUG taransition fix for Chrome-->
