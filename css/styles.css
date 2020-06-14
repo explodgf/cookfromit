@@ -1464,4 +1464,258 @@ li {
   padding: 15px;
 }
 
+.find-tips-container {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto !important;
+  padding-top: 110px !important;
+}
+.find-tips-container .find-tips .center-box {
+  margin: 0 auto !important;
+  height: auto;
+  width: 840px;
+  position: relative;
+}
+.find-tips-container .find-tips .center-box .title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.find-tips-container .find-tips .center-box .title h1 {
+  font-size: 4em;
+  text-align: center;
+  font-family: "Manjari", sans-serif;
+  padding-bottom: 20px !important;
+  color: #DDA288;
+  letter-spacing: 3px;
+}
+.find-tips-container .find-tips .center-box .title span {
+  font-size: 10em;
+  text-align: center;
+  font-family: "Manjari", sans-serif;
+  padding: 0px 20px;
+  font-weight: 700;
+  color: #F5F1F1;
+}
+.find-tips-container .find-tips .center-box .subtitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -20px !important;
+  padding-right: 40px;
+  padding-bottom: 50px;
+}
+.find-tips-container .find-tips .center-box .subtitle h2 {
+  font-size: 1.3em;
+  font-family: "Manjari", sans-serif;
+  font-weight: 100;
+  color: #F5F1F1;
+  flex-wrap: wrap;
+}
+.find-tips-container .category-chooser {
+  width: 80%;
+  height: auto;
+  margin: 0 auto !important;
+}
+.find-tips-container .category-chooser .category-box {
+  width: 100%;
+  height: 60px;
+  margin-bottom: 5px !important;
+  position: relative;
+}
+.find-tips-container .category-chooser .category-box .category {
+  background: #8593ae;
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.find-tips-container .category-chooser .category-box .category p {
+  font-family: "Covered By Your Grace", cursive;
+  color: #DDA288;
+  letter-spacing: 3px;
+  display: none;
+  opacity: 0;
+  color: #F5F1F1;
+}
+.find-tips-container .category-chooser .category-box .category h2 {
+  font-size: 1.45em;
+  font-family: "Manjari", sans-serif;
+  color: #F5F1F1;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  padding: 0 20px 0 50px;
+  padding-top: 10px;
+}
+.find-tips-container .category-chooser .category-box .category .icon-box {
+  height: 100%;
+  width: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.find-tips-container .category-chooser .category-box .category .icon-box img {
+  width: 70%;
+  height: 70%;
+}
+.find-tips-container .category-chooser .category-box .left {
+  left: 0;
+}
+.find-tips-container .category-chooser .category-box .left:hover {
+  width: 100%;
+  background: #DDA288;
+  background-image: linear-gradient(to right, #DDA288, #5A4E4D);
+}
+.find-tips-container .category-chooser .category-box .left:hover p {
+  display: block;
+  opacity: 1;
+  padding-left: 50px;
+}
+.find-tips-container .category-chooser .category-box .right {
+  right: 0;
+}
+.find-tips-container .category-chooser .category-box .right:hover {
+  width: 100%;
+  background: #DDA288;
+  background-image: linear-gradient(to left, #DDA288, #5A4E4D);
+}
+.find-tips-container .category-chooser .category-box .right:hover p {
+  display: block;
+  opacity: 1;
+  padding: 0 50px;
+}
+.find-tips-container .search-tips {
+  width: 100%;
+  height: auto;
+  margin-top: 100px !important;
+  position: relative;
+  display: inline-block;
+}
+.find-tips-container .search-tips input[type=text] {
+  background: none;
+  height: auto;
+  width: calc(100% - 20px);
+  padding: 10px 0px;
+  font-family: "Manjari", sans-serif;
+  font-size: 1.4em;
+  letter-spacing: 3px;
+  color: #F5F1F1;
+  border: none;
+  border-bottom: 2px solid #8593ae;
+  outline: none;
+}
+.find-tips-container .search-tips input[type=text]::placeholder {
+  color: #F5F1F1;
+}
+.find-tips-container .search-tips input[type=text] .result {
+  width: 100%;
+  box-sizing: border-box;
+}
+.find-tips-container .search-tips .result {
+  position: absolute;
+  z-index: 999;
+  top: 100%;
+  left: 0;
+  background: #8593ae;
+  width: 100%;
+  max-height: 160px;
+  overflow-y: auto;
+}
+.find-tips-container .search-tips .result p {
+  margin: 0;
+  padding: 10px;
+  border-bottom: 1px solid #DDA288;
+  border-top: none;
+  cursor: pointer;
+  font-family: "Manjari", sans-serif;
+  font-size: 1.2em;
+  color: #F5F1F1;
+}
+.find-tips-container .search-tips .result p:hover {
+  background: #DDA288;
+}
+.find-tips-container .search-box {
+  padding-bottom: 220px !important;
+}
+.find-tips-container .tips-grid {
+  margin: 0 auto !important;
+  height: auto;
+  width: 60%;
+  position: relative;
+}
+.find-tips-container .tips-grid h1 {
+  font-family: "Manjari", sans-serif;
+  color: #DDA288;
+  font-size: 2.2em;
+  letter-spacing: 4px;
+  padding-bottom: 50px;
+}
+.find-tips-container .tips-grid .grid {
+  width: 100%;
+  position: relative;
+  display: grid;
+  grid-auto-rows: auto;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  grid-gap: 3em;
+  z-index: 999;
+  padding-bottom: 50px;
+}
+.find-tips-container .tips-grid .grid .tip-card {
+  color: #fff;
+  height: 300px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.5);
+  transition: ease-in-out 0.5s;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+.find-tips-container .tips-grid .grid .tip-card:hover {
+  transform: scale(1.1);
+}
+.find-tips-container .tips-grid .grid .tip-card:hover .img-box:before {
+  opacity: 0;
+}
+.find-tips-container .tips-grid .grid .tip-card .img-box {
+  width: 100%;
+  height: 230px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.find-tips-container .tips-grid .grid .tip-card .img-box img {
+  width: 100%;
+  height: 100%;
+}
+.find-tips-container .tips-grid .grid .tip-card .img-box:before {
+  content: "";
+  background: #8593ae;
+  opacity: 0.8;
+  z-index: 2;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition: 0.5s;
+}
+.find-tips-container .tips-grid .grid .tip-card .title {
+  width: 100%;
+  height: 70px;
+  background-color: #7E675E;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.find-tips-container .tips-grid .grid .tip-card .title h3 {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-family: "Manjari", sans-serif;
+  color: #F5F1F1;
+  font-size: 1.3em;
+  padding: 15px;
+}
+
 /*# sourceMappingURL=styles.css.map */
