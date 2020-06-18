@@ -1846,4 +1846,222 @@ li {
   fill: #8593ae;
 }
 
+.send-recipe-container {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto !important;
+  padding-top: 110px !important;
+}
+.send-recipe-container .send-recipe .center-box {
+  margin: 0 auto !important;
+  height: auto;
+  width: 840px;
+  position: relative;
+}
+.send-recipe-container .send-recipe .center-box .title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.send-recipe-container .send-recipe .center-box .title h1 {
+  font-size: 4em;
+  text-align: center;
+  font-family: "Manjari", sans-serif;
+  padding-bottom: 20px !important;
+  color: #DDA288;
+  letter-spacing: 3px;
+}
+.send-recipe-container .send-recipe .center-box .title img {
+  margin-bottom: 50px !important;
+  padding: 20px;
+}
+.send-recipe-container .send-recipe .center-box .subtitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -20px !important;
+  padding-right: 40px;
+  padding-bottom: 50px;
+}
+.send-recipe-container .send-recipe .center-box .subtitle h2 {
+  font-size: 1.3em;
+  font-family: "Manjari", sans-serif;
+  font-weight: 100;
+  color: #F5F1F1;
+  flex-wrap: wrap;
+}
+.send-recipe-container .send-recipe .center-box form input[type=text] {
+  background: none;
+  height: auto;
+  width: 100%;
+  margin-bottom: 40px;
+  font-family: "Manjari", sans-serif;
+  font-size: 1.4em;
+  letter-spacing: 3px;
+  color: #F5F1F1;
+  border: none;
+  border-bottom: 3px solid #8593ae;
+  outline: none;
+}
+.send-recipe-container .send-recipe .center-box form input[type=text]::placeholder {
+  color: #F5F1F1;
+}
+.send-recipe-container .send-recipe .center-box form .select {
+  background: none;
+  height: auto;
+  width: 100%;
+  margin-bottom: 40px;
+  font-family: "Manjari", sans-serif;
+  font-size: 1.4em;
+  letter-spacing: 3px;
+  color: #F5F1F1;
+  border: none;
+  border-bottom: 3px solid #8593ae;
+  outline: none;
+}
+.send-recipe-container .send-recipe .center-box form .select option {
+  color: #8593ae;
+  background: #DDA288;
+  font-size: 0.9em;
+  height: 40px;
+}
+.send-recipe-container .send-recipe .center-box form .form-box-top {
+  height: auto;
+  width: 100%;
+  display: flex;
+}
+.send-recipe-container .send-recipe .center-box form .form-box-top .form-left, .send-recipe-container .send-recipe .center-box form .form-box-top .form-right {
+  height: auto;
+  width: 50%;
+  padding: 0px 30px;
+}
+.send-recipe-container .send-recipe .center-box form .form-box-top .form-left {
+  border-right: 5px solid #DDA288;
+}
+.send-recipe-container .send-recipe .center-box form .form-box-top .add-ingredients {
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+.send-recipe-container .send-recipe .center-box form .form-box-top .add-ingredients .result {
+  position: absolute;
+  z-index: 999;
+  top: 25px;
+  left: 0;
+  background: #8593ae;
+  width: 100%;
+  max-height: 80px;
+  overflow-y: auto;
+}
+.send-recipe-container .send-recipe .center-box form .form-box-top .add-ingredients .result p {
+  margin: 0;
+  padding: 10px;
+  border-bottom: 1px solid #DDA288;
+  border-top: none;
+  cursor: pointer;
+  font-family: "Manjari", sans-serif;
+  font-size: 1.2em;
+  color: #F5F1F1;
+}
+.send-recipe-container .send-recipe .center-box form .form-box-top .add-ingredients .result p:hover {
+  background: #DDA288;
+}
+.send-recipe-container .send-recipe .center-box form .form-box-top .ing-box {
+  margin-top: 50px !important;
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.send-recipe-container .send-recipe .center-box form .form-box-top .ing-box .ingredient {
+  width: 80%;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.send-recipe-container .send-recipe .center-box form .form-box-top .ing-box .ingredient div {
+  width: 50px;
+  height: 100%;
+  font-size: 1.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #DDA288;
+  font-family: "Manjari", sans-serif;
+  font-weight: 100;
+}
+.send-recipe-container .send-recipe .center-box form .form-box-top .ing-box .ingredient h2 {
+  font-family: "Manjari", sans-serif;
+  font-weight: 100;
+  color: #DDA288;
+  font-size: 1.5em;
+  width: 300px;
+}
+.send-recipe-container .send-recipe .center-box form .form-box-top .ing-box .ingredient i {
+  cursor: pointer;
+  margin-bottom: 10px !important;
+}
+.send-recipe-container .send-recipe .center-box form .form-box-top .ing-box .ingredient i:hover {
+  transform: scale(1.2);
+  color: #8593ae;
+}
+.send-recipe-container .send-recipe .center-box form .form-box-bottom {
+  margin-top: 50px !important;
+  position: relative;
+  max-height: auto;
+  width: 100%;
+  padding: 0px 30px;
+}
+.send-recipe-container .send-recipe .center-box form .form-box-bottom .add-steps {
+  margin-bottom: 10px;
+}
+.send-recipe-container .send-recipe .center-box form .form-box-bottom .step-box {
+  display: flex;
+  width: 100%;
+  height: auto;
+  font-family: "Manjari", sans-serif;
+  font-size: 1.2em;
+  letter-spacing: 1px;
+  color: #DDA288;
+  padding: 20px 0px;
+}
+.send-recipe-container .send-recipe .center-box form .form-box-bottom .step-box span {
+  padding-right: 20px;
+}
+.send-recipe-container .send-recipe .center-box form .button-box {
+  height: auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.send-recipe-container .send-recipe .center-box form .button-box .submit-button {
+  position: relative;
+  z-index: 999;
+  height: 150px;
+  width: 150px;
+  background: #5A4E4D;
+  cursor: pointer;
+  border-radius: 50%;
+  border: 5px solid #DDA288;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.2s;
+  margin-bottom: -80px;
+}
+.send-recipe-container .send-recipe .center-box form .button-box .submit-button:hover {
+  transform: scale(1.1);
+  border-color: #8593ae;
+}
+.send-recipe-container .send-recipe .center-box form .button-box .submit-button:hover svg {
+  fill: #8593ae;
+}
+.send-recipe-container .send-recipe .center-box form .button-box .submit-button svg {
+  fill: #DDA288;
+  margin-left: -10px;
+}
+
 /*# sourceMappingURL=styles.css.map */
