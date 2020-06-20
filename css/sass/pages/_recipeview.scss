@@ -62,11 +62,14 @@
                     }
                 }
                 p {
-                    margin-left: -20px !important;
+                    margin-left: -50px !important;
                     height: 20px;
                     font-family: 'Manjari', sans-serif;
                     color: #DDA288;
                     font-size: 1.4em;
+                    @include respond-to(large) {
+                        margin-left: 0 !important;
+                    }
                 }
             }
 

@@ -1,3 +1,4 @@
 # Ignore everything in this directory
 .vscode
 css/styles.css.map
+.sass-cache

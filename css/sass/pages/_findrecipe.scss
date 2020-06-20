@@ -133,6 +133,9 @@
         position: absolute;
         top: 20px;
         right: -130px;
+        @include respond-to(large) {
+            display: none;
+        }
         img {
             position: absolute;
             right: 0;
@@ -286,6 +289,9 @@
             grid-gap: 4em;
             z-index: 999;
             padding-bottom: 50px;
+            @include respond-to(large) {
+                grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            }
             .recipe-card {
                 color: #fff;
                 height: 300px;

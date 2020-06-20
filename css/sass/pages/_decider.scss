@@ -3,6 +3,10 @@
     height: calc(100vh - 120px);
     margin: 0 auto !important;
     padding-top: 110px !important;
+    @include respond-to(large) {
+        min-height: 100vh;
+        height: auto;
+    }
     .decide {
         .center-box {
             margin: 0 auto !important;
@@ -37,6 +41,9 @@
                 margin-top: -20px !important;
                 padding-right: 40px;
                 padding-bottom: 50px;
+                @include respond-to(large) {
+                    padding-bottom: 0;
+                }
                 h2 {
                     font-size: 1.3em;
                     font-family: 'Manjari', sans-serif;
@@ -64,6 +71,7 @@
         .button-box {
             height: auto;
             margin: 0 auto !important;
+            margin-top: -40px !important;
             width: 40%;
             display: flex;
             justify-content: space-evenly;
@@ -100,6 +108,9 @@
             display: none;
             .img-box {
                 margin: 0 auto !important;
+                @include respond-to(large) {
+                    margin-top: 50px !important;
+                }
                 position: relative;
                 width: 80%;
                 height: 350px;

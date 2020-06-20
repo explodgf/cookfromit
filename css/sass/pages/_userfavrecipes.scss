@@ -3,6 +3,9 @@
     height: 100vh;
     margin: 0 auto !important;
     padding-top: 110px !important;
+    @include respond-to(large) {
+        height: auto;
+    }
     h1 {
         font-size: 4em;
         text-align: center;
@@ -20,6 +23,9 @@
     overflow-y: scroll;
     position: relative;
     z-index: 2;
+    @include respond-to(large) {
+        margin-bottom: 100px !important;
+    }
 }
 .fav-recipe {
     background: #7E675E;

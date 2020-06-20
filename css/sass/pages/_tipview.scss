@@ -14,6 +14,9 @@
         height: auto;
         position: relative;
         .container-first {
+            @include respond-to(large) {
+                width: 90%;
+            }
             h1 {
                 font-family: 'Manjari', sans-serif;
                 color: #DDA288;
@@ -37,6 +40,10 @@
                 .title {
                     width: 30%;
                     height: 100%;
+                    @include respond-to(large) {
+                        width: auto;
+                        padding-right: 20px;
+                    }
                     h2 {
                         color: #8593ae;
                         font-size: 1.6em;
@@ -47,6 +54,9 @@
                 .content {
                     width: 70%;
                     height: 100%;
+                    @include respond-to(large) {
+                        width: 100%;
+                    }
                     p {
                         color: #DDA288;
                         font-size: 1.2em;

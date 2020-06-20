@@ -1,3 +1,4 @@
+
 .hero {
     /* Sizing */
     width: 100vw;
@@ -14,7 +15,7 @@
     color: #F5F1F1; /* ADD THIS LINE */
 
     /* Background styles */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.3)), url('../public/assets/bg.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.3)), url('../public/assets/BG.jpg');
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -72,11 +73,14 @@
 
 .pointer-hero {
     height: 150px;
-    width: 315px;
+    width: 200px;
     position: absolute;
     display: inline-block;
     margin-top: 180px !important;
     margin-left: 20px !important;
+    @include respond-to(large) {
+        display: none;
+    }
     img {
         position: absolute;
         left: 0;
@@ -87,5 +91,9 @@
         right: 0;
         top: 40px;
         font-family: 'Covered By Your Grace', cursive;
+        @include respond-to(large) {
+            right: -20px;
+            top:20px;
+        }
     }
 }
