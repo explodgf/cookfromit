@@ -1,10 +1,12 @@
 @import "utils/mixins";
+
 @import "base/base";
 @import "base/reset";
 @import "base/typography";
 
 @import "components/footer";
 @import "components/comments";
+@import "components/navigation";
 
 @import "pages/frontpage";
 @import "pages/registration";
