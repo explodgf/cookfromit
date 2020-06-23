@@ -19,12 +19,65 @@
             img {
                 width: 100%;
                 height: 100%;
+                transition: 0.2s;
+                &:hover {
+                    transform: scale(1.1);
+                }
             }
         }
         .items-box {
             width: 400px;
             height: 100%;
-            background: #564788;
+            ul {
+                list-style: none;
+                margin-top: 10px !important;
+                padding-left: 0;
+                font-family: 'Manjari', sans-serif;
+                li {
+                    color: #F5F1F1;
+                    display: block;
+                    float: left;
+                    padding: 0.7em;
+                    position: relative;
+                    text-decoration: none;
+                    transition-duration: 0.3s;
+                    @include respond-to(small) {
+                        padding: 0.5em;
+                    }
+                    a {
+                        color: #F5F1F1;
+                        font-size: 1.4em;
+                        text-transform: capitalize;
+                        padding-top: 7px !important;
+                        @include respond-to(small) {
+                            font-size: 0.9rem;
+                        }
+                        svg {
+                            margin-top: 0;
+                            margin-left: 5px;
+                        }
+                    }
+                    &:hover, &:focus-within {
+                        cursor: pointer;
+                        transform: scale(1.1);
+                        font-weight: 700;
+                    }
+                    &:focus-within a {
+                        outline: none;
+                    }
+                    .border_last {
+                        border: 2px solid #DDA288;
+                        padding: 4px 10px 4px 10px;
+                        border-radius: 10px;
+                        &:hover {
+                            background: rgba($color: #DDA288, $alpha: 0.9);
+                        }
+                    }
+                }
+                .menu-icon {
+                    margin-top: -5px !important;
+                }
+            }
         }
     }
 }
