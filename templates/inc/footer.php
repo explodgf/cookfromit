@@ -15,4 +15,9 @@
             </div>
         </footer>
     </body>
+    <script>
+        $('.menu-icon').click(function(){
+            $('.menu').toggleClass('menuOn');
+        })
+    </script>
 </html>

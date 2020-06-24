@@ -7,7 +7,7 @@
             <ul>
                 <li><a href="#login">Sign in</a></li>
                 <li><a href="registration.php" class="border_last">Sign up</a></li>
-                <li class="menu-icon"><a href="#menu">
+                <li class="menu-icon"><a>
                     Menu
                     <svg xmlns="http://www.w3.org/2000/svg" width="22" height="20" viewBox="0 0 24 20">
                         <g id="Menu_Button" data-name="Menu Button" transform="translate(-1853 -71)">
@@ -61,9 +61,53 @@
         </div>
     </div>
 </div>
-<div id="menu" class="menu">
-    <div>
-
+<div class="menu">
+    <div class="menu-box">
+        <a class="item-box" href="index.php">
+            <div class="num">
+                <span>01</span>
+            </div>
+            <div class="content">
+                <h1>Home</h1>
+                <i class="fas fa-long-arrow-alt-right"></i>
+            </div>
+        </a>
+        <a class="item-box" href="find_recipe.php">
+            <div class="num">
+                <span>02</span>
+            </div>
+            <div class="content">
+                <h1>Find recipe</h1>
+                <i class="fas fa-long-arrow-alt-right"></i>
+            </div>
+        </a>
+        <a class="item-box" href="find_tips.php">
+            <div class="num">
+                <span>03</span>
+            </div>
+            <div class="content">
+                <h1>Tips</h1>
+                <i class="fas fa-long-arrow-alt-right"></i>
+            </div>
+        </a>
+        <a class="item-box" href="send_recipe.php">
+            <div class="num">
+                <span>04</span>
+            </div>
+            <div class="content">
+                <h1>Submit recipe</h1>
+                <i class="fas fa-long-arrow-alt-right"></i>
+            </div>
+        </a>
+        <a class="item-box" href="decider.php">
+            <div class="num">
+                <span>05</span>
+            </div>
+            <div class="content">
+                <h1>Decider</h1>
+                <i class="fas fa-long-arrow-alt-right"></i>
+            </div>
+        </a>
     </div>
     <div class="modal-footer">
         <div class="footer-box">

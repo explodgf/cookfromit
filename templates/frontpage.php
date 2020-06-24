@@ -13,3 +13,8 @@
 </body>
 </html>
 <script> </script>  <!--BUG taransition fix for Chrome-->
+<script>
+    $('.menu-icon').click(function(){
+        $('.menu').toggleClass('menuOn');
+    })
+</script>
