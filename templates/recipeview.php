@@ -14,8 +14,8 @@
                             <img src="public/assets/icons8593ae/medium.svg" alt="icon"/>
                         </div>
                         <p>Medium</p>
-                        <div class="icon-box likeActive" id="like">
-                            <svg id="like-box" xmlns="http://www.w3.org/2000/svg" width="28.827" height="27.666" viewBox="0 0 28.827 27.666" id="like">
+                        <div class="icon-box" id="like-button">
+                            <svg id="like" class="likeUnactive" xmlns="http://www.w3.org/2000/svg" width="28.827" height="27.666" viewBox="0 0 28.827 27.666">
                                 <g transform="translate(0.5 0.5)">
                                     <g id="Group_12" data-name="Group 12" transform="translate(0 11.594)">
                                     <g id="Group_11" data-name="Group 11" transform="translate(0 0)">
@@ -116,11 +116,13 @@
 <?php include 'inc/footer.php';?>
 <script> </script> <!--BUG taransition fix for Chrome-->
 <script>
-        $('#like').click(function(){
-            if ($('#like-box').css('fill', 'none')) {
-                ($('#like-box').css('fill', '#8593ae'));
-            } else {
-                ($('#like-box').css('fill', 'none'));
-            };
-        })
-    </script>
+    $('#like-button').click(function(){
+        if ($('#like').hasClass('likeUnactive')) {
+            $('#like').removeClass('likeUnactive');
+            $('#like').addClass('likeActive');
+        } else {
+            $('#like').removeClass('likeActive');
+            $('#like').addClass('likeUnactive');
+        }
+    })
+</script>

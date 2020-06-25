@@ -1304,9 +1304,13 @@ li {
   width: 70%;
   height: 70%;
 }
-.recipe-container .info-box .container-first .info-container .icon-box #like-box {
+.recipe-container .info-box .container-first .info-container .icon-box .likeUnactive {
   cursor: pointer;
   fill: none;
+}
+.recipe-container .info-box .container-first .info-container .icon-box .likeActive {
+  fill: #8593ae;
+  cursor: pointer;
 }
 .recipe-container .info-box .container-first .info-container p {
   margin-left: -50px !important;
@@ -2267,6 +2271,13 @@ li {
   color: #8593ae;
   font-size: 1.5em;
   padding: 10px;
+}
+.tip-container .box .useful-box .active {
+  transform: scale(1.1);
+  background: #DDA288 !important;
+}
+.tip-container .box .useful-box .active svg {
+  fill: #8593ae !important;
 }
 .tip-container .box .useful-box .icon-box {
   height: 70px;
