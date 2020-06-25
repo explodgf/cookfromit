@@ -65,7 +65,7 @@
                     &:focus-within a {
                         outline: none;
                     }
-                    .border_last {
+                    .border-last {
                         border: 2px solid #DDA288;
                         padding: 4px 10px 4px 10px;
                         border-radius: 10px;
@@ -73,9 +73,50 @@
                             background: rgba($color: #DDA288, $alpha: 0.9);
                         }
                     }
+                    .icon-box {
+                        position: relative;
+                        display: inline-block;
+                        top: -7px;
+                        height: 30px;
+                    }
+                    .icon {
+                        position: relative;
+                        display: inline-block;
+                        width: 30px;
+                        height: 3px;
+                        background: #F5F1F1;
+                        transition: 0.3s;
+                        &:before,
+                        &:after {
+                            @extend .icon;
+                            content: "";
+                            position: absolute;
+                            left: 0;
+                        }
+                        &:before {
+                            top: 8px;
+                        }
+                        &:after {
+                            bottom: 8px;
+                        }
+                    }
+                    .iconOn {
+                        background: transparent;
+                        &:before {
+                            top: 0;
+                            transform: rotate3d(0, 0, 1, 45deg);
+                        }
+                        &:after {
+                            bottom: 0;
+                            transform: rotate3d(0, 0, 1, -45deg);
+                        }
+                    }
                 }
-                .menu-icon {
-                    margin-top: -5px !important;
+                .menu-iconOn {
+                    border: 2px solid #7E675E;
+                    padding: 4px 10px 4px 10px;
+                    border-radius: 10px;
+                    background: #7E675E;
                 }
             }
         }

@@ -14,9 +14,9 @@
                             <img src="public/assets/icons8593ae/medium.svg" alt="icon"/>
                         </div>
                         <p>Medium</p>
-                        <div class="icon-box">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="28.827" height="27.666" viewBox="0 0 28.827 27.666" id="like">
-                                <g id="like" transform="translate(0.5 0.5)">
+                        <div class="icon-box likeActive" id="like">
+                            <svg id="like-box" xmlns="http://www.w3.org/2000/svg" width="28.827" height="27.666" viewBox="0 0 28.827 27.666" id="like">
+                                <g transform="translate(0.5 0.5)">
                                     <g id="Group_12" data-name="Group 12" transform="translate(0 11.594)">
                                     <g id="Group_11" data-name="Group 11" transform="translate(0 0)">
                                         <path id="Path_54" data-name="Path 54" d="M2.9,224A2.9,2.9,0,0,0,0,226.9v9.275a2.9,2.9,0,0,0,2.9,2.9H6.377a2.878,2.878,0,0,0,1.739-.587V224Z" transform="translate(0 -224)" stroke="#8593ae" stroke-width="1"/>
@@ -115,3 +115,12 @@
     </main>
 <?php include 'inc/footer.php';?>
 <script> </script> <!--BUG taransition fix for Chrome-->
+<script>
+        $('#like').click(function(){
+            if ($('#like-box').css('fill', 'none')) {
+                ($('#like-box').css('fill', '#8593ae'));
+            } else {
+                ($('#like-box').css('fill', 'none'));
+            };
+        })
+    </script>

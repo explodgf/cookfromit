@@ -230,7 +230,7 @@ li {
   bottom: 0;
   left: 90px;
 }
-.comments .header .icon {
+.comments .header .icon, .comments .header .navigation .nav-box .items-box ul li .icon:before, .navigation .nav-box .items-box ul li .comments .header .icon:before, .comments .header .navigation .nav-box .items-box ul li .icon:after, .navigation .nav-box .items-box ul li .comments .header .icon:after {
   width: 70px;
   height: 100%;
   display: flex;
@@ -409,16 +409,55 @@ li {
 .navigation .nav-box .items-box ul li:focus-within a {
   outline: none;
 }
-.navigation .nav-box .items-box ul li .border_last {
+.navigation .nav-box .items-box ul li .border-last {
   border: 2px solid #DDA288;
   padding: 4px 10px 4px 10px;
   border-radius: 10px;
 }
-.navigation .nav-box .items-box ul li .border_last:hover {
+.navigation .nav-box .items-box ul li .border-last:hover {
   background: rgba(221, 162, 136, 0.9);
 }
-.navigation .nav-box .items-box ul .menu-icon {
-  margin-top: -5px !important;
+.navigation .nav-box .items-box ul li .icon-box {
+  position: relative;
+  display: inline-block;
+  top: -7px;
+  height: 30px;
+}
+.navigation .nav-box .items-box ul li .icon, .navigation .nav-box .items-box ul li .icon:before, .navigation .nav-box .items-box ul li .icon:after {
+  position: relative;
+  display: inline-block;
+  width: 30px;
+  height: 3px;
+  background: #F5F1F1;
+  transition: 0.3s;
+}
+.navigation .nav-box .items-box ul li .icon:before, .navigation .nav-box .items-box ul li .icon:after {
+  content: "";
+  position: absolute;
+  left: 0;
+}
+.navigation .nav-box .items-box ul li .icon:before {
+  top: 8px;
+}
+.navigation .nav-box .items-box ul li .icon:after {
+  bottom: 8px;
+}
+.navigation .nav-box .items-box ul li .iconOn {
+  background: transparent;
+}
+.navigation .nav-box .items-box ul li .iconOn:before {
+  top: 0;
+  transform: rotate3d(0, 0, 1, 45deg);
+}
+.navigation .nav-box .items-box ul li .iconOn:after {
+  bottom: 0;
+  transform: rotate3d(0, 0, 1, -45deg);
+}
+.navigation .nav-box .items-box ul .menu-iconOn {
+  border: 2px solid #7E675E;
+  padding: 4px 10px 4px 10px;
+  border-radius: 10px;
+  background: #7E675E;
 }
 
 .modal-window {
@@ -1265,7 +1304,7 @@ li {
   width: 70%;
   height: 70%;
 }
-.recipe-container .info-box .container-first .info-container .icon-box #like {
+.recipe-container .info-box .container-first .info-container .icon-box #like-box {
   cursor: pointer;
   fill: none;
 }
@@ -1494,6 +1533,11 @@ li {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+.find-rec-container .category-choose .category-box .active {
+  transform: scale(1.1);
+  background: #8593ae !important;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.5);
 }
 .find-rec-container .category-choose .category-box .img-box {
   width: 120px;
@@ -1905,18 +1949,21 @@ li {
   width: 50%;
   height: 100%;
   position: absolute;
-  transition: 0.3s;
+  transition: ease-in 0.3s;
   display: flex;
   align-items: center;
   cursor: pointer;
 }
 .find-tips-container .category-chooser .category-box .category p {
+  position: absolute;
   font-family: "Covered By Your Grace", cursive;
   color: #DDA288;
   letter-spacing: 3px;
-  display: none;
   opacity: 0;
   color: #F5F1F1;
+  right: 0;
+  transition-delay: 0.2s;
+  padding: 50px;
 }
 .find-tips-container .category-chooser .category-box .category h2 {
   font-size: 1.45em;
@@ -1938,6 +1985,13 @@ li {
   width: 70%;
   height: 70%;
 }
+.find-tips-container .category-chooser .category-box .active {
+  width: 100%;
+  background: #DDA288;
+}
+.find-tips-container .category-chooser .category-box .active p {
+  opacity: 1;
+}
 .find-tips-container .category-chooser .category-box .left {
   left: 0;
 }
@@ -1947,9 +2001,7 @@ li {
   background-image: linear-gradient(to right, #DDA288, #5A4E4D);
 }
 .find-tips-container .category-chooser .category-box .left:hover p {
-  display: block;
   opacity: 1;
-  padding-left: 50px;
 }
 .find-tips-container .category-chooser .category-box .right {
   right: 0;
@@ -2432,7 +2484,7 @@ li {
 }
 .send-recipe-container .send-recipe .center-box form .button-box .submit-button {
   position: relative;
-  z-index: 999;
+  z-index: 10;
   height: 150px;
   width: 150px;
   background: #5A4E4D;

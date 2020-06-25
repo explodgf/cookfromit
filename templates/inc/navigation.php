@@ -6,16 +6,12 @@
         <div class="items-box">
             <ul>
                 <li><a href="#login">Sign in</a></li>
-                <li><a href="registration.php" class="border_last">Sign up</a></li>
-                <li class="menu-icon"><a>
+                <li><a href="registration.php" class="border-last">Sign up</a></li>
+                <li><a class="menu-icon">
                     Menu
-                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="20" viewBox="0 0 24 20">
-                        <g id="Menu_Button" data-name="Menu Button" transform="translate(-1853 -71)">
-                            <rect id="Rectangle_3" data-name="Rectangle 3" width="24" height="4" rx="2" transform="translate(1853 71)" fill="#F5F1F1"/>
-                            <rect id="Rectangle_4" data-name="Rectangle 4" width="24" height="4" rx="2" transform="translate(1853 87)" fill="#F5F1F1"/>
-                            <rect id="Rectangle_5" data-name="Rectangle 5" width="16" height="4" rx="2" transform="translate(1853 79)" fill="#F5F1F1"/>
-                        </g>
-                    </svg>
+                    <div class="icon-box">
+                        <span class="icon"></span>
+                    </div>
                 </a></li>
             </ul>
         </div>

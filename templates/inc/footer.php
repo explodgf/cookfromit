@@ -17,6 +17,8 @@
     </body>
     <script>
         $('.menu-icon').click(function(){
+            $('.menu-icon').toggleClass('menu-iconOn');
+            $('.icon').toggleClass('iconOn');
             $('.menu').toggleClass('menuOn');
         })
     </script>
