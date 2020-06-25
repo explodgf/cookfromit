@@ -104,3 +104,13 @@
 </main>
 <?php include 'inc/footer.php';?>
 <script> </script> <!--BUG taransition fix for Chrome-->
+<script>
+    $("button").click(function() {
+        if ($(this).hasClass("active")) {
+            $(this).removeClass("active");
+        } else {
+            $(".active").removeClass("active");
+            $(this).addClass('active');
+        }
+    });
+</script>

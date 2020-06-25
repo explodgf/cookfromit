@@ -112,6 +112,13 @@
                 font-size: 1.5em;
                 padding: 10px;
             }
+            .active {
+                transform: scale(1.1);
+                background: #DDA288 !important;
+                svg {
+                    fill:#8593ae !important;
+                }
+            }
             .icon-box {
                 height: 70px;
                 width: 70px;

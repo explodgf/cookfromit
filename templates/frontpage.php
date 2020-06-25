@@ -13,3 +13,10 @@
 </body>
 </html>
 <script> </script>  <!--BUG taransition fix for Chrome-->
+<script>
+    $('.menu-icon').click(function(){
+        $('.menu-icon').toggleClass('menu-iconOn');
+        $('.icon').toggleClass('iconOn');
+        $('.menu').toggleClass('menuOn');
+    })
+</script>
