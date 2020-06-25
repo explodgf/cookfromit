@@ -5,6 +5,13 @@
         </div>
         <div class="items-box">
             <ul>
+                <li><a class="dropdown-holder" href="#" aria-haspopup="true"><div class="user-img"><img src="https://www.w3schools.com/w3images/team2.jpg" alt="user"/></div>Username<i class="fas fa-angle-down"></i></a>
+                    <ul class="dropdown" aria-label="submenu">
+                        <li><a href="userprofile.php">My profile</a></li>
+                        <li><a href="my_favorites_recipes.php">Favorite recipes</a></li>
+                        <li><a href="#">Logout</a></li>
+                    </ul>
+                </li>
                 <li><a href="#login">Sign in</a></li>
                 <li><a href="registration.php" class="border-last">Sign up</a></li>
                 <li><a class="menu-icon">

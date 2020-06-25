@@ -202,7 +202,7 @@
             grid-auto-rows: auto;
             grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
             grid-gap: 3em;
-            z-index: 999;
+            z-index: 2;
             padding-bottom: 50px;
             .tip-card {
                 color: #fff;
