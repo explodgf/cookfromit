@@ -1,15 +1,15 @@
-<nav class="navigation">
+<nav class="navigation" id="navbar">
     <div class="nav-box">
         <div class="logo-box">
             <a href="index.php"><img src="public/assets/Logo.svg" alt="logo"/></a>
         </div>
         <div class="items-box">
             <ul>
-                <li><a class="dropdown-holder" href="#" aria-haspopup="true"><div class="user-img"><img src="https://www.w3schools.com/w3images/team2.jpg" alt="user"/></div>Username<i class="fas fa-angle-down"></i></a>
+                <a class="dropdown-holder" href="#" aria-haspopup="true"><li><div class="user-img"><img src="https://www.w3schools.com/w3images/team2.jpg" alt="user"/></div>Username<i class="fas fa-angle-down"></i></a>
                     <ul class="dropdown" aria-label="submenu">
-                        <li><a href="userprofile.php">My profile</a></li>
-                        <li><a href="my_favorites_recipes.php">Favorite recipes</a></li>
-                        <li><a href="#">Logout</a></li>
+                    <a href="userprofile.php"><li>My profile</li></a>
+                    <a href="my_favorites_recipes.php"><li>Favorite recipes</li></a>
+                    <a href="#"><li class="last">Logout</li></a>
                     </ul>
                 </li>
                 <li><a href="#login">Sign in</a></li>

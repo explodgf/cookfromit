@@ -1,3 +1,8 @@
+.scroll {
+    background-color:#8593ae;
+    box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.6);
+    transition: background-color 6000ms linear;
+}
 .navigation {
     position: fixed;
     top: 0;
@@ -8,6 +13,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: 0.2s;
     .nav-box {
         width: 80%;
         height: 60px;
@@ -157,11 +163,15 @@
                             opacity: 1;
                             display: block;
                         }
+                        .last {
+                            border-bottom: 2px solid #8593ae;
+                        }
                         li {
                             clear: both;
                             width: 100%;
-                            border-top: 3px solid #8593ae;
-                            background: rgba($color: #DDA288, $alpha: 0.9);
+                            border-top: 2px solid #8593ae;
+                            border-bottom: 2px solid #8593ae;
+                            background: #7E675E;
                             a {
                                 font-size: 1.2em;
                             }
