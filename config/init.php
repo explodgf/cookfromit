@@ -1,7 +1,7 @@
 <?php
 // Start Session
 session_start();
-
+$errors = [];
 //Config file
 require_once 'config.php';
 
