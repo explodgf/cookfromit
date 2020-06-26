@@ -170,8 +170,12 @@
                             clear: both;
                             width: 100%;
                             border-top: 2px solid #8593ae;
-                            border-bottom: 2px solid #8593ae;
+                            border-bottom: 2px solid #595a5c;
                             background: #7E675E;
+                            @include respond-to(large) {
+                                font-size: 0.8em;
+                                height: 40px !important;
+                            }
                             a {
                                 font-size: 1.2em;
                             }
