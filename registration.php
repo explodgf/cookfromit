@@ -2,6 +2,10 @@
 
 <?php
     $user = new User;
+    $ip = new IP;
+    $u_info = new UserInfo;
+
+    $ipId =   $ip -> getIpId($u_info -> get_ip())->IPID;
 
     if(isset($_POST['submit'])) {
         $username = trim($_POST['username']);
@@ -12,19 +16,19 @@
         $user -> usernameValidation($username);
         $user -> emailValidation($email);
         $user -> passwordValidation($password_1, $password_2);
-        if ($valid_username || $valid_email || $valid_password == true) {
+        if ($valid_username || $valid_email || $valid_password || $ip_exist == true) {
             $data = array();
             $data['username'] = $username;
             $data['email'] =  $email;
             $data['password'] = $password_1;
-            $data['ip'] = 1;
+            $data['ip'] = $ipId;
             $data['group'] = 1;
             $data['date'] = $date;
             $data['uprp'] = 1;
             $data['unpr'] = 1;
-            $data['img'] = 3;
+            $data['img'] = 1;
             if($user -> register($data)) {
-                redirect('index.php', 'You are register', 'success');
+                redirect('index.php', 'You are registered', 'success');
             } else {
                 redirect('index.php', 'Something went wrong', 'error');
             }

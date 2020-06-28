@@ -64,4 +64,21 @@ class Validators {
             array_push($errors, "Email already exist");
         }
     }
+
+    public function IpValidation($ip) {
+        global $ip_exist;
+
+        $this -> db -> query("SELECT IPAD FROM ipau WHERE IPAD = :ip");
+
+        $this -> db -> bind(':ip', $ip);
+
+        $results = $this -> db -> resultSet();
+        $numRows = $this -> db -> rowCount();
+
+        if($numRows  > 0) {
+            $ip_exist = true;
+        } else {
+            $ip_exist = false;
+        }
+    }
 }
