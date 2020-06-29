@@ -15,11 +15,14 @@ function __autoload($class_name) {
 }
 
 //GetIP
-$c_info = new UserInfo;
+$u_info = new UserInfo;
 $ip = new IP;
+$logs = new Logs;
 
-$ip -> IpValidation($c_info -> get_ip());
+$ip -> IpValidation($u_info -> get_ip());
 
 if ($ip_exist == false) {
-    $ip -> addIpAddr($c_info -> get_ip());
+    $ip -> addIpAddr($u_info -> get_ip());
+    $logs -> addLog(1, 1, "IP address: ".  $_SESSION['ip'] . " added to DB");
+    unset($_SESSION['ip']);
 }

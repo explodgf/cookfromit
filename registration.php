@@ -2,8 +2,6 @@
 
 <?php
     $user = new User;
-    $ip = new IP;
-    $u_info = new UserInfo;
 
     $ipId =   $ip -> getIpId($u_info -> get_ip())->IPID;
 
@@ -16,7 +14,7 @@
         $user -> usernameValidation($username);
         $user -> emailValidation($email);
         $user -> passwordValidation($password_1, $password_2);
-        if ($valid_username || $valid_email || $valid_password || $ip_exist == true) {
+        if ($valid_username && $valid_email && $valid_password && $ip_exist == true) {
             $data = array();
             $data['username'] = $username;
             $data['email'] =  $email;
@@ -28,12 +26,12 @@
             $data['unpr'] = 1;
             $data['img'] = 1;
             if($user -> register($data)) {
+                $logs -> addLog(1, $ipId, "User ". $username . " registered success");
                 redirect('index.php', 'You are registered', 'success');
             } else {
                 redirect('index.php', 'Something went wrong', 'error');
+                $logs -> addLog(1, $ipId, "User ". $username . " registered in error");
             }
-        } else {
-            echo $errors;
         }
     }
 

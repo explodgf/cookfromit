@@ -10,13 +10,13 @@ class Validators {
         $specialChars = preg_match('@[^\w]@', $password);
         // Check for empty and invalid inputs
         if (empty($password)) {
-            array_push($errors, "Please enter a valid password ");
+            redirect('registration.php', 'Please enter a valid password', 'error');
             $valid_password = false;
         } elseif (empty($password_repet)) {
-            array_push($errors, "Please enter a valid password.");
+            redirect('registration.php', 'Please enter a valid password', 'error');
             $valid_password = false;
         } elseif (!$uppercase || !$lowercase || !$number || !$specialChars || strlen($password) < 8) {
-            array_push($errors, "Password should be at least 8 characters in length and should include at least one upper case letter, one number, and one special character.");
+            redirect('registration.php', 'Password should be at least 8 characters in length and should include at least one upper case letter, one number, and one special character.', 'error');
             $valid_password = false;
         } else {
             // Check if the user may be logged in
@@ -24,7 +24,7 @@ class Validators {
                 $valid_password = true;
             } else {
                 $valid_password = false;
-                array_push($errors, "Password are not the same");
+                redirect('registration.php', 'Password are not the same', 'error');
             }
         }
     }
@@ -39,11 +39,13 @@ class Validators {
 
         $row = $this -> db -> single();
 
-        if(!$row > 0) {
+        $numRows = $this -> db -> rowCount();
+
+        if($numRows == 0) {
             $valid_username = true;
         } else {
             $valid_username = false;
-            array_push($errors, "User already exist");
+            redirect('registration.php', 'User already exist', 'error');
         }
     }
 
@@ -56,12 +58,13 @@ class Validators {
         $this -> db -> bind(':email', $email);
 
         $row = $this -> db -> single();
+        $numRows = $this -> db -> rowCount();
 
-        if(!$row > 0) {
+        if($numRows == 0) {
             $valid_email = true;
         } else {
             $valid_email = false;
-            array_push($errors, "Email already exist");
+            redirect('registration.php', 'Email already used', 'error');
         }
     }
 
