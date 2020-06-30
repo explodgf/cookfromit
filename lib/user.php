@@ -14,7 +14,6 @@ class User extends Validators {
         VALUES (:UNAM, :UEMA, :UPAS, :USIP, :UGRO, :UJOD, :UPRP ,:UNPR, :UIMG)");
         $password = md5($data['password']);
 
-        // Bind data
         $this -> db -> bind(':UNAM', $data['username']);
         $this -> db -> bind(':UEMA', $data['email']);
         $this -> db -> bind(':UPAS', $password);
@@ -25,7 +24,6 @@ class User extends Validators {
         $this -> db -> bind(':UNPR', $data['unpr']);
         $this -> db -> bind(':UIMG', $data['img']);
 
-        // Execute
         if($this -> db -> execute()) {
         return true;
         } else {
@@ -33,4 +31,34 @@ class User extends Validators {
         }
     }
 
+    public function login($data) {
+
+        $this -> db -> query("SELECT * FROM user WHERE UNAM = :unam AND UPAS = :upas");
+        $pass= md5($data['password']);
+
+        $this -> db -> bind(':unam', $data['user']);
+        $this -> db -> bind(':upas', $pass);
+
+        $results = $this -> db -> resultSet();
+        $numRows = $this -> db -> rowCount();
+
+        if($numRows == 1) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function logout() {
+
+        session_destroy();
+        unset($_SESSION['username']);
+        unset($_SESSION['confirm']);
+
+        if (!isset($_SESSION['confirm']) && !isset($_SESSION['username'])) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

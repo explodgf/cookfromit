@@ -26,15 +26,16 @@
             $data['unpr'] = 1;
             $data['img'] = 1;
             if($user -> register($data)) {
-                $logs -> addLog(1, $ipId, "User ". $username . " registered success");
+                $logs -> addLog(5, $ipId, "User ". $username . " registered success");
                 redirect('index.php', 'You are registered', 'success');
             } else {
+                $logs -> addLog(5, $ipId, "User ". $username . " registered in error");
                 redirect('index.php', 'Something went wrong', 'error');
-                $logs -> addLog(1, $ipId, "User ". $username . " registered in error");
             }
         }
     }
 
+    include_once 'helpers/log_in_out.php';
 
     $template = new Template('./templates/registration.php');
 
