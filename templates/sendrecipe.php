@@ -67,3 +67,26 @@
 </main>
 <?php include 'inc/footer.php';?>
 <script> </script> <!--BUG taransition fix for Chrome-->
+<script>
+$(document).ready(function(){
+    $('.add-ingredients input[type="text"]').on("keyup input", function(){
+        /* Get input value on change */
+        var inputVal = $(this).val();
+        var resultDropdown = $(this).siblings(".result");
+        if(inputVal.length){
+            $.get("helpers/search_handler.php", {term: inputVal}).done(function(data){
+                // Display the returned data in browser
+                resultDropdown.html(data);
+            });
+        } else{
+            resultDropdown.empty();
+        }
+    });
+
+    // Set search input value on click of result item
+    $(document).on("click", ".result p", function(){
+        $(this).parents(".add-ingredients").find('input[type="text"]').val($(this).text());
+        $(this).parent(".result").empty();
+    });
+});
+</script>
