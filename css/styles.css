@@ -2416,7 +2416,7 @@ li {
 .send-recipe-container .send-recipe .center-box {
   margin: 0 auto !important;
   height: auto;
-  width: 840px;
+  width: 55%;
   position: relative;
 }
 .send-recipe-container .send-recipe .center-box .title {
@@ -2503,6 +2503,15 @@ li {
   width: 100%;
   height: auto;
   position: relative;
+  display: flex;
+}
+.send-recipe-container .send-recipe .center-box form .form-box-top .add-ingredients .ig {
+  margin-right: 30px !important;
+}
+.send-recipe-container .send-recipe .center-box form .form-box-top .add-ingredients i {
+  color: #F5F1F1;
+  font-size: 1.3em;
+  cursor: pointer;
 }
 .send-recipe-container .send-recipe .center-box form .form-box-top .add-ingredients .result {
   position: absolute;
@@ -2536,13 +2545,14 @@ li {
   justify-content: center;
 }
 .send-recipe-container .send-recipe .center-box form .form-box-top .ing-box .ingredient {
-  width: 80%;
-  height: 50px;
+  width: 100%;
+  height: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 5px 0;
 }
-.send-recipe-container .send-recipe .center-box form .form-box-top .ing-box .ingredient div {
+.send-recipe-container .send-recipe .center-box form .form-box-top .ing-box .ingredient .trash {
   width: 50px;
   height: 100%;
   font-size: 1.5em;
@@ -2558,7 +2568,13 @@ li {
   font-weight: 100;
   color: #DDA288;
   font-size: 1.5em;
-  width: 300px;
+  width: 90%;
+}
+.send-recipe-container .send-recipe .center-box form .form-box-top .ing-box .ingredient h2 .amount {
+  margin: 0 5px !important;
+  font-size: 0.8em;
+  margin-bottom: -5px !important;
+  max-width: 50px;
 }
 .send-recipe-container .send-recipe .center-box form .form-box-top .ing-box .ingredient i {
   cursor: pointer;
@@ -2577,6 +2593,23 @@ li {
 }
 .send-recipe-container .send-recipe .center-box form .form-box-bottom .add-steps {
   margin-bottom: 10px;
+  resize: none;
+  width: 100%;
+  height: 100px;
+  background: #7E675E;
+  border: none;
+  outline: none;
+  padding: 20px;
+  font-family: "Manjari", sans-serif;
+  font-size: 1.1em;
+  color: #F5F1F1;
+  position: relative;
+}
+.send-recipe-container .send-recipe .center-box form .form-box-bottom .add-steps::-webkit-input-placeholder, .send-recipe-container .send-recipe .center-box form .form-box-bottom .add-steps:-moz-placeholder, .send-recipe-container .send-recipe .center-box form .form-box-bottom .add-steps:-moz-placeholder, .send-recipe-container .send-recipe .center-box form .form-box-bottom .add-steps:-ms-input-placeholder, .send-recipe-container .send-recipe .center-box form .form-box-bottom .add-steps::placeholder {
+  color: #F5F1F1;
+}
+.send-recipe-container .send-recipe .center-box form .form-box-bottom .add-steps::placeholder {
+  color: #F5F1F1;
 }
 .send-recipe-container .send-recipe .center-box form .form-box-bottom .step-box {
   display: flex;

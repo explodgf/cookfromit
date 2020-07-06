@@ -28,22 +28,18 @@
                         </div>
                         <div class="form-right">
                             <div class="add-ingredients">
-                                <input type="text" autocomplete="off" placeholder="Add ingredients" />
+                                <input class="ig" type="text" autocomplete="off" placeholder="Add ingredients" />
+                                <i id="add" class="fas fa-plus"></i>
                                 <div class="result" id="scroll">
 
                                 </div>
                             </div>
                             <div class="ing-box">
-                                <div class="ingredient">
-                                    <div>01.</div>
-                                    <h2>Tomatoes</h2>
-                                    <div class="trash"><i class="fas fa-trash"></i></div>
-                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="form-box-bottom">
-                        <input type="text" autocomplete="off" placeholder="Steps to do" class="add-steps"/>
+                        <textarea placeholder="Steps to do" class="add-steps" required></textarea>
                         <div class="step-box">
                             <span>01.</span>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab impedit harum optio praesentium consequuntur ipsam vero blanditiis, magnam distinctio facilis, aspernatur libero adipisci dolore dignissimos corrupti repudiandae? Facilis, asperiores dolore?</p>
@@ -88,5 +84,23 @@ $(document).ready(function(){
         $(this).parents(".add-ingredients").find('input[type="text"]').val($(this).text());
         $(this).parent(".result").empty();
     });
+});
+</script>
+<script>
+$(document).ready(function(){
+    $(document).on("click", "#add", function(){
+        var ingredient = $('.ig').val();
+        if(ingredient != 'No matches found' && ingredient != '') {
+            $(".ing-box").append('<div id="ig" class="ingredient">&nbsp;<h2>' + ingredient + '<input class="amount" type="text" autocomplete="off" required/> peaces</h2>&nbsp;<div class="trash" id="remove" >&nbsp;<i class="fas fa-trash"></i></div></div>');
+            $('.ig').val('');
+        } else {
+            $('.ig').val('');
+        }
+    });
+});
+</script>
+<script>
+$('.ing-box').on('click','#remove', function () {
+    $(this).parent('#ig').remove();
 });
 </script>

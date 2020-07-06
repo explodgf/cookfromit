@@ -7,7 +7,7 @@
         .center-box {
             margin: 0 auto !important;
             height: auto;
-            width: 840px;
+            width: 55%;
             position: relative;
             .title {
                 display: flex;
@@ -93,6 +93,15 @@
                         width: 100%;
                         height: auto;
                         position: relative;
+                        display: flex;
+                        .ig {
+                            margin-right: 30px !important;
+                        }
+                        i {
+                            color: #F5F1F1;
+                            font-size: 1.3em;
+                            cursor: pointer;
+                        }
                         .result {
                             position: absolute;
                             z-index: 999;
@@ -125,12 +134,13 @@
                         flex-direction: column;
                         justify-content: center;
                         .ingredient {
-                            width: 80%;
-                            height: 50px;
+                            width: 100%;
+                            height: auto;
                             display: flex;
                             justify-content: space-between;
                             align-items: center;
-                            div {
+                            padding: 5px 0;
+                            .trash {
                                 width: 50px;
                                 height: 100%;
                                 font-size: 1.5em;
@@ -146,7 +156,13 @@
                                 font-weight: 100;
                                 color: #DDA288;
                                 font-size: 1.5em;
-                                width: 300px;
+                                width: 90%;
+                                .amount {
+                                    margin: 0 5px !important;
+                                    font-size: 0.8em;
+                                    margin-bottom: -5px !important;
+                                    max-width: 50px;
+                                }
                             }
                             i {
                                 cursor: pointer;
@@ -167,6 +183,24 @@
                     padding: 0px 30px;
                     .add-steps {
                         margin-bottom: 10px;
+                        resize: none;
+                        width: 100%;
+                        height: 100px;
+                        background: #7E675E;
+                        border: none;
+                        outline: none;
+                        padding: 20px;
+                        font-family: 'Manjari', sans-serif;
+                        font-size: 1.1em;
+                        color: #F5F1F1;
+                        position: relative;
+                        &::-webkit-input-placeholder, &:-moz-placeholder,
+                        &:-moz-placeholder, &:-ms-input-placeholder, &::placeholder {
+                            color: #F5F1F1;
+                        }
+                        &::placeholder {
+                            color: #F5F1F1;
+                        }
                     }
                     .step-box {
                         display: flex;
