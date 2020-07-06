@@ -2591,8 +2591,31 @@ li {
   width: 100%;
   padding: 0px 30px;
 }
-.send-recipe-container .send-recipe .center-box form .form-box-bottom .add-steps {
-  margin-bottom: 10px;
+.send-recipe-container .send-recipe .center-box form .form-box-bottom .step-add {
+  width: 100%;
+  height: 100px;
+  background: #000;
+  position: relative;
+}
+.send-recipe-container .send-recipe .center-box form .form-box-bottom .step-add .button-add {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  background: #DDA288;
+  color: #F5F1F1;
+  font-size: 1.4em;
+  width: 50px;
+  height: 100%;
+  top: 0;
+  right: 0;
+  z-index: 2;
+}
+.send-recipe-container .send-recipe .center-box form .form-box-bottom .step-add .button-add:hover {
+  transform: scale(1.05);
+}
+.send-recipe-container .send-recipe .center-box form .form-box-bottom .step-add .add-steps {
   resize: none;
   width: 100%;
   height: 100px;
@@ -2600,15 +2623,16 @@ li {
   border: none;
   outline: none;
   padding: 20px;
+  padding-right: 70px;
   font-family: "Manjari", sans-serif;
   font-size: 1.1em;
   color: #F5F1F1;
   position: relative;
 }
-.send-recipe-container .send-recipe .center-box form .form-box-bottom .add-steps::-webkit-input-placeholder, .send-recipe-container .send-recipe .center-box form .form-box-bottom .add-steps:-moz-placeholder, .send-recipe-container .send-recipe .center-box form .form-box-bottom .add-steps:-moz-placeholder, .send-recipe-container .send-recipe .center-box form .form-box-bottom .add-steps:-ms-input-placeholder, .send-recipe-container .send-recipe .center-box form .form-box-bottom .add-steps::placeholder {
+.send-recipe-container .send-recipe .center-box form .form-box-bottom .step-add .add-steps::-webkit-input-placeholder, .send-recipe-container .send-recipe .center-box form .form-box-bottom .step-add .add-steps:-moz-placeholder, .send-recipe-container .send-recipe .center-box form .form-box-bottom .step-add .add-steps:-moz-placeholder, .send-recipe-container .send-recipe .center-box form .form-box-bottom .step-add .add-steps:-ms-input-placeholder, .send-recipe-container .send-recipe .center-box form .form-box-bottom .step-add .add-steps::placeholder {
   color: #F5F1F1;
 }
-.send-recipe-container .send-recipe .center-box form .form-box-bottom .add-steps::placeholder {
+.send-recipe-container .send-recipe .center-box form .form-box-bottom .step-add .add-steps::placeholder {
   color: #F5F1F1;
 }
 .send-recipe-container .send-recipe .center-box form .form-box-bottom .step-box {

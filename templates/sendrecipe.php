@@ -39,7 +39,10 @@
                         </div>
                     </div>
                     <div class="form-box-bottom">
-                        <textarea placeholder="Steps to do" class="add-steps" required></textarea>
+                        <div class="step-add">
+                            <textarea placeholder="Steps to do" class="add-steps" required></textarea>
+                            <div class="button-add" id="stepAdd"><i class="fas fa-plus"></i></div>
+                        </div>
                         <div class="step-box">
                             <span>01.</span>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab impedit harum optio praesentium consequuntur ipsam vero blanditiis, magnam distinctio facilis, aspernatur libero adipisci dolore dignissimos corrupti repudiandae? Facilis, asperiores dolore?</p>
@@ -102,5 +105,21 @@ $(document).ready(function(){
 <script>
 $('.ing-box').on('click','#remove', function () {
     $(this).parent('#ig').remove();
+});
+</script>
+<script>
+$(document).ready(function(){
+    var stepNum = 1;
+    $(document).on("click", "#stepAdd", function(){
+        var step = $('.add-steps').val();
+        if(stepNum <= 9){stepNum = '0'+stepNum}else{stepNum};
+        if(step != '') {
+            $(".form-box-bottom").append('<div class="step-box">&nbsp;<span>'+ stepNum +'.</span><p>' + step + '</p></div>');
+            $('.add-steps').val('');
+            stepNum++;
+        } else {
+            $('.add-steps').val('');
+        }
+    });
 });
 </script>
