@@ -10,7 +10,7 @@ class Search {
     }
 
     public function ingSearch($term) {
-        $this -> db -> query("SELECT IGNA FROM ingr WHERE IGNA LIKE :search");
+        $this -> db -> query("SELECT IGNA, MENA FROM ingr, inme WHERE IGMT = MEID AND IGNA LIKE :search");
         $search = $term . "%";
         // Bind data
         $this -> db -> bind(':search', $search);
@@ -20,7 +20,7 @@ class Search {
 
         if($numRows > 0) {
             foreach($results as $row) {
-                echo "<p>". $row -> IGNA ."</p>";
+                echo "<div><p>". $row -> IGNA ."</p><span hidden>". $row -> MENA ."</span></div>";
             }
         } else {
             echo "<p>No matches found</p>";

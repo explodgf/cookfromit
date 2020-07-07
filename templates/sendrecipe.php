@@ -23,12 +23,13 @@
                                 <option>Medium</option>
                                 <option>Hard</option>
                             </select>
-                            <input type="text" autocomplete="off" placeholder="Cooking time (minutes)">
+                            <input id="cookingtime" type="text" autocomplete="off" placeholder="Cooking time (minutes)">
                             <input type="text" autocomplete="off" placeholder="For how many people">
                         </div>
                         <div class="form-right">
                             <div class="add-ingredients">
                                 <input class="ig" type="text" autocomplete="off" placeholder="Add ingredients" />
+                                <input hidden class="measure"/>
                                 <i id="add" class="fas fa-plus"></i>
                                 <div class="result" id="scroll">
 
@@ -40,12 +41,8 @@
                     </div>
                     <div class="form-box-bottom">
                         <div class="step-add">
-                            <textarea placeholder="Steps to do" class="add-steps" required></textarea>
+                            <textarea placeholder="Steps to do" class="add-steps"></textarea>
                             <div class="button-add" id="stepAdd"><i class="fas fa-plus"></i></div>
-                        </div>
-                        <div class="step-box">
-                            <span>01.</span>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab impedit harum optio praesentium consequuntur ipsam vero blanditiis, magnam distinctio facilis, aspernatur libero adipisci dolore dignissimos corrupti repudiandae? Facilis, asperiores dolore?</p>
                         </div>
                     </div>
                     <div class="button-box">
@@ -83,8 +80,9 @@ $(document).ready(function(){
     });
 
     // Set search input value on click of result item
-    $(document).on("click", ".result p", function(){
-        $(this).parents(".add-ingredients").find('input[type="text"]').val($(this).text());
+    $(document).on("click", ".result div", function(){
+        $(this).parents(".add-ingredients").find('input[type="text"]').val($('p',this).text());
+        $(this).parents(".add-ingredients").find('.measure').val($('span',this).text());
         $(this).parent(".result").empty();
     });
 });
@@ -93,11 +91,14 @@ $(document).ready(function(){
 $(document).ready(function(){
     $(document).on("click", "#add", function(){
         var ingredient = $('.ig').val();
+        var measure = $('.measure').val();
         if(ingredient != 'No matches found' && ingredient != '') {
-            $(".ing-box").append('<div id="ig" class="ingredient">&nbsp;<h2>' + ingredient + '<input class="amount" type="text" autocomplete="off" required/> peaces</h2>&nbsp;<div class="trash" id="remove" >&nbsp;<i class="fas fa-trash"></i></div></div>');
+            $(".ing-box").append('<div id="ig" class="ingredient">&nbsp;<h2>' + ingredient + '<input class="amount" type="text" autocomplete="off" required/>'+ measure +'</h2>&nbsp;<div class="trash" id="remove" >&nbsp;<i class="fas fa-trash"></i></div></div>');
             $('.ig').val('');
+            $('.measure').val('');
         } else {
             $('.ig').val('');
+            $('.measure').val('');
         }
     });
 });
@@ -109,17 +110,19 @@ $('.ing-box').on('click','#remove', function () {
 </script>
 <script>
 $(document).ready(function(){
-    var stepNum = 1;
     $(document).on("click", "#stepAdd", function(){
         var step = $('.add-steps').val();
-        if(stepNum <= 9){stepNum = '0'+stepNum}else{stepNum};
         if(step != '') {
-            $(".form-box-bottom").append('<div class="step-box">&nbsp;<span>'+ stepNum +'.</span><p>' + step + '</p></div>');
+            $(".form-box-bottom").append('<div class="step-box" id="step">&nbsp;<p>' + step + '</p><div class="trash" id="remove" ><i class="fas fa-trash"></i></div></div>');
             $('.add-steps').val('');
-            stepNum++;
         } else {
             $('.add-steps').val('');
         }
     });
+});
+</script>
+<script>
+$('.form-box-bottom').on('click','#remove', function () {
+    $(this).parent('#step').remove();
 });
 </script>
