@@ -66,12 +66,10 @@
 <script>
 $(document).ready(function(){
     $('.add-ingredients input[type="text"]').on("keyup input", function(){
-        /* Get input value on change */
         var inputVal = $(this).val();
         var resultDropdown = $(this).siblings(".result");
         if(inputVal.length){
             $.get("helpers/search_handler.php", {term: inputVal}).done(function(data){
-                // Display the returned data in browser
                 resultDropdown.html(data);
             });
         } else{
@@ -79,7 +77,6 @@ $(document).ready(function(){
         }
     });
 
-    // Set search input value on click of result item
     $(document).on("click", ".result div", function(){
         $(this).parents(".add-ingredients").find('input[type="text"]').val($('p',this).text());
         $(this).parents(".add-ingredients").find('.measure').val($('span',this).text());
