@@ -3,7 +3,6 @@ include_once './helpers/validators.php';
 
 class User extends Validators {
     protected $db;
-
     public function __construct() {
         $this -> db = new Database;
     }
@@ -32,7 +31,7 @@ class User extends Validators {
     }
 
     public function login($data) {
-
+        global $results;
         $this -> db -> query("SELECT * FROM user WHERE UNAM = :unam AND UPAS = :upas");
         $pass= md5($data['password']);
 
@@ -41,7 +40,6 @@ class User extends Validators {
 
         $results = $this -> db -> resultSet();
         $numRows = $this -> db -> rowCount();
-
         if($numRows == 1) {
             return true;
         } else {
