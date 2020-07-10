@@ -24,14 +24,13 @@ class User extends Validators {
         $this -> db -> bind(':UIMG', $data['img']);
 
         if($this -> db -> execute()) {
-        return true;
+            return true;
         } else {
-        return false;
+            return false;
         }
     }
 
     public function login($data) {
-        global $results;
         $this -> db -> query("SELECT * FROM user WHERE UNAM = :unam AND UPAS = :upas");
         $pass= md5($data['password']);
 
@@ -41,6 +40,11 @@ class User extends Validators {
         $results = $this -> db -> resultSet();
         $numRows = $this -> db -> rowCount();
         if($numRows == 1) {
+            foreach($results as $row) {
+                $_SESSION['userId'] = $row -> USID;
+                $_SESSION['username'] = $row -> UNAM;
+                $_SESSION['confirm'] = "start";
+            }
             return true;
         } else {
             return false;
@@ -50,10 +54,11 @@ class User extends Validators {
     public function logout() {
 
         session_destroy();
+        unset($_SESSION['userId']);
         unset($_SESSION['username']);
         unset($_SESSION['confirm']);
 
-        if (!isset($_SESSION['confirm']) && !isset($_SESSION['username'])) {
+        if (!isset($_SESSION['confirm']) && !isset($_SESSION['username']) && !isset($_SESSION['userId'])) {
             return true;
         } else {
             return false;

@@ -21,6 +21,7 @@ class Recipes {
 
         return $results;
     }
+
     public function addRecipe($data) {
         $this -> db -> query("INSERT INTO reua (RUTI, RUAU, RUPT, RUDI, RULC, RUAM, RUIA, RUCA, RUIM, RUCT, RUMT)
         VALUES (:RUTI, :RUAU, :RUPT, :RUDI, :RULC, :RUAM, :RUIA, :RUCA, :RUIM, :RUCT, :RUMT)");

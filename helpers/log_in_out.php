@@ -9,8 +9,6 @@ if(isset($_POST['login'])) {
         $data['password'] = $password;
 
         if($user -> login($data)) {
-            $_SESSION['username'] = $username;
-            $_SESSION['confirm'] = "start";
             $logs -> addLog(3, $ipId, $username . " login success");
             redirect($_SERVER['PHP_SELF'], 'You login', 'success');
         } else {
