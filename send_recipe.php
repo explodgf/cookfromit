@@ -33,7 +33,7 @@
         $data['ruct'] = date(DATE_ATOM);
         $data['rumt'] = date(DATE_ATOM);
         if($recipes -> addRecipe($data)) {
-            redirect('index.php', 'You add recipe', 'success');
+            redirect($_SERVER['PHP_SELF'], 'You add recipe', 'success');
         } else {
             redirect('index.php', 'Something went wrong', 'error');
         }

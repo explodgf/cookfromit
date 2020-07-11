@@ -37,9 +37,15 @@ class Recipes {
         $this -> db -> bind(':RUIM', $data['ruim']);
         $this -> db -> bind(':RUCT', $data['ruct']);
         $this -> db -> bind(':RUMT', $data['rumt']);
-
         if($this -> db -> execute()) {
-            return true;
+            $this -> db -> query("SELECT RUID FROM reua WHERE RUAU = :RUAU AND RUCT = :RUCT");
+
+            $this -> db -> bind(':RUAU', $data['ruau']);
+            $this -> db -> bind(':RUCT', $data['ruct']);
+
+            $row = $this -> db -> single();
+
+            return $row;
         } else {
             return false;
         }

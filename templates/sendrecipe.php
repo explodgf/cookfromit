@@ -36,6 +36,7 @@
                             <div class="add-ingredients">
                                 <input class="ig" type="text" autocomplete="off" placeholder="Add ingredients" />
                                 <input hidden class="measure"/>
+                                <input hidden class="igId"/>
                                 <i id="add" class="fas fa-plus"></i>
                                 <div class="result" id="scroll">
 
@@ -85,7 +86,8 @@ $(document).ready(function(){
 
     $(document).on("click", ".result div", function(){
         $(this).parents(".add-ingredients").find('input[type="text"]').val($('p',this).text());
-        $(this).parents(".add-ingredients").find('.measure').val($('span',this).text());
+        $(this).parents(".add-ingredients").find('.measure').val($('#mena',this).text());
+        $(this).parents(".add-ingredients").find('.igId').val($('#igid',this).text());
         $(this).parent(".result").empty();
     });
 });
@@ -95,13 +97,16 @@ $(document).ready(function(){
     $(document).on("click", "#add", function(){
         var ingredient = $('.ig').val();
         var measure = $('.measure').val();
+        var ingredientId = $('.igId').val();
         if(ingredient != 'No matches found' && ingredient != '') {
-            $(".ing-box").append('<div id="ig" class="ingredient">&nbsp;<h2>' + ingredient + '<input class="amount" type="text" autocomplete="off" required/>'+ measure +'</h2>&nbsp;<div class="trash" id="remove" >&nbsp;<i class="fas fa-trash"></i></div></div>');
+            $(".ing-box").append('<div id="ig" class="ingredient"><input hidden type="text" autocomplete="off" required value="'+ ingredientId +'"/><h2>' + ingredient + '<input class="amount" type="text" autocomplete="off" required/>'+ measure +'</h2><div class="trash" id="remove" ><i class="fas fa-trash"></i></div></div>');
             $('.ig').val('');
             $('.measure').val('');
+            $('.igId').val('');
         } else {
             $('.ig').val('');
             $('.measure').val('');
+            $('.igId').val('');
         }
     });
 });
