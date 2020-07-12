@@ -24,7 +24,7 @@
         $data['ruti'] = $name;
         $data['ruau'] = $_SESSION['userId'];
         $data['rupt'] = $time;
-        $data['rudi'] =  $difficulty;
+        $data['rudi'] = $difficulty;
         $data['rulc'] = 1;
         $data['ruam'] = $peopleCount;
         $data['ruia'] = 1;
@@ -33,7 +33,22 @@
         $data['ruct'] = date(DATE_ATOM);
         $data['rumt'] = date(DATE_ATOM);
         if($recipes -> addRecipe($data)) {
-            redirect($_SERVER['PHP_SELF'], 'You add recipe', 'success');
+            $count = count($_POST['igId']);
+
+            $dataIg = array(
+                array()
+            );
+
+            $reId = $_SESSION['RecipeId'];
+            $igId = $_POST['igId'][0];
+            $amount = $_POST['amount'][0];
+
+            $dataIg['urig'] = $reId;
+            $dataIg['igur'] = $igId;
+            $dataIg['igam'] = $amount;
+            if($recipes -> addIngredientsToRecipe($dataIg)){
+                redirect($_SERVER['PHP_SELF'], 'You add recipe', 'success');
+            }
         } else {
             redirect('index.php', 'Something went wrong', 'error');
         }

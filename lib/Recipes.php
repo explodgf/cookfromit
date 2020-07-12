@@ -37,6 +37,7 @@ class Recipes {
         $this -> db -> bind(':RUIM', $data['ruim']);
         $this -> db -> bind(':RUCT', $data['ruct']);
         $this -> db -> bind(':RUMT', $data['rumt']);
+        
         if($this -> db -> execute()) {
             $this -> db -> query("SELECT RUID FROM reua WHERE RUAU = :RUAU AND RUCT = :RUCT");
 
@@ -45,7 +46,24 @@ class Recipes {
 
             $row = $this -> db -> single();
 
-            return $row;
+            $_SESSION['RecipeId'] =  $row -> RUID;
+
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function addIngredientsToRecipe($dataIg) {
+        $this -> db -> query("INSERT INTO urti (URIG, IGUR, IGAM)
+        VALUES (:URIG, :IGUR, :IGAM)");
+
+        $this -> db -> bind(':URIG', $dataIg['urig']);
+        $this -> db -> bind(':IGUR', $dataIg['igur']);
+        $this -> db -> bind(':IGAM', $dataIg['igam']);
+
+        if($this -> db -> execute()) {
+            return true;
         } else {
             return false;
         }

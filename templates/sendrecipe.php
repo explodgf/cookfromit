@@ -99,7 +99,7 @@ $(document).ready(function(){
         var measure = $('.measure').val();
         var ingredientId = $('.igId').val();
         if(ingredient != 'No matches found' && ingredient != '') {
-            $(".ing-box").append('<div id="ig" class="ingredient"><input hidden type="text" autocomplete="off" required value="'+ ingredientId +'"/><h2>' + ingredient + '<input class="amount" type="text" autocomplete="off" required/>'+ measure +'</h2><div class="trash" id="remove" ><i class="fas fa-trash"></i></div></div>');
+            $(".ing-box").append('<div id="ig" class="ingredient"><input hidden name="igId[]" type="text" autocomplete="off" required value="'+ ingredientId +'"/><h2>' + ingredient + '<input name="amount[]" class="amount" type="text" autocomplete="off" required/>'+ measure +'</h2><div class="trash" id="remove" ><i class="fas fa-trash"></i></div></div>');
             $('.ig').val('');
             $('.measure').val('');
             $('.igId').val('');
