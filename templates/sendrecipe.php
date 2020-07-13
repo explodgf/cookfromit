@@ -16,16 +16,16 @@
                 <form method="POST" action="send_recipe.php">
                     <div class="form-box-top">
                         <div class="form-left">
-                            <input type="text" autocomplete="off" placeholder="Dish name" name="dishName"/>
-                            <select class="select" name="difficulty">
+                            <input type="text" autocomplete="off" placeholder="Dish name" name="dishName" required/>
+                            <select class="select" name="difficulty" required>
                                 <option disabled selected>Level of complexity</option>
                                 <?php foreach($difficultys as $difficulty): ?>
                                     <option value="<?php echo $difficulty -> DIID ?>"><?php echo $difficulty -> DNAM; ?></option>
                                 <?php endforeach;?>
                             </select>
-                            <input id="cookingtime" type="text" autocomplete="off" placeholder="Cooking time (minutes)" name="time">
-                            <input type="text" autocomplete="off" placeholder="For how many people" name="peopleCount">
-                            <select class="select" name="category">
+                            <input id="cookingtime" type="text" autocomplete="off" placeholder="Cooking time (minutes)" name="time" required>
+                            <input type="text" autocomplete="off" placeholder="For how many people" name="peopleCount" required>
+                            <select class="select" name="category" required>
                                 <option disabled selected>Category</option>
                                 <?php foreach($categories as $category): ?>
                                     <option value="<?php echo $category -> RCID ?>"><?php echo $category -> RCNA; ?></option>
@@ -109,28 +109,23 @@ $(document).ready(function(){
             $('.igId').val('');
         }
     });
-});
-</script>
-<script>
-$('.ing-box').on('click','#remove', function () {
-    $(this).parent('#ig').remove();
-});
-</script>
-<script>
-$(document).ready(function(){
-    $(document).on("click", "#stepAdd", function(){
-        var step = $('.add-steps').val();
-        if(step != '') {
-            $(".form-box-bottom").append('<div class="step-box" id="step">&nbsp;<p>' + step + '</p><div class="trash" id="remove" ><i class="fas fa-trash"></i></div></div>');
-            $('.add-steps').val('');
-        } else {
-            $('.add-steps').val('');
-        }
+    $('.ing-box').on('click','#remove', function () {
+        $(this).parent('#ig').remove();
     });
 });
 </script>
 <script>
-$('.form-box-bottom').on('click','#remove', function () {
-    $(this).parent('#step').remove();
+$(document).ready(function(){
+    var count = 1;
+    $(document).on("click", "#stepAdd", function(){
+        var step = $('.add-steps').val();
+        if(step != '') {
+            $(".form-box-bottom").append('<div class="step-box" id="step"><div class="step-count">'+ count +'</div><input hidden name="stepId[]" type="text" autocomplete="off" required value="'+ count +'"/><textarea class="step" name="step[]" required>'+ step +'</textarea></div>');
+            $('.add-steps').val('');
+            count++;
+        } else {
+            $('.add-steps').val('');
+        }
+    });
 });
 </script>

@@ -55,6 +55,7 @@ class Recipes {
     }
 
     public function addIngredientsToRecipe($dataIg, $count) {
+        $execute = 0;
         for ($i=0; $i < $count; $i++) {
             $this -> db -> query("INSERT INTO urti (URIG, IGUR, IGAM)
             VALUES (:URIG, :IGUR, :IGAM)");
@@ -64,9 +65,30 @@ class Recipes {
             $this -> db -> bind(':IGAM', $dataIg[$i]['igam']);
 
             $this -> db -> execute();
+            $execute++;
         }
 
-        if($this -> db -> execute()) {
+        if($execute === $count) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    public function addStepsToRecipe($dataSteps, $count) {
+        $execute = 0;
+        for ($i=0; $i < $count; $i++) {
+            $this -> db -> query("INSERT INTO stdr (SCON, SINO, STRI)
+            VALUES (:SCON, :SINO, :STRI)");
+
+            $this -> db -> bind(':SCON', $dataSteps[$i]['scon']);
+            $this -> db -> bind(':SINO', $dataSteps[$i]['sino']);
+            $this -> db -> bind(':STRI', $dataSteps[$i]['stri']);
+
+            $this -> db -> execute();
+            $execute++;
+        }
+
+        if($execute === $count) {
             return true;
         } else {
             return false;

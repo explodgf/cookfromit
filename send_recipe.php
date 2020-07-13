@@ -33,10 +33,10 @@
         $data['ruct'] = date(DATE_ATOM);
         $data['rumt'] = date(DATE_ATOM);
         if($recipes -> addRecipe($data)) {
-            $count = count($_POST['igId']);
+            $countIg = count($_POST['igId']);
 
             $dataIg = array(array());
-            for ($i=0; $i < $count; $i++) {
+            for ($i=0; $i < $countIg; $i++) {
                 $reId = $_SESSION['RecipeId'];
                 $igId = $_POST['igId'][$i];
                 $amount = $_POST['amount'][$i];
@@ -45,11 +45,34 @@
                 $dataIg[$i]['igur'] = $igId;
                 $dataIg[$i]['igam'] = $amount;
             }
-            if($recipes -> addIngredientsToRecipe($dataIg, $count)){
-                redirect($_SERVER['PHP_SELF'], 'You add recipe', 'success');
+            if($recipes -> addIngredientsToRecipe($dataIg, $countIg)){
+                $countStep = count($_POST['step']);
+
+                $dataSteps = array(array());
+                for ($i=0; $i < $countStep; $i++) {
+                    $scon = $_POST['step'][$i];
+                    $sino = $i;
+                    $stri = $_SESSION['RecipeId'];
+
+                    $dataSteps[$i]['scon'] = $scon;
+                    $dataSteps[$i]['sino'] = $sino;
+                    $dataSteps[$i]['stri'] = $stri;
+                }
+                if($recipes -> addStepsToRecipe($dataSteps, $countStep)){
+                    $logs -> addLog(6, $ipId, "Recipe ". $_SESSION['RecipeId'] ." added by ". $_SESSION['username']);
+                    unset($_SESSION['RecipeId']);
+                    redirect($_SERVER['PHP_SELF'], 'You add recipe', 'success');
+                } else {
+                    $logs -> addLog(6, $ipId, "Recipe add error [addSteps]");
+                    redirect($_SERVER['PHP_SELF'], 'Something went wrong', 'error');
+                }
+            } else {
+                $logs -> addLog(6, $ipId, "Recipe add error [addIngredients]");
+                redirect($_SERVER['PHP_SELF'], 'Something went wrong', 'error');
             }
         } else {
-            redirect('index.php', 'Something went wrong', 'error');
+            $logs -> addLog(6, $ipId, "Recipe add error [addRecipe]");
+            redirect($_SERVER['PHP_SELF'], 'Something went wrong', 'error');
         }
     }
 
