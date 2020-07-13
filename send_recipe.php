@@ -35,18 +35,17 @@
         if($recipes -> addRecipe($data)) {
             $count = count($_POST['igId']);
 
-            $dataIg = array(
-                array()
-            );
+            $dataIg = array(array());
+            for ($i=0; $i < $count; $i++) {
+                $reId = $_SESSION['RecipeId'];
+                $igId = $_POST['igId'][$i];
+                $amount = $_POST['amount'][$i];
 
-            $reId = $_SESSION['RecipeId'];
-            $igId = $_POST['igId'][0];
-            $amount = $_POST['amount'][0];
-
-            $dataIg['urig'] = $reId;
-            $dataIg['igur'] = $igId;
-            $dataIg['igam'] = $amount;
-            if($recipes -> addIngredientsToRecipe($dataIg)){
+                $dataIg[$i]['urig'] = $reId;
+                $dataIg[$i]['igur'] = $igId;
+                $dataIg[$i]['igam'] = $amount;
+            }
+            if($recipes -> addIngredientsToRecipe($dataIg, $count)){
                 redirect($_SERVER['PHP_SELF'], 'You add recipe', 'success');
             }
         } else {
