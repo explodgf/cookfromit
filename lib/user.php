@@ -99,7 +99,7 @@ class User extends Validators {
 
         $this -> db -> bind(':UPAS', $password);
         $this -> db -> bind(':USID', $userId);
-        
+
         if($this -> db -> execute()) {
             return true;
         } else {
