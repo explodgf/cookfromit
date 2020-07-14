@@ -23,14 +23,16 @@ class Recipes {
     }
 
     public function addRecipe($data) {
-        $this -> db -> query("INSERT INTO reua (RUTI, RUAU, RUPT, RUDI, RULC, RUAM, RUIA, RUCA, RUIM, RUCT, RUMT)
-        VALUES (:RUTI, :RUAU, :RUPT, :RUDI, :RULC, :RUAM, :RUIA, :RUCA, :RUIM, :RUCT, :RUMT)");
+        $this -> db -> query("INSERT INTO reua (RUTI, RUAU, RUPT, RUDI, RULC, RUCC, RUVC, RUAM, RUIA, RUCA, RUIM, RUCT, RUMT)
+        VALUES (:RUTI, :RUAU, :RUPT, :RUDI, :RULC, :RUCC, :RUVC, :RUAM, :RUIA, :RUCA, :RUIM, :RUCT, :RUMT)");
 
         $this -> db -> bind(':RUTI', $data['ruti']);
         $this -> db -> bind(':RUAU', $data['ruau']);
         $this -> db -> bind(':RUPT', $data['rupt']);
         $this -> db -> bind(':RUDI', $data['rudi']);
         $this -> db -> bind(':RULC', $data['rulc']);
+        $this -> db -> bind(':RUCC', $data['rucc']);
+        $this -> db -> bind(':RUVC', $data['ruvc']);
         $this -> db -> bind(':RUAM', $data['ruam']);
         $this -> db -> bind(':RUIA', $data['ruia']);
         $this -> db -> bind(':RUCA', $data['ruca']);

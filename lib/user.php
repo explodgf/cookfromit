@@ -64,4 +64,46 @@ class User extends Validators {
             return false;
         }
     }
+
+    public function getUserRecipes() {
+        $this -> db -> query("SELECT * FROM reua WHERE RUAU = :ruau");
+
+        $this -> db -> bind(':ruau', $_SESSION['userId']);
+
+        $results = $this -> db -> resultSet();
+
+        return $results;
+    }
+
+    public function checkPwd($pwd) {
+        $this -> db -> query("SELECT * FROM user WHERE UPAS = :upas");
+
+        $pass= md5($pwd);
+
+        $this -> db -> bind(':upas', $pass);
+
+        $results = $this -> db -> resultSet();
+        $numRows = $this -> db -> rowCount();
+        if($numRows == 1) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function changePwd($pwd, $userId) {
+
+        $this -> db -> query("UPDATE user SET UPAS = :UPAS WHERE USID = :USID");
+
+        $password = md5($pwd);
+
+        $this -> db -> bind(':UPAS', $password);
+        $this -> db -> bind(':USID', $userId);
+        
+        if($this -> db -> execute()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

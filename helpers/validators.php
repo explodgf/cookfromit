@@ -10,13 +10,13 @@ class Validators {
         $specialChars = preg_match('@[^\w]@', $password);
         // Check for empty and invalid inputs
         if (empty($password)) {
-            redirect('registration.php', 'Please enter a valid password', 'error');
+            redirect($_SERVER['PHP_SELF'], 'Please enter a valid password', 'error');
             $valid_password = false;
         } elseif (empty($password_repet)) {
-            redirect('registration.php', 'Please enter a valid password', 'error');
+            redirect($_SERVER['PHP_SELF'], 'Please enter a valid password', 'error');
             $valid_password = false;
         } elseif (!$uppercase || !$lowercase || !$number || !$specialChars || strlen($password) < 8) {
-            redirect('registration.php', 'Password should be at least 8 characters in length and should include at least one upper case letter, one number, and one special character.', 'error');
+            redirect($_SERVER['PHP_SELF'], 'Password should be at least 8 characters in length and should include at least one upper case letter, one number, and one special character.', 'error');
             $valid_password = false;
         } else {
             // Check if the user may be logged in
@@ -24,7 +24,7 @@ class Validators {
                 $valid_password = true;
             } else {
                 $valid_password = false;
-                redirect('registration.php', 'Password are not the same', 'error');
+                redirect($_SERVER['PHP_SELF'], 'Password are not the same', 'error');
             }
         }
     }
@@ -45,7 +45,7 @@ class Validators {
             $valid_username = true;
         } else {
             $valid_username = false;
-            redirect('registration.php', 'User already exist', 'error');
+            redirect($_SERVER['PHP_SELF'], 'User already exist', 'error');
         }
     }
 
@@ -64,7 +64,7 @@ class Validators {
             $valid_email = true;
         } else {
             $valid_email = false;
-            redirect('registration.php', 'Email already used', 'error');
+            redirect($_SERVER['PHP_SELF'], 'Email already used', 'error');
         }
     }
 

@@ -60,8 +60,15 @@
         font-size: 1.5em;
         border-bottom: 3px solid #8593ae;
         font-family: 'Manjari', sans-serif;
+        &::-webkit-input-placeholder, &:-moz-placeholder,
+        &:-moz-placeholder, &:-ms-input-placeholder, &::placeholder {
+            color: #F5F1F1;
+        }
+        &::placeholder {
+            color: #F5F1F1;
+        }
     }
-    button {
+    a {
         cursor: pointer;
         background: inherit;
         outline: none;

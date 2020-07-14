@@ -25,7 +25,9 @@
         $data['ruau'] = $_SESSION['userId'];
         $data['rupt'] = $time;
         $data['rudi'] = $difficulty;
-        $data['rulc'] = 1;
+        $data['rulc'] = 0;
+        $data['rucc'] = 0;
+        $data['ruvc'] = 0;
         $data['ruam'] = $peopleCount;
         $data['ruia'] = 1;
         $data['ruca'] = $category;
