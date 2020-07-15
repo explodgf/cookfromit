@@ -106,4 +106,21 @@ class User extends Validators {
             return false;
         }
     }
+
+    public function getUserLikedRecipes() {
+        $this -> db -> query("SELECT u.UNAM, r.RETI, r.REPT, r.RELC, r.REAM, d.DNAM, i.RIAN, i.RIUR
+                                FROM user u, reci r, uslr l, redi d, imre i
+                                    WHERE l.UTRE = u.USID
+                                        AND l.RETU = r.REID
+                                        AND r.REIM = i.RIID
+                                        AND l.UTRE = :usid
+                                        AND r.REDI = d.DIID"
+                            );
+
+        $this -> db -> bind(':usid', $_SESSION['userId']);
+
+        $results = $this -> db -> resultSet();
+
+        return $results;
+    }
 }

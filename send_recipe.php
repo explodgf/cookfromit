@@ -19,6 +19,7 @@
         $time = trim($_POST['time']);
         $peopleCount = trim($_POST['peopleCount']);
         $category = trim($_POST['category']);
+        $igCount = count($_POST['igId']);
 
         $data = array();
         $data['ruti'] = $name;
@@ -29,7 +30,7 @@
         $data['rucc'] = 0;
         $data['ruvc'] = 0;
         $data['ruam'] = $peopleCount;
-        $data['ruia'] = 1;
+        $data['ruia'] = $igCount;
         $data['ruca'] = $category;
         $data['ruim'] = 1;
         $data['ruct'] = date(DATE_ATOM);
