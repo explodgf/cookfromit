@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 29 Maj 2020, 13:09
+-- Czas generowania: 16 Lip 2020, 23:24
 -- Wersja serwera: 10.4.11-MariaDB
 -- Wersja PHP: 7.4.1
 
@@ -25,58 +25,14 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktura tabeli dla tabeli `core`
---
-
-CREATE TABLE `core` (
-  `CRID` int(11) NOT NULL,
-  `RCID` int(11) NOT NULL,
-  `CUID` int(11) NOT NULL,
-  `CDAT` datetime NOT NULL,
-  `CCON` varchar(150) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Zrzut danych tabeli `core`
---
-
-INSERT INTO `core` (`CRID`, `RCID`, `CUID`, `CDAT`, `CCON`) VALUES
-(1, 1, 10203040, '2020-05-22 14:14:22', 'Dupa123'),
-(2, 1, 10203040, '2020-05-22 14:14:22', 'Dupa321');
-
--- --------------------------------------------------------
-
---
--- Struktura tabeli dla tabeli `coti`
---
-
-CREATE TABLE `coti` (
-  `CTID` int(11) NOT NULL,
-  `TCID` int(11) NOT NULL,
-  `CUID` int(11) NOT NULL,
-  `CDAT` datetime NOT NULL,
-  `CCON` varchar(150) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Zrzut danych tabeli `coti`
---
-
-INSERT INTO `coti` (`CTID`, `TCID`, `CUID`, `CDAT`, `CCON`) VALUES
-(1, 1, 10203040, '2020-05-22 14:19:10', 'Dupa123'),
-(2, 1, 10203040, '2020-05-22 14:19:10', 'Dupa321');
-
--- --------------------------------------------------------
-
---
 -- Struktura tabeli dla tabeli `imre`
 --
 
 CREATE TABLE `imre` (
   `RIID` int(11) NOT NULL,
-  `RINA` varchar(20) NOT NULL,
-  `RIAN` varchar(30) NOT NULL,
-  `RIUR` varchar(60) NOT NULL
+  `RINA` varchar(30) NOT NULL,
+  `RIAN` varchar(40) NOT NULL,
+  `RIUR` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -84,29 +40,7 @@ CREATE TABLE `imre` (
 --
 
 INSERT INTO `imre` (`RIID`, `RINA`, `RIAN`, `RIUR`) VALUES
-(1, 'test1', 'test1', 'http://127.0.0.1/phpmyadmin/tbl_change.php'),
-(2, 'test1', 'test1', 'http://127.0.0.1/phpmyadmin/tbl_change2.php');
-
--- --------------------------------------------------------
-
---
--- Struktura tabeli dla tabeli `imti`
---
-
-CREATE TABLE `imti` (
-  `TIIG` int(11) NOT NULL,
-  `TINA` varchar(20) NOT NULL,
-  `TIAN` varchar(30) NOT NULL,
-  `TIUR` varchar(60) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Zrzut danych tabeli `imti`
---
-
-INSERT INTO `imti` (`TIIG`, `TINA`, `TIAN`, `TIUR`) VALUES
-(1, 'test1', 'test1', 'http://127.0.0.1/phpmyadmin/tbl_change.php'),
-(2, 'test2', 'test2', 'http://127.0.0.1/phpmyadmin/tbl_change2.php');
+(1, 'Default ', 'Default recipe image', './public/recipes_img/testRecipe.jpg');
 
 -- --------------------------------------------------------
 
@@ -126,6 +60,7 @@ CREATE TABLE `imus` (
 --
 
 INSERT INTO `imus` (`UIID`, `UINA`, `UIAN`, `UIUR`) VALUES
+(1, 'Default', 'Default user image', 'xxx'),
 (3, 'test1', 'test1', 'http://127.0.0.1/phpmyadmin/tbl_change.php'),
 (4, 'test2', 'test2', 'http://127.0.0.1/phpmyadmin/tbl_change2.php');
 
@@ -137,22 +72,46 @@ INSERT INTO `imus` (`UIID`, `UINA`, `UIAN`, `UIUR`) VALUES
 
 CREATE TABLE `ingr` (
   `IGID` int(11) NOT NULL,
-  `IGNA` varchar(50) NOT NULL,
-  `IGCD` datetime NOT NULL
+  `IGNA` varchar(60) NOT NULL,
+  `IGMT` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Zrzut danych tabeli `ingr`
 --
 
-INSERT INTO `ingr` (`IGID`, `IGNA`, `IGCD`) VALUES
-(1, 'Pomidory', '2020-05-22 11:47:18'),
-(2, 'Ogorki', '2020-05-22 11:47:18'),
-(3, 'Proszek do pieczenia', '2020-05-22 11:47:48'),
-(4, 'Ziemniaki', '2020-05-22 11:47:48'),
-(5, 'Wieprzowina', '2020-05-22 11:47:48'),
-(6, 'Makaron', '2020-05-22 11:47:48'),
-(7, 'Grzyby', '2020-05-22 11:47:48');
+INSERT INTO `ingr` (`IGID`, `IGNA`, `IGMT`) VALUES
+(14, 'Tomatoe', 3),
+(15, 'Milk', 1),
+(16, 'Eggs', 3),
+(17, 'Flour', 2),
+(18, 'Butter', 2),
+(19, 'Water', 1),
+(20, 'Salmon', 2),
+(21, 'Sunflower oil', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Struktura tabeli dla tabeli `inme`
+--
+
+CREATE TABLE `inme` (
+  `MEID` int(11) NOT NULL,
+  `MENA` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Zrzut danych tabeli `inme`
+--
+
+INSERT INTO `inme` (`MEID`, `MENA`) VALUES
+(1, 'milliliters'),
+(2, 'grams'),
+(3, 'peaces'),
+(4, 'slices'),
+(5, 'tea spoon'),
+(6, 'table spoon');
 
 -- --------------------------------------------------------
 
@@ -162,16 +121,20 @@ INSERT INTO `ingr` (`IGID`, `IGNA`, `IGCD`) VALUES
 
 CREATE TABLE `ipau` (
   `IPID` int(11) NOT NULL,
-  `IPAD` varchar(15) NOT NULL
+  `IPAD` varchar(15) NOT NULL,
+  `IPDA` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Zrzut danych tabeli `ipau`
 --
 
-INSERT INTO `ipau` (`IPID`, `IPAD`) VALUES
-(1, '127.0.0.1'),
-(2, '127.127.127.127');
+INSERT INTO `ipau` (`IPID`, `IPAD`, `IPDA`) VALUES
+(1, 'SYSTEM', '0000-00-00 00:00:00'),
+(34, '127.0.0.0', '2020-06-28 16:17:47'),
+(37, '192.168.1.23', '2020-06-29 20:26:48'),
+(43, '127.0.0.1', '2020-06-29 21:57:32'),
+(44, '192.168.1.15', '2020-06-30 19:41:04');
 
 -- --------------------------------------------------------
 
@@ -180,30 +143,20 @@ INSERT INTO `ipau` (`IPID`, `IPAD`) VALUES
 --
 
 CREATE TABLE `logs` (
-  `LOID` int(11) NOT NULL,
-  `LTYP` int(11) NOT NULL,
+  `LOID` int(8) UNSIGNED NOT NULL,
+  `LTYP` int(10) NOT NULL,
   `LDAT` datetime NOT NULL,
-  `LMBY` int(8) NOT NULL,
-  `LIPA` int(11) NOT NULL,
-  `LCHA` text NOT NULL
+  `LIPA` int(10) NOT NULL,
+  `LINF` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Zrzut danych tabeli `logs`
---
-
-INSERT INTO `logs` (`LOID`, `LTYP`, `LDAT`, `LMBY`, `LIPA`, `LCHA`) VALUES
-(1, 2, '2020-05-22 14:56:36', 10203040, 1, 'COS EDIT');
-
--- --------------------------------------------------------
 
 --
 -- Struktura tabeli dla tabeli `loty`
 --
 
 CREATE TABLE `loty` (
-  `TYID` int(11) NOT NULL,
-  `TNAM` varchar(45) NOT NULL
+  `TYID` int(10) NOT NULL,
+  `TNAM` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -211,10 +164,12 @@ CREATE TABLE `loty` (
 --
 
 INSERT INTO `loty` (`TYID`, `TNAM`) VALUES
-(1, 'Select'),
-(2, 'Edit'),
-(3, 'Find'),
-(4, 'Modify');
+(1, 'ADD'),
+(2, 'SELECT'),
+(3, 'LOGIN'),
+(4, 'LOGOUT'),
+(5, 'REGISTRATION'),
+(6, 'ADD RECIPE');
 
 -- --------------------------------------------------------
 
@@ -245,25 +200,28 @@ INSERT INTO `reca` (`RCID`, `RCNA`) VALUES
 
 CREATE TABLE `reci` (
   `REID` int(11) NOT NULL,
-  `RTIT` varchar(80) NOT NULL,
-  `RAUT` int(8) NOT NULL,
-  `RPTI` int(3) NOT NULL,
-  `RDIF` int(1) NOT NULL,
-  `RLCO` int(5) NOT NULL,
-  `RAMO` int(2) NOT NULL,
-  `RIAM` int(2) NOT NULL,
-  `RCAT` int(1) NOT NULL,
-  `RIMG` int(11) NOT NULL,
-  `RCTI` datetime NOT NULL,
-  `RMTI` datetime NOT NULL
+  `RETI` varchar(100) NOT NULL,
+  `REAU` int(8) NOT NULL,
+  `REPT` int(3) NOT NULL,
+  `REDI` int(11) NOT NULL,
+  `RELC` int(11) NOT NULL,
+  `RECC` int(11) NOT NULL,
+  `REVC` int(11) NOT NULL,
+  `REAM` int(2) NOT NULL,
+  `REIA` int(2) NOT NULL,
+  `RECA` int(11) NOT NULL,
+  `REIM` int(11) NOT NULL,
+  `RECT` datetime NOT NULL,
+  `REMT` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Zrzut danych tabeli `reci`
 --
 
-INSERT INTO `reci` (`REID`, `RTIT`, `RAUT`, `RPTI`, `RDIF`, `RLCO`, `RAMO`, `RIAM`, `RCAT`, `RIMG`, `RCTI`, `RMTI`) VALUES
-(1, 'Coś tam do zjedzenia', 10203040, 40, 1, 0, 4, 2, 1, 1, '2020-05-22 12:58:05', '2020-05-22 12:58:05');
+INSERT INTO `reci` (`REID`, `RETI`, `REAU`, `REPT`, `REDI`, `RELC`, `RECC`, `REVC`, `REAM`, `REIA`, `RECA`, `REIM`, `RECT`, `REMT`) VALUES
+(1, 'test1', 10000006, 40, 1, 43, 13, 64, 4, 2, 3, 1, '2020-07-15 23:11:58', '2020-07-15 23:11:58'),
+(2, 'test2', 10000015, 40, 3, 12, 6, 54, 4, 2, 3, 1, '2020-07-15 23:33:43', '2020-07-15 23:33:43');
 
 -- --------------------------------------------------------
 
@@ -272,8 +230,8 @@ INSERT INTO `reci` (`REID`, `RTIT`, `RAUT`, `RPTI`, `RDIF`, `RLCO`, `RAMO`, `RIA
 --
 
 CREATE TABLE `redi` (
-  `DIID` int(1) NOT NULL,
-  `DNAM` varchar(20) NOT NULL
+  `DIID` int(11) NOT NULL,
+  `DNAM` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -294,16 +252,22 @@ INSERT INTO `redi` (`DIID`, `DNAM`) VALUES
 CREATE TABLE `rein` (
   `ITRI` int(11) NOT NULL,
   `RETI` int(11) NOT NULL,
-  `ITRE` int(11) NOT NULL
+  `ITRE` int(11) NOT NULL,
+  `IGAM` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+-- --------------------------------------------------------
+
 --
--- Zrzut danych tabeli `rein`
+-- Struktura tabeli dla tabeli `rest`
 --
 
-INSERT INTO `rein` (`ITRI`, `RETI`, `ITRE`) VALUES
-(1, 1, 2),
-(2, 1, 3);
+CREATE TABLE `rest` (
+  `STID` int(11) NOT NULL,
+  `SCON` text NOT NULL,
+  `SINO` int(2) NOT NULL,
+  `STRI` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -313,25 +277,31 @@ INSERT INTO `rein` (`ITRI`, `RETI`, `ITRE`) VALUES
 
 CREATE TABLE `reua` (
   `RUID` int(11) NOT NULL,
-  `RUTI` varchar(80) NOT NULL,
+  `RUTI` varchar(100) NOT NULL,
   `RUAU` int(8) NOT NULL,
   `RUPT` int(3) NOT NULL,
-  `RUDI` int(1) NOT NULL,
+  `RUDI` int(11) NOT NULL,
   `RULC` int(11) NOT NULL,
+  `RUCC` int(11) NOT NULL,
+  `RUVC` int(11) NOT NULL,
   `RUAM` int(2) NOT NULL,
   `RUIA` int(2) NOT NULL,
-  `RUCA` int(1) NOT NULL,
-  `RUIM` int(11) DEFAULT NULL,
+  `RUCA` int(11) NOT NULL,
+  `RUIM` int(11) NOT NULL,
   `RUCT` datetime NOT NULL,
-  `RUMT` datetime DEFAULT NULL
+  `RUMT` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Zrzut danych tabeli `reua`
 --
 
-INSERT INTO `reua` (`RUID`, `RUTI`, `RUAU`, `RUPT`, `RUDI`, `RULC`, `RUAM`, `RUIA`, `RUCA`, `RUIM`, `RUCT`, `RUMT`) VALUES
-(1, 'COS', 10203040, 35, 3, 0, 5, 3, 3, 1, '2020-05-22 15:26:47', NULL);
+INSERT INTO `reua` (`RUID`, `RUTI`, `RUAU`, `RUPT`, `RUDI`, `RULC`, `RUCC`, `RUVC`, `RUAM`, `RUIA`, `RUCA`, `RUIM`, `RUCT`, `RUMT`) VALUES
+(1, 'test', 10000006, 40, 1, 1, 34, 435, 4, 1, 2, 1, '2020-07-09 14:58:12', '2020-07-09 14:58:12'),
+(13, 'test2', 10000006, 2, 1, 1, 52, 765, 2, 1, 1, 1, '2020-07-12 18:40:46', '2020-07-12 18:40:46'),
+(24, 'test3', 10000006, 30, 2, 1, 2, 41, 2, 1, 2, 1, '2020-07-13 20:28:35', '2020-07-13 20:28:35'),
+(25, 'test4', 10000006, 60, 2, 0, 0, 0, 4, 1, 2, 1, '2020-07-14 21:56:32', '2020-07-14 21:56:32'),
+(26, 'test5', 10000006, 50, 1, 0, 0, 0, 4, 4, 3, 1, '2020-07-15 22:57:12', '2020-07-15 22:57:12');
 
 -- --------------------------------------------------------
 
@@ -341,7 +311,7 @@ INSERT INTO `reua` (`RUID`, `RUTI`, `RUAU`, `RUPT`, `RUDI`, `RULC`, `RUAM`, `RUI
 
 CREATE TABLE `stdr` (
   `STID` int(11) NOT NULL,
-  `SCON` varchar(200) NOT NULL,
+  `SCON` text NOT NULL,
   `SINO` int(2) NOT NULL,
   `STRI` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -351,58 +321,15 @@ CREATE TABLE `stdr` (
 --
 
 INSERT INTO `stdr` (`STID`, `SCON`, `SINO`, `STRI`) VALUES
-(9, 'Jajka ugotuj na twardo, przestudź i obierz ze skorupek. Rozkrój je wzdłuż na połówki.\r\n\r\n', 1, 1),
-(10, 'Śmietanę ubij na sztywno, dodaj chrzan, posiekany szczypior, sok z cytryny oraz pieprz (część pozostaw do dekoracji) i ½ opakowania Knorr. Całość dobrze wymieszaj.', 2, 1),
-(11, 'Osiem plastrów szynki posmaruj przygotowanym kremem i owiń nimi połówki jajek.\r\n\r\n', 3, 1),
-(12, 'Pozostałe plastry szynki zwiń w rożki i napełnij chrzanowym kremem.\r\n\r\n', 4, 1),
-(13, 'Pozostałą część sosu Knorr rozmieszaj z wodą, oliwą oraz posiekaną natką.\r\n\r\n', 5, 1),
-(14, 'Na środku półmiska ułóż sałatę. Dookoła poukładaj zawinięte w szynkę jajka oraz rożki z kremem.', 6, 1),
-(15, 'Całość skrop przygotowanym sosem i udekoruj szczypiorem.', 7, 1);
-
--- --------------------------------------------------------
-
---
--- Struktura tabeli dla tabeli `tica`
---
-
-CREATE TABLE `tica` (
-  `TCID` int(1) NOT NULL,
-  `TCNA` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Zrzut danych tabeli `tica`
---
-
-INSERT INTO `tica` (`TCID`, `TCNA`) VALUES
-(1, 'Kitchen DIY'),
-(2, 'Fast cooking');
-
--- --------------------------------------------------------
-
---
--- Struktura tabeli dla tabeli `tips`
---
-
-CREATE TABLE `tips` (
-  `TTID` int(11) NOT NULL,
-  `TIIT` varchar(80) NOT NULL,
-  `TPRO` text NOT NULL,
-  `TSOL` text NOT NULL,
-  `TCAT` int(1) NOT NULL,
-  `TIMG` int(11) NOT NULL,
-  `TLIK` int(5) NOT NULL,
-  `TUSE` int(5) NOT NULL,
-  `TMTI` datetime NOT NULL,
-  `TCTI` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Zrzut danych tabeli `tips`
---
-
-INSERT INTO `tips` (`TTID`, `TIIT`, `TPRO`, `TSOL`, `TCAT`, `TIMG`, `TLIK`, `TUSE`, `TMTI`, `TCTI`) VALUES
-(1, 'Problem do rozwiązania', 'No jakiś problem do rozwiązania', 'No... rozwiązanie problemu jest proste, nie miec problemu', 2, 1, 0, 0, '2020-05-22 13:36:08', '2020-05-22 13:36:08');
+(15, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 0, 24),
+(16, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 1, 24),
+(17, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 2, 24),
+(18, 'step1', 0, 25),
+(19, 'step2', 1, 25),
+(20, 'step3', 2, 25),
+(21, 'test1 abcfdgfjhj', 0, 26),
+(22, 'test2 ndfjgadnskfhjg', 1, 26),
+(23, 'test3gdkfjhkgh', 2, 26);
 
 -- --------------------------------------------------------
 
@@ -413,17 +340,27 @@ INSERT INTO `tips` (`TTID`, `TIIT`, `TPRO`, `TSOL`, `TCAT`, `TIMG`, `TLIK`, `TUS
 CREATE TABLE `urti` (
   `URII` int(11) NOT NULL,
   `URIG` int(11) NOT NULL,
-  `IGUR` int(11) NOT NULL
+  `IGUR` int(11) NOT NULL,
+  `IGAM` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Zrzut danych tabeli `urti`
 --
 
-INSERT INTO `urti` (`URII`, `URIG`, `IGUR`) VALUES
-(10, 1, 3),
-(11, 1, 7),
-(12, 1, 5);
+INSERT INTO `urti` (`URII`, `URIG`, `IGUR`, `IGAM`) VALUES
+(42, 24, 14, 3),
+(43, 24, 16, 3),
+(44, 24, 19, 500),
+(45, 24, 15, 100),
+(46, 25, 14, 4),
+(47, 25, 16, 5),
+(48, 25, 21, 30),
+(49, 25, 20, 100),
+(50, 26, 14, 4),
+(51, 26, 16, 4),
+(52, 26, 19, 100),
+(53, 26, 15, 100);
 
 -- --------------------------------------------------------
 
@@ -449,7 +386,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`USID`, `UNAM`, `UEMA`, `UPAS`, `USIP`, `UGRO`, `UJOD`, `UPRP`, `UNPR`, `UIMG`) VALUES
-(10203040, 'Dupek', 'dupek@dupa.pl', 'dupa.1234', 1, 1, '2020-05-22', 1, 1, 3);
+(10000006, 'test', 'test@test', '13bade984aa416220470ca3f82bf5fb8', 34, 1, '2020-06-29', 1, 1, 1),
+(10000015, 'test2', 'test2@test', '13bade984aa416220470ca3f82bf5fb', 43, 1, '2020-06-29', 1, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -460,34 +398,17 @@ INSERT INTO `user` (`USID`, `UNAM`, `UEMA`, `UPAS`, `USIP`, `UGRO`, `UJOD`, `UPR
 CREATE TABLE `uslr` (
   `URLI` int(11) NOT NULL,
   `UTRE` int(8) NOT NULL,
-  `RETU` int(11) NOT NULL
+  `RETU` int(10) NOT NULL,
+  `LDAT` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Zrzut danych tabeli `uslr`
 --
 
-INSERT INTO `uslr` (`URLI`, `UTRE`, `RETU`) VALUES
-(1, 10203040, 1);
-
--- --------------------------------------------------------
-
---
--- Struktura tabeli dla tabeli `uslt`
---
-
-CREATE TABLE `uslt` (
-  `ULTI` int(11) NOT NULL,
-  `UTTI` int(8) NOT NULL,
-  `TITU` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Zrzut danych tabeli `uslt`
---
-
-INSERT INTO `uslt` (`ULTI`, `UTTI`, `TITU`) VALUES
-(1, 10203040, 1);
+INSERT INTO `uslr` (`URLI`, `UTRE`, `RETU`, `LDAT`) VALUES
+(1, 10000006, 1, '2020-07-15 23:21:25'),
+(2, 10000015, 2, '2020-07-15 23:35:26');
 
 -- --------------------------------------------------------
 
@@ -515,32 +436,10 @@ INSERT INTO `uspe` (`PEID`, `PENA`, `PESK`) VALUES
 --
 
 --
--- Indeksy dla tabeli `core`
---
-ALTER TABLE `core`
-  ADD PRIMARY KEY (`CRID`),
-  ADD KEY `CRID` (`RCID`),
-  ADD KEY `CUID` (`CUID`);
-
---
--- Indeksy dla tabeli `coti`
---
-ALTER TABLE `coti`
-  ADD PRIMARY KEY (`CTID`),
-  ADD KEY `TCID` (`TCID`),
-  ADD KEY `CUID` (`CUID`);
-
---
 -- Indeksy dla tabeli `imre`
 --
 ALTER TABLE `imre`
   ADD PRIMARY KEY (`RIID`);
-
---
--- Indeksy dla tabeli `imti`
---
-ALTER TABLE `imti`
-  ADD PRIMARY KEY (`TIIG`);
 
 --
 -- Indeksy dla tabeli `imus`
@@ -552,7 +451,14 @@ ALTER TABLE `imus`
 -- Indeksy dla tabeli `ingr`
 --
 ALTER TABLE `ingr`
-  ADD PRIMARY KEY (`IGID`);
+  ADD PRIMARY KEY (`IGID`),
+  ADD KEY `IGMT` (`IGMT`);
+
+--
+-- Indeksy dla tabeli `inme`
+--
+ALTER TABLE `inme`
+  ADD PRIMARY KEY (`MEID`);
 
 --
 -- Indeksy dla tabeli `ipau`
@@ -565,9 +471,8 @@ ALTER TABLE `ipau`
 --
 ALTER TABLE `logs`
   ADD PRIMARY KEY (`LOID`),
-  ADD KEY `LTYP` (`LTYP`),
-  ADD KEY `LMBY` (`LMBY`),
-  ADD KEY `LIPA` (`LIPA`);
+  ADD KEY `LIPA` (`LIPA`),
+  ADD KEY `LTYP` (`LTYP`);
 
 --
 -- Indeksy dla tabeli `loty`
@@ -586,10 +491,10 @@ ALTER TABLE `reca`
 --
 ALTER TABLE `reci`
   ADD PRIMARY KEY (`REID`),
-  ADD KEY `RAUT` (`RAUT`),
-  ADD KEY `RDIF` (`RDIF`),
-  ADD KEY `RIMG` (`RIMG`),
-  ADD KEY `RCAT` (`RCAT`);
+  ADD KEY `REAU` (`REAU`),
+  ADD KEY `REDI` (`REDI`),
+  ADD KEY `RECA` (`RECA`),
+  ADD KEY `REIM` (`REIM`);
 
 --
 -- Indeksy dla tabeli `redi`
@@ -602,18 +507,25 @@ ALTER TABLE `redi`
 --
 ALTER TABLE `rein`
   ADD PRIMARY KEY (`ITRI`),
-  ADD KEY `ITRE` (`ITRE`),
-  ADD KEY `RETI` (`RETI`);
+  ADD KEY `RETI` (`RETI`),
+  ADD KEY `ITRE` (`ITRE`);
+
+--
+-- Indeksy dla tabeli `rest`
+--
+ALTER TABLE `rest`
+  ADD PRIMARY KEY (`STID`),
+  ADD KEY `STRI` (`STRI`);
 
 --
 -- Indeksy dla tabeli `reua`
 --
 ALTER TABLE `reua`
   ADD PRIMARY KEY (`RUID`),
-  ADD KEY `RUAU` (`RUAU`),
-  ADD KEY `RUDI` (`RUDI`),
+  ADD KEY `RUCA` (`RUCA`),
   ADD KEY `RUIM` (`RUIM`),
-  ADD KEY `RUCA` (`RUCA`);
+  ADD KEY `RUDI` (`RUDI`),
+  ADD KEY `RUAU` (`RUAU`);
 
 --
 -- Indeksy dla tabeli `stdr`
@@ -623,26 +535,12 @@ ALTER TABLE `stdr`
   ADD KEY `STRI` (`STRI`);
 
 --
--- Indeksy dla tabeli `tica`
---
-ALTER TABLE `tica`
-  ADD PRIMARY KEY (`TCID`);
-
---
--- Indeksy dla tabeli `tips`
---
-ALTER TABLE `tips`
-  ADD PRIMARY KEY (`TTID`),
-  ADD KEY `TCAT` (`TCAT`),
-  ADD KEY `TIMG` (`TIMG`);
-
---
 -- Indeksy dla tabeli `urti`
 --
 ALTER TABLE `urti`
   ADD PRIMARY KEY (`URII`),
-  ADD KEY `IGUR` (`IGUR`),
-  ADD KEY `URIG` (`URIG`);
+  ADD KEY `URIG` (`URIG`),
+  ADD KEY `IGUR` (`IGUR`);
 
 --
 -- Indeksy dla tabeli `user`
@@ -658,16 +556,8 @@ ALTER TABLE `user`
 --
 ALTER TABLE `uslr`
   ADD PRIMARY KEY (`URLI`),
-  ADD KEY `RETU` (`RETU`),
-  ADD KEY `UTRE` (`UTRE`);
-
---
--- Indeksy dla tabeli `uslt`
---
-ALTER TABLE `uslt`
-  ADD PRIMARY KEY (`ULTI`),
-  ADD KEY `TITU` (`TITU`),
-  ADD KEY `UTTI` (`UTTI`);
+  ADD KEY `UTRE` (`UTRE`),
+  ADD KEY `RETU` (`RETU`);
 
 --
 -- Indeksy dla tabeli `uspe`
@@ -680,28 +570,10 @@ ALTER TABLE `uspe`
 --
 
 --
--- AUTO_INCREMENT dla tabeli `core`
---
-ALTER TABLE `core`
-  MODIFY `CRID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT dla tabeli `coti`
---
-ALTER TABLE `coti`
-  MODIFY `CTID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
 -- AUTO_INCREMENT dla tabeli `imre`
 --
 ALTER TABLE `imre`
-  MODIFY `RIID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT dla tabeli `imti`
---
-ALTER TABLE `imti`
-  MODIFY `TIIG` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `RIID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT dla tabeli `imus`
@@ -713,25 +585,31 @@ ALTER TABLE `imus`
 -- AUTO_INCREMENT dla tabeli `ingr`
 --
 ALTER TABLE `ingr`
-  MODIFY `IGID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `IGID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+
+--
+-- AUTO_INCREMENT dla tabeli `inme`
+--
+ALTER TABLE `inme`
+  MODIFY `MEID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT dla tabeli `ipau`
 --
 ALTER TABLE `ipau`
-  MODIFY `IPID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `IPID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
 -- AUTO_INCREMENT dla tabeli `logs`
 --
 ALTER TABLE `logs`
-  MODIFY `LOID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `LOID` int(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10000154;
 
 --
 -- AUTO_INCREMENT dla tabeli `loty`
 --
 ALTER TABLE `loty`
-  MODIFY `TYID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `TYID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT dla tabeli `reca`
@@ -743,61 +621,55 @@ ALTER TABLE `reca`
 -- AUTO_INCREMENT dla tabeli `reci`
 --
 ALTER TABLE `reci`
-  MODIFY `REID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `REID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT dla tabeli `redi`
 --
 ALTER TABLE `redi`
-  MODIFY `DIID` int(1) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `DIID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT dla tabeli `rein`
 --
 ALTER TABLE `rein`
-  MODIFY `ITRI` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `ITRI` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT dla tabeli `rest`
+--
+ALTER TABLE `rest`
+  MODIFY `STID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT dla tabeli `reua`
 --
 ALTER TABLE `reua`
-  MODIFY `RUID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `RUID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT dla tabeli `stdr`
 --
 ALTER TABLE `stdr`
-  MODIFY `STID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
-
---
--- AUTO_INCREMENT dla tabeli `tica`
---
-ALTER TABLE `tica`
-  MODIFY `TCID` int(1) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT dla tabeli `tips`
---
-ALTER TABLE `tips`
-  MODIFY `TTID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `STID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT dla tabeli `urti`
 --
 ALTER TABLE `urti`
-  MODIFY `URII` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `URII` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
+
+--
+-- AUTO_INCREMENT dla tabeli `user`
+--
+ALTER TABLE `user`
+  MODIFY `USID` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10000016;
 
 --
 -- AUTO_INCREMENT dla tabeli `uslr`
 --
 ALTER TABLE `uslr`
   MODIFY `URLI` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT dla tabeli `uslt`
---
-ALTER TABLE `uslt`
-  MODIFY `ULTI` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT dla tabeli `uspe`
@@ -810,71 +682,61 @@ ALTER TABLE `uspe`
 --
 
 --
--- Ograniczenia dla tabeli `core`
+-- Ograniczenia dla tabeli `ingr`
 --
-ALTER TABLE `core`
-  ADD CONSTRAINT `core_ibfk_1` FOREIGN KEY (`RCID`) REFERENCES `reci` (`REID`),
-  ADD CONSTRAINT `core_ibfk_2` FOREIGN KEY (`CUID`) REFERENCES `user` (`USID`);
-
---
--- Ograniczenia dla tabeli `coti`
---
-ALTER TABLE `coti`
-  ADD CONSTRAINT `coti_ibfk_1` FOREIGN KEY (`TCID`) REFERENCES `tips` (`TTID`),
-  ADD CONSTRAINT `coti_ibfk_2` FOREIGN KEY (`CUID`) REFERENCES `user` (`USID`);
+ALTER TABLE `ingr`
+  ADD CONSTRAINT `ingr_ibfk_1` FOREIGN KEY (`IGMT`) REFERENCES `inme` (`MEID`);
 
 --
 -- Ograniczenia dla tabeli `logs`
 --
 ALTER TABLE `logs`
-  ADD CONSTRAINT `logs_ibfk_1` FOREIGN KEY (`LTYP`) REFERENCES `loty` (`TYID`),
-  ADD CONSTRAINT `logs_ibfk_2` FOREIGN KEY (`LIPA`) REFERENCES `ipau` (`IPID`),
-  ADD CONSTRAINT `logs_ibfk_3` FOREIGN KEY (`LMBY`) REFERENCES `user` (`USID`);
+  ADD CONSTRAINT `logs_ibfk_1` FOREIGN KEY (`LIPA`) REFERENCES `ipau` (`IPID`),
+  ADD CONSTRAINT `logs_ibfk_2` FOREIGN KEY (`LTYP`) REFERENCES `loty` (`TYID`);
 
 --
 -- Ograniczenia dla tabeli `reci`
 --
 ALTER TABLE `reci`
-  ADD CONSTRAINT `reci_ibfk_1` FOREIGN KEY (`RIMG`) REFERENCES `imre` (`RIID`),
-  ADD CONSTRAINT `reci_ibfk_2` FOREIGN KEY (`RCAT`) REFERENCES `reca` (`RCID`),
-  ADD CONSTRAINT `reci_ibfk_3` FOREIGN KEY (`RDIF`) REFERENCES `redi` (`DIID`),
-  ADD CONSTRAINT `reci_ibfk_4` FOREIGN KEY (`RAUT`) REFERENCES `user` (`USID`);
+  ADD CONSTRAINT `reci_ibfk_1` FOREIGN KEY (`REAU`) REFERENCES `user` (`USID`),
+  ADD CONSTRAINT `reci_ibfk_2` FOREIGN KEY (`RECA`) REFERENCES `reca` (`RCID`),
+  ADD CONSTRAINT `reci_ibfk_3` FOREIGN KEY (`REIM`) REFERENCES `imre` (`RIID`),
+  ADD CONSTRAINT `reci_ibfk_4` FOREIGN KEY (`REDI`) REFERENCES `redi` (`DIID`);
 
 --
 -- Ograniczenia dla tabeli `rein`
 --
 ALTER TABLE `rein`
-  ADD CONSTRAINT `rein_ibfk_1` FOREIGN KEY (`RETI`) REFERENCES `reci` (`REID`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `rein_ibfk_2` FOREIGN KEY (`ITRE`) REFERENCES `ingr` (`IGID`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `rein_ibfk_1` FOREIGN KEY (`RETI`) REFERENCES `reci` (`REID`),
+  ADD CONSTRAINT `rein_ibfk_2` FOREIGN KEY (`ITRE`) REFERENCES `ingr` (`IGID`);
+
+--
+-- Ograniczenia dla tabeli `rest`
+--
+ALTER TABLE `rest`
+  ADD CONSTRAINT `rest_ibfk_1` FOREIGN KEY (`STRI`) REFERENCES `reci` (`REID`);
 
 --
 -- Ograniczenia dla tabeli `reua`
 --
 ALTER TABLE `reua`
-  ADD CONSTRAINT `reua_ibfk_1` FOREIGN KEY (`RUAU`) REFERENCES `user` (`USID`),
+  ADD CONSTRAINT `reua_ibfk_1` FOREIGN KEY (`RUCA`) REFERENCES `reca` (`RCID`),
   ADD CONSTRAINT `reua_ibfk_2` FOREIGN KEY (`RUDI`) REFERENCES `redi` (`DIID`),
-  ADD CONSTRAINT `reua_ibfk_3` FOREIGN KEY (`RUCA`) REFERENCES `reca` (`RCID`),
-  ADD CONSTRAINT `reua_ibfk_4` FOREIGN KEY (`RUIM`) REFERENCES `imre` (`RIID`);
+  ADD CONSTRAINT `reua_ibfk_3` FOREIGN KEY (`RUIM`) REFERENCES `imre` (`RIID`),
+  ADD CONSTRAINT `reua_ibfk_4` FOREIGN KEY (`RUAU`) REFERENCES `user` (`USID`);
 
 --
 -- Ograniczenia dla tabeli `stdr`
 --
 ALTER TABLE `stdr`
-  ADD CONSTRAINT `stdr_ibfk_1` FOREIGN KEY (`STRI`) REFERENCES `reci` (`REID`);
-
---
--- Ograniczenia dla tabeli `tips`
---
-ALTER TABLE `tips`
-  ADD CONSTRAINT `tips_ibfk_1` FOREIGN KEY (`TIMG`) REFERENCES `imti` (`TIIG`),
-  ADD CONSTRAINT `tips_ibfk_2` FOREIGN KEY (`TCAT`) REFERENCES `tica` (`TCID`);
+  ADD CONSTRAINT `stdr_ibfk_1` FOREIGN KEY (`STRI`) REFERENCES `reua` (`RUID`);
 
 --
 -- Ograniczenia dla tabeli `urti`
 --
 ALTER TABLE `urti`
-  ADD CONSTRAINT `urti_ibfk_1` FOREIGN KEY (`URIG`) REFERENCES `reua` (`RUID`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `urti_ibfk_2` FOREIGN KEY (`IGUR`) REFERENCES `ingr` (`IGID`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `urti_ibfk_1` FOREIGN KEY (`IGUR`) REFERENCES `ingr` (`IGID`),
+  ADD CONSTRAINT `urti_ibfk_2` FOREIGN KEY (`URIG`) REFERENCES `reua` (`RUID`);
 
 --
 -- Ograniczenia dla tabeli `user`
@@ -888,15 +750,8 @@ ALTER TABLE `user`
 -- Ograniczenia dla tabeli `uslr`
 --
 ALTER TABLE `uslr`
-  ADD CONSTRAINT `uslr_ibfk_1` FOREIGN KEY (`RETU`) REFERENCES `reci` (`REID`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `uslr_ibfk_2` FOREIGN KEY (`UTRE`) REFERENCES `user` (`USID`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Ograniczenia dla tabeli `uslt`
---
-ALTER TABLE `uslt`
-  ADD CONSTRAINT `uslt_ibfk_1` FOREIGN KEY (`UTTI`) REFERENCES `user` (`USID`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `uslt_ibfk_2` FOREIGN KEY (`TITU`) REFERENCES `tips` (`TTID`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `uslr_ibfk_1` FOREIGN KEY (`UTRE`) REFERENCES `user` (`USID`),
+  ADD CONSTRAINT `uslr_ibfk_2` FOREIGN KEY (`RETU`) REFERENCES `reci` (`REID`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
