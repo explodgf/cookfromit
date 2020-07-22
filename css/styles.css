@@ -1849,7 +1849,8 @@ li {
   height: auto;
   margin-top: 100px !important;
   position: relative;
-  display: inline-block;
+  display: flex;
+  align-items: center;
 }
 .find-rec-container .search-ing input[type=text] {
   background: none;
@@ -1871,13 +1872,18 @@ li {
   width: 100%;
   box-sizing: border-box;
 }
+.find-rec-container .search-ing i {
+  color: #F5F1F1;
+  font-size: 1.3em;
+  cursor: pointer;
+}
 .find-rec-container .search-ing .result {
   position: absolute;
   z-index: 999;
   top: 100%;
   left: 0;
   background: #8593ae;
-  width: 100%;
+  width: calc(100% - 20px);
   max-height: 160px;
   overflow-y: auto;
 }
@@ -1970,7 +1976,8 @@ li {
   height: calc(100% - 150px);
   overflow-y: auto;
   display: flex;
-  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 .find-rec-container .ing-list-form .ing-box .ingredient {
   width: 80%;
