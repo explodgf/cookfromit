@@ -68,34 +68,35 @@
         </section>
         <section class="recipe-grid">
             <h1>Three most popular dishes</h1>
-            <?php print_r($recipes);?>
             <div class="grid pagination-results">
+            <?php foreach($recipes as $recipe): ?>
                 <a href="#">
                     <div class="recipe-card">
                         <div class="img-box">
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSS1x1gSB2Um_jNMDFL5F1rzsO2IWg4OIspYPhHs33h9wmMO-lb&usqp=CAU" alt=recipe/>
+                            <img src="<?php echo $recipe -> RIUR; ?>" alt='<?php echo $recipe -> RIAN; ?>'/>
                             <div class="reci-info">
                                 <div class="icon-box">
                                     <img src="public/assets/iconsDDA288/speed.svg" alt="icon" class="first"/>
                                 </div>
-                                <p>45 min</p>
+                                <p><?php echo $recipe -> REPT; ?></p>
                                 <div class="icon-box">
                                     <img src="public/assets/iconsDDA288/medium.svg" alt="icon"/>
                                 </div>
-                                <p>Medium</p>
+                                <p><?php echo $recipe -> DNAM; ?></p>
                                 <div class="icon-box">
                                     <img src="public/assets/iconsDDA288/like.svg" alt="icon"/>
                                 </div>
-                                <p>1300</p>
+                                <p><?php echo $recipe -> RELC; ?></p>
                             </div>
                         </div>
                         <div class="title">
                             <h3>
-                                Potatoes with peppers in sauce
+                                <?php echo $recipe -> RETI;?>
                             </h3>
                         </div>
                     </div>
                 </a>
+            <?php endforeach;?>
             </div>
         </section>
         <div class="wave"></div>

@@ -10,6 +10,8 @@
 
     $template = new Template('./templates/findrecipe.php');
 
+    $template -> recipes = $recipe -> topRecipes();
+
     if(isset($_POST['submit'])) {
 
         $category = trim($_POST['cat_id']);

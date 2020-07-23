@@ -96,9 +96,23 @@ class Recipes {
             return false;
         }
     }
+    public function topRecipes() {
+        $this -> db -> query("SELECT RETI, REPT, RELC, RIUR, RIAN, DNAM
+        FROM reci, imre, redi
+        WHERE REIM = RIID
+            AND REDI = DIID
+            LIMIT 3");
 
+        $results = $this -> db -> resultSet();
+
+        return $results;
+    }
     public function recipeSearch($countIg) {
-        $this -> db -> query("SELECT * FROM reci WHERE REIA <= :reia");
+        $this -> db -> query("SELECT RETI, REPT, RELC, RIUR, RIAN, DNAM
+                                FROM reci, imre, redi
+                                WHERE REIM = RIID
+                                    AND REDI = DIID
+                                    AND REIA <= :reia");
 
         $this -> db -> bind(':reia', $countIg);
 
