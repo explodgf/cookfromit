@@ -14,25 +14,25 @@
                 </div>
                 <div class="category-choose">
                     <div class="category-box">
-                        <button class="img-box">
+                        <button class="img-box" value="1">
                             <img src="public/assets/breakfest.svg" alt="magnification-glass"/>
                         </button>
                         <h2>Breakfest</h2>
                     </div>
                     <div class="category-box">
-                        <button class="img-box">
+                        <button class="img-box" value="2">
                             <img src="public/assets/cuisine.svg" alt="magnification-glass"/>
                         </button>
                         <h2>Dinner</h2>
                     </div>
                     <div class="category-box">
-                        <button class="img-box">
+                        <button class="img-box" value="3">
                             <img src="public/assets/dessert.svg" alt="magnification-glass"/>
                         </button>
                         <h2>Dessert</h2>
                     </div>
                     <div class="category-box">
-                        <button class="img-box">
+                        <button class="img-box" value="4">
                             <img src="public/assets/sandwich.svg" alt="magnification-glass"/>
                         </button>
                         <h2>Supper</h2>
@@ -53,11 +53,12 @@
                 </div>
             </div>
             <div class="center-box">
-                <form class="ing-list-form">
+                <form class="ing-list-form" method="POST">
+                        <input hidden name="cat_id" id="category_id" type="text" value="none"/>
                         <h1>Your ingredients list:</h1>
                         <div class="ing-box" id="scroll">
                         </div>
-                        <input type="submit" value="Cook from it!" class="submit"/>
+                        <input type="submit" value="Cook from it!" class="submit" name="submit"/>
                 </form>
                 <div class="third">
                     <img src="public/assets/arrow.svg">
@@ -67,6 +68,7 @@
         </section>
         <section class="recipe-grid">
             <h1>Three most popular dishes</h1>
+            <?php print_r($recipes);?>
             <div class="grid pagination-results">
                 <a href="#">
                     <div class="recipe-card">
@@ -108,6 +110,8 @@
         } else {
             $(".active").removeClass("active");
             $(this).addClass('active');
+            var catId = $(this).val();
+            $('#category_id').val(catId);
         }
     });
 </script>

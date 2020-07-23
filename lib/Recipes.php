@@ -96,4 +96,14 @@ class Recipes {
             return false;
         }
     }
+
+    public function recipeSearch($countIg) {
+        $this -> db -> query("SELECT * FROM reci WHERE REIA <= :reia");
+
+        $this -> db -> bind(':reia', $countIg);
+
+        $results = $this -> db -> resultSet();
+
+        return $results;
+    }
 }
