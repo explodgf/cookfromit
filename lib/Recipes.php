@@ -107,13 +107,16 @@ class Recipes {
 
         return $results;
     }
-    public function recipeSearch($countIg) {
+    public function recipeSearch($countIg, $category) {
+        //SELECT RETI, COUNT(RETI) AS ilosc FROM rein WHERE ITRE = 15 OR ITRE = 16 GROUP BY RETI HAVING (ilosc > 1) - Zliczanie ilosci skladnikow z wyszukiwania po skladnikach
         $this -> db -> query("SELECT RETI, REPT, RELC, RIUR, RIAN, DNAM
                                 FROM reci, imre, redi
-                                WHERE REIM = RIID
+                                WHERE RECA = :reca
+                                    AND REIM = RIID
                                     AND REDI = DIID
                                     AND REIA <= :reia");
 
+        $this -> db -> bind(':reca', $category);
         $this -> db -> bind(':reia', $countIg);
 
         $results = $this -> db -> resultSet();

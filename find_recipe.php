@@ -24,7 +24,7 @@
             $dataIg[$i]['igId'] = $igId;
         }
 
-        $template -> recipes = $recipe -> recipeSearch($countIg);
+        $template -> recipes = $recipe -> recipeSearch($countIg, $category);
 
         if($template -> recipes != NULL) {
             $_SESSION['message'] = 'We find something for you!';
