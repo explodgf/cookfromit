@@ -13,7 +13,7 @@ class Logs {
 
         // Bind data
         $this -> db -> bind(':LTYP', $typ);
-        $this -> db -> bind(':LDAT', date(DATE_ATOM));
+        $this -> db -> bind(':LDAT', date('Y-m-d H:i:s'));
         $this -> db -> bind(':LIPA', $ip);
         $this -> db -> bind(':LINF', $info);
         // Execute

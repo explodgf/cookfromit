@@ -16,7 +16,7 @@ class IP extends Validators {
 
         // Bind data
         $this -> db -> bind(':ip', $ip);
-        $this -> db -> bind(':date', date(DATE_ATOM));
+        $this -> db -> bind(':date', date('Y-m-d H:i:s'));
 
         if($this -> db -> execute()) {
             $_SESSION['ip'] = $ip;

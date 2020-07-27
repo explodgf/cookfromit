@@ -33,8 +33,8 @@
         $data['ruia'] = $igCount;
         $data['ruca'] = $category;
         $data['ruim'] = 1;
-        $data['ruct'] = date(DATE_ATOM);
-        $data['rumt'] = date(DATE_ATOM);
+        $data['ruct'] = date('Y-m-d H:i:s');
+        $data['rumt'] = date('Y-m-d H:i:s');
         if($recipes -> addRecipe($data)) {
             $countIg = count($_POST['igId']);
 

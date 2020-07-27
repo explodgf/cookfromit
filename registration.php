@@ -10,7 +10,7 @@
         $email = trim($_POST['email']);
         $password_1 = trim($_POST['password_1']);
         $password_2 = trim($_POST['password_2']);
-        $date = date("Y-m-d");
+        $date = date("Y-m-d H:i:s");
         $user -> usernameValidation($username);
         $user -> emailValidation($email);
         $user -> passwordValidation($password_1, $password_2);
