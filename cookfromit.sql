@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 16 Lip 2020, 23:24
+-- Czas generowania: 27 Lip 2020, 22:28
 -- Wersja serwera: 10.4.11-MariaDB
 -- Wersja PHP: 7.4.1
 
@@ -151,6 +151,122 @@ CREATE TABLE `logs` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
+-- Zrzut danych tabeli `logs`
+--
+
+INSERT INTO `logs` (`LOID`, `LTYP`, `LDAT`, `LIPA`, `LINF`) VALUES
+(10000002, 1, '2020-06-29 21:18:08', 1, 'test'),
+(10000004, 1, '2020-06-29 21:52:47', 1, 'IP address: 127.0.0.1 added to DB'),
+(10000008, 1, '2020-06-29 21:57:32', 1, 'IP address: 127.0.0.1 added to DB'),
+(10000009, 1, '2020-06-29 22:04:02', 43, 'User test2 registered success'),
+(10000010, 1, '2020-06-30 19:41:05', 1, 'IP address: 192.168.1.15 added to DB'),
+(10000059, 3, '2020-06-30 21:38:39', 43, 'hnfgn login in error'),
+(10000060, 3, '2020-06-30 21:39:16', 43, 'test login success'),
+(10000061, 3, '2020-06-30 21:45:06', 43, 'ehfg login in error'),
+(10000062, 3, '2020-06-30 21:45:11', 43, 'test login success'),
+(10000063, 4, '2020-06-30 21:47:02', 43, 'Logout success'),
+(10000064, 3, '2020-06-30 21:47:12', 43, 'test login success'),
+(10000065, 4, '2020-06-30 21:47:20', 43, 'Logout success'),
+(10000066, 3, '2020-07-02 17:51:55', 43, 'test login success'),
+(10000067, 3, '2020-07-06 11:10:22', 43, 'test login success'),
+(10000068, 3, '2020-07-09 14:15:06', 43, 'test login success'),
+(10000069, 4, '2020-07-09 14:15:42', 43, 'Logout success'),
+(10000070, 3, '2020-07-09 14:16:20', 43, 'test login success'),
+(10000071, 4, '2020-07-09 14:16:34', 43, 'Logout success'),
+(10000072, 3, '2020-07-09 14:16:44', 43, 'test login success'),
+(10000073, 4, '2020-07-09 14:18:31', 43, 'Logout success'),
+(10000074, 3, '2020-07-09 14:18:37', 43, 'test login success'),
+(10000075, 4, '2020-07-09 14:18:59', 43, 'Logout success'),
+(10000076, 3, '2020-07-09 14:19:06', 43, 'test login success'),
+(10000077, 4, '2020-07-09 14:19:21', 43, 'Logout success'),
+(10000078, 3, '2020-07-09 14:19:34', 43, 'test login success'),
+(10000079, 4, '2020-07-09 14:20:47', 43, 'Logout success'),
+(10000080, 3, '2020-07-09 14:20:55', 43, 'test login success'),
+(10000081, 4, '2020-07-09 14:21:05', 43, 'Logout success'),
+(10000082, 3, '2020-07-09 14:21:13', 43, 'test login success'),
+(10000083, 4, '2020-07-09 14:40:51', 43, 'Logout success'),
+(10000084, 3, '2020-07-09 14:42:20', 43, 'test login success'),
+(10000085, 4, '2020-07-09 14:46:11', 43, 'Logout success'),
+(10000086, 3, '2020-07-09 14:46:19', 43, 'test login success'),
+(10000087, 4, '2020-07-09 14:51:04', 43, 'Logout success'),
+(10000088, 3, '2020-07-09 14:51:14', 43, 'test login success'),
+(10000089, 4, '2020-07-09 14:54:03', 43, 'Logout success'),
+(10000090, 3, '2020-07-09 14:54:24', 43, 'test login success'),
+(10000091, 4, '2020-07-09 14:55:21', 43, 'Logout success'),
+(10000092, 3, '2020-07-09 14:55:33', 43, 'test login success'),
+(10000093, 4, '2020-07-09 14:57:49', 43, 'Logout success'),
+(10000094, 3, '2020-07-09 14:57:56', 43, 'test login success'),
+(10000095, 4, '2020-07-09 15:03:41', 43, 'Logout success'),
+(10000096, 3, '2020-07-09 15:21:13', 43, 'test login in error'),
+(10000097, 4, '2020-07-09 15:21:22', 43, 'Logout success'),
+(10000098, 3, '2020-07-09 15:23:33', 43, 'test login in error'),
+(10000099, 4, '2020-07-09 15:23:36', 43, 'Logout success'),
+(10000100, 3, '2020-07-09 15:23:43', 43, 'test login in error'),
+(10000101, 3, '2020-07-09 15:27:53', 43, 'test login success'),
+(10000102, 4, '2020-07-09 15:27:56', 43, 'Logout success'),
+(10000103, 3, '2020-07-09 15:40:46', 43, 'test login success'),
+(10000104, 4, '2020-07-09 15:46:44', 43, 'Logout success'),
+(10000105, 3, '2020-07-09 15:46:52', 43, 'test login success'),
+(10000106, 4, '2020-07-09 15:49:06', 43, 'Logout success'),
+(10000107, 3, '2020-07-09 15:49:11', 43, 'test login success'),
+(10000108, 4, '2020-07-09 15:49:45', 43, 'Logout success'),
+(10000109, 3, '2020-07-09 15:49:52', 43, 'test login success'),
+(10000110, 4, '2020-07-09 15:50:04', 43, 'Logout success'),
+(10000111, 3, '2020-07-09 15:50:10', 43, 'test login success'),
+(10000112, 3, '2020-07-10 14:39:18', 43, 'test login success'),
+(10000113, 4, '2020-07-10 14:39:56', 43, 'Logout success'),
+(10000114, 3, '2020-07-10 14:40:05', 43, 'test login success'),
+(10000115, 4, '2020-07-10 14:40:20', 43, 'Logout success'),
+(10000116, 3, '2020-07-10 14:40:27', 43, 'test login success'),
+(10000117, 4, '2020-07-10 14:41:23', 43, 'Logout success'),
+(10000118, 3, '2020-07-10 14:41:31', 43, 'test login success'),
+(10000119, 4, '2020-07-10 14:42:52', 43, 'Logout success'),
+(10000120, 3, '2020-07-10 14:42:58', 43, 'test login success'),
+(10000121, 4, '2020-07-10 14:44:12', 43, 'Logout success'),
+(10000122, 3, '2020-07-10 14:44:17', 43, 'test login success'),
+(10000123, 4, '2020-07-10 14:57:35', 43, 'Logout success'),
+(10000124, 3, '2020-07-10 15:08:19', 43, 'test login success'),
+(10000125, 4, '2020-07-10 15:09:07', 43, 'Logout success'),
+(10000126, 3, '2020-07-10 15:09:13', 43, 'test login success'),
+(10000127, 4, '2020-07-10 15:09:55', 43, 'Logout success'),
+(10000128, 3, '2020-07-10 15:10:00', 43, 'test login success'),
+(10000129, 4, '2020-07-10 15:11:53', 43, 'Logout success'),
+(10000130, 3, '2020-07-10 15:11:59', 43, 'test login success'),
+(10000131, 4, '2020-07-10 15:13:47', 43, 'Logout success'),
+(10000132, 3, '2020-07-10 15:13:59', 43, 'test login success'),
+(10000133, 4, '2020-07-10 15:16:35', 43, 'Logout success'),
+(10000134, 3, '2020-07-10 15:16:41', 43, 'test login success'),
+(10000135, 3, '2020-07-11 13:02:19', 43, 'test login success'),
+(10000136, 3, '2020-07-12 17:54:19', 43, 'test login success'),
+(10000137, 3, '2020-07-13 18:27:07', 43, 'test login success'),
+(10000138, 3, '2020-07-13 20:00:57', 43, 'test login success'),
+(10000139, 6, '2020-07-13 20:28:36', 43, 'Recipe24 added by test'),
+(10000140, 3, '2020-07-14 18:20:38', 43, 'test login success'),
+(10000141, 3, '2020-07-14 21:15:56', 43, 'test login success'),
+(10000142, 4, '2020-07-14 21:24:42', 43, 'Logout success'),
+(10000143, 3, '2020-07-14 21:24:59', 43, 'test login success'),
+(10000144, 3, '2020-07-14 21:32:55', 43, 'test login success'),
+(10000145, 6, '2020-07-14 21:56:32', 43, 'Recipe 25 added by test'),
+(10000146, 3, '2020-07-14 22:28:29', 43, 'test login success'),
+(10000147, 4, '2020-07-14 23:05:53', 43, 'Logout success'),
+(10000148, 3, '2020-07-14 23:06:09', 43, 'test login in error'),
+(10000149, 3, '2020-07-14 23:06:17', 43, 'test login success'),
+(10000150, 3, '2020-07-15 18:51:11', 43, 'test login success'),
+(10000151, 3, '2020-07-15 22:42:49', 43, 'test login success'),
+(10000152, 6, '2020-07-15 22:57:13', 43, 'Recipe 26 added by test'),
+(10000153, 4, '2020-07-16 00:02:06', 43, 'Logout success'),
+(10000154, 3, '2020-07-22 15:22:25', 43, 'test login success'),
+(10000155, 3, '2020-07-24 00:13:04', 43, 'test login success'),
+(10000156, 6, '2020-07-24 00:13:50', 43, 'Recipe 27 added by test'),
+(10000157, 6, '2020-07-24 00:14:31', 43, 'Recipe 28 added by test'),
+(10000158, 6, '2020-07-24 00:16:12', 43, 'Recipe 29 added by test'),
+(10000159, 3, '2020-07-27 20:19:00', 43, 'test login success'),
+(10000160, 4, '2020-07-27 20:31:02', 43, 'Logout success'),
+(10000161, 3, '2020-07-27 20:32:56', 43, 'test login success');
+
+-- --------------------------------------------------------
+
+--
 -- Struktura tabeli dla tabeli `loty`
 --
 
@@ -221,7 +337,11 @@ CREATE TABLE `reci` (
 
 INSERT INTO `reci` (`REID`, `RETI`, `REAU`, `REPT`, `REDI`, `RELC`, `RECC`, `REVC`, `REAM`, `REIA`, `RECA`, `REIM`, `RECT`, `REMT`) VALUES
 (1, 'test1', 10000006, 40, 1, 43, 13, 64, 4, 2, 3, 1, '2020-07-15 23:11:58', '2020-07-15 23:11:58'),
-(2, 'test2', 10000015, 40, 3, 12, 6, 54, 4, 2, 3, 1, '2020-07-15 23:33:43', '2020-07-15 23:33:43');
+(2, 'test2', 10000015, 40, 3, 12, 6, 54, 4, 2, 3, 1, '2020-07-15 23:33:43', '2020-07-15 23:33:43'),
+(3, 'test3', 10000015, 68, 3, 15, 45, 3, 3, 4, 2, 1, '2020-07-24 00:20:19', '2020-07-24 00:20:19'),
+(4, 'test4', 10000006, 57, 1, 64, 3, 2, 4, 3, 4, 1, '2020-07-24 00:20:19', '2020-07-24 00:20:19'),
+(5, 'test5', 10000006, 10, 1, 75, 4, 354, 2, 2, 2, 1, '2020-07-24 00:20:19', '2020-07-24 00:20:19'),
+(6, 'test6', 10000006, 30, 2, 64, 43, 456, 4, 5, 3, 1, '2020-07-24 00:20:19', '2020-07-24 00:20:19');
 
 -- --------------------------------------------------------
 
@@ -255,6 +375,30 @@ CREATE TABLE `rein` (
   `ITRE` int(11) NOT NULL,
   `IGAM` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Zrzut danych tabeli `rein`
+--
+
+INSERT INTO `rein` (`ITRI`, `RETI`, `ITRE`, `IGAM`) VALUES
+(1, 1, 16, 2),
+(2, 1, 15, 100),
+(3, 2, 21, 200),
+(4, 2, 19, 200),
+(5, 3, 16, 2),
+(6, 3, 20, 200),
+(7, 3, 18, 20),
+(8, 3, 14, 2),
+(9, 4, 16, 2),
+(10, 4, 18, 20),
+(11, 4, 20, 200),
+(12, 5, 17, 100),
+(13, 5, 19, 100),
+(14, 6, 18, 10),
+(15, 6, 16, 3),
+(16, 6, 17, 200),
+(17, 6, 15, 100),
+(18, 6, 20, 100);
 
 -- --------------------------------------------------------
 
@@ -301,7 +445,10 @@ INSERT INTO `reua` (`RUID`, `RUTI`, `RUAU`, `RUPT`, `RUDI`, `RULC`, `RUCC`, `RUV
 (13, 'test2', 10000006, 2, 1, 1, 52, 765, 2, 1, 1, 1, '2020-07-12 18:40:46', '2020-07-12 18:40:46'),
 (24, 'test3', 10000006, 30, 2, 1, 2, 41, 2, 1, 2, 1, '2020-07-13 20:28:35', '2020-07-13 20:28:35'),
 (25, 'test4', 10000006, 60, 2, 0, 0, 0, 4, 1, 2, 1, '2020-07-14 21:56:32', '2020-07-14 21:56:32'),
-(26, 'test5', 10000006, 50, 1, 0, 0, 0, 4, 4, 3, 1, '2020-07-15 22:57:12', '2020-07-15 22:57:12');
+(26, 'test5', 10000006, 50, 1, 0, 0, 0, 4, 4, 3, 1, '2020-07-15 22:57:12', '2020-07-15 22:57:12'),
+(27, 'test3', 10000006, 65, 2, 0, 0, 0, 4, 3, 3, 1, '2020-07-24 00:13:49', '2020-07-24 00:13:49'),
+(28, 'test4', 10000006, 23, 2, 0, 0, 0, 4, 2, 1, 1, '2020-07-24 00:14:31', '2020-07-24 00:14:31'),
+(29, 'test5', 10000006, 32, 1, 0, 0, 0, 5, 4, 4, 1, '2020-07-24 00:16:12', '2020-07-24 00:16:12');
 
 -- --------------------------------------------------------
 
@@ -329,7 +476,15 @@ INSERT INTO `stdr` (`STID`, `SCON`, `SINO`, `STRI`) VALUES
 (20, 'step3', 2, 25),
 (21, 'test1 abcfdgfjhj', 0, 26),
 (22, 'test2 ndfjgadnskfhjg', 1, 26),
-(23, 'test3gdkfjhkgh', 2, 26);
+(23, 'test3gdkfjhkgh', 2, 26),
+(24, 'test1', 0, 27),
+(25, 'test2', 1, 27),
+(26, 'test3', 2, 27),
+(27, 'test435', 0, 28),
+(28, 'test7634', 1, 28),
+(29, 'test46', 0, 29),
+(30, 'tewdt6346436', 1, 29),
+(31, 'terydf645', 2, 29);
 
 -- --------------------------------------------------------
 
@@ -360,7 +515,16 @@ INSERT INTO `urti` (`URII`, `URIG`, `IGUR`, `IGAM`) VALUES
 (50, 26, 14, 4),
 (51, 26, 16, 4),
 (52, 26, 19, 100),
-(53, 26, 15, 100);
+(53, 26, 15, 100),
+(54, 27, 19, 100),
+(55, 27, 15, 100),
+(56, 27, 20, 200),
+(57, 28, 20, 100),
+(58, 28, 18, 100),
+(59, 29, 14, 2),
+(60, 29, 20, 100),
+(61, 29, 15, 100),
+(62, 29, 18, 40);
 
 -- --------------------------------------------------------
 
@@ -603,7 +767,7 @@ ALTER TABLE `ipau`
 -- AUTO_INCREMENT dla tabeli `logs`
 --
 ALTER TABLE `logs`
-  MODIFY `LOID` int(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10000154;
+  MODIFY `LOID` int(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10000162;
 
 --
 -- AUTO_INCREMENT dla tabeli `loty`
@@ -621,7 +785,7 @@ ALTER TABLE `reca`
 -- AUTO_INCREMENT dla tabeli `reci`
 --
 ALTER TABLE `reci`
-  MODIFY `REID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `REID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT dla tabeli `redi`
@@ -633,7 +797,7 @@ ALTER TABLE `redi`
 -- AUTO_INCREMENT dla tabeli `rein`
 --
 ALTER TABLE `rein`
-  MODIFY `ITRI` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ITRI` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT dla tabeli `rest`
@@ -645,19 +809,19 @@ ALTER TABLE `rest`
 -- AUTO_INCREMENT dla tabeli `reua`
 --
 ALTER TABLE `reua`
-  MODIFY `RUID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `RUID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT dla tabeli `stdr`
 --
 ALTER TABLE `stdr`
-  MODIFY `STID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `STID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT dla tabeli `urti`
 --
 ALTER TABLE `urti`
-  MODIFY `URII` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
+  MODIFY `URII` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
 
 --
 -- AUTO_INCREMENT dla tabeli `user`
