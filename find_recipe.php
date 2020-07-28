@@ -17,14 +17,14 @@
         $category = trim($_POST['cat_id']);
         $countIg = count($_POST['igId']);
 
-        $dataIg = array(array());
+        $dataIg = array();
         for ($i=0; $i < $countIg; $i++) {
             $igId = $_POST['igId'][$i];
 
-            $dataIg[$i]['igId'] = $igId;
+            array_push($dataIg, $igId);
         }
 
-        $template -> recipes = $recipe -> recipeSearch($countIg, $category);
+        $template -> recipes = $recipe -> recipeSearch($countIg, $category, $dataIg);
 
         if($template -> recipes != NULL) {
             $_SESSION['message'] = 'We find something for you!';

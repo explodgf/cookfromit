@@ -107,9 +107,11 @@ class Recipes {
 
         return $results;
     }
-    public function recipeSearch($countIg, $category) {
-        //SELECT RETI, COUNT(RETI) AS ilosc FROM rein WHERE ITRE = 15 OR ITRE = 16 GROUP BY RETI HAVING (ilosc > 1) - Zliczanie ilosci skladnikow z wyszukiwania po skladnikach
-        $this -> db -> query("SELECT RETI, REPT, RELC, RIUR, RIAN, DNAM
+    public function recipeSearch($countIg, $category, $dataIg) {
+        //SELECT RETI, REPT, RELC, RIUR, RIAN, DNAM FROM reci, imre, redi WHERE RECA = 3 AND REIM = RIID AND REDI = DIID AND REIA <= 2 AND REIA = (SELECT COUNT(RETI) AS igCnt FROM rein WHERE ITRE in (15,16) GROUP BY RETI HAVING (igCnt > 1)) - Not working
+
+        //SELECT RETI, COUNT(RETI) AS Cnt FROM rein WHERE ITRE in (15,16) GROUP BY RETI HAVING (Cnt > 1 AND RETI in (1)) - select recipes cntIgendients where recipes ID is in
+        $this -> db -> query("SELECT REDI, RETI, REPT, RELC, RIUR, RIAN, DNAM
                                 FROM reci, imre, redi
                                 WHERE RECA = :reca
                                     AND REIM = RIID
@@ -120,7 +122,15 @@ class Recipes {
         $this -> db -> bind(':reia', $countIg);
 
         $results = $this -> db -> resultSet();
+        if($results != NULL) {
+            $this -> db -> query("SELECT RETI, COUNT(RETI) AS Cnt FROM rein WHERE ITRE in (:igIds) GROUP BY RETI HAVING (Cnt > 1 AND RETI in (1,6))");
+            $this -> db -> bind(':igIds', $dataIg);
+            $results2 = $this -> db -> resultSet();
 
-        return $results;
+        } else {
+            return false;
+        }
+
+
     }
 }
