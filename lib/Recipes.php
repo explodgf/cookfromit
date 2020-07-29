@@ -111,26 +111,17 @@ class Recipes {
         //SELECT RETI, REPT, RELC, RIUR, RIAN, DNAM FROM reci, imre, redi WHERE RECA = 3 AND REIM = RIID AND REDI = DIID AND REIA <= 2 AND REIA = (SELECT COUNT(RETI) AS igCnt FROM rein WHERE ITRE in (15,16) GROUP BY RETI HAVING (igCnt > 1)) - Not working
 
         //SELECT RETI, COUNT(RETI) AS Cnt FROM rein WHERE ITRE in (15,16) GROUP BY RETI HAVING (Cnt > 1 AND RETI in (1)) - select recipes cntIgendients where recipes ID is in
-        $this -> db -> query("SELECT REDI, RETI, REPT, RELC, RIUR, RIAN, DNAM
-                                FROM reci, imre, redi
-                                WHERE RECA = :reca
-                                    AND REIM = RIID
-                                    AND REDI = DIID
-                                    AND REIA <= :reia");
+        $this -> db -> query("SELECT r.RETI, r.REPT, r.RELC, im.RIUR,  im.RIAN, d.DNAM, r.REIA, COUNT(ri.RETI) AS IGCnt
+                            FROM rein ri,reci r, imre im, redi d
+                            WHERE ri.ITRE in (". implode(',',$dataIg). ") AND r.RECA = :reca AND r.REIA <= :reia AND ri.RETI = r.REID AND r.REIM = im.RIID AND r.REDI = d.DIID
+                            GROUP BY ri.RETI
+                            HAVING (IGCnt > 1)");
 
         $this -> db -> bind(':reca', $category);
         $this -> db -> bind(':reia', $countIg);
 
         $results = $this -> db -> resultSet();
-        if($results != NULL) {
-            $this -> db -> query("SELECT RETI, COUNT(RETI) AS Cnt FROM rein WHERE ITRE in (:igIds) GROUP BY RETI HAVING (Cnt > 1 AND RETI in (1,6))");
-            $this -> db -> bind(':igIds', $dataIg);
-            $results2 = $this -> db -> resultSet();
 
-        } else {
-            return false;
-        }
-
-
+        return $results;
     }
 }
