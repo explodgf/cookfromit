@@ -27,4 +27,22 @@ class Search {
         }
     }
 
+    public function tipsSearch($term) {
+        $this -> db -> query("SELECT TTID, TIIT, TIUR, TIAN FROM tips, imti WHERE TIMG = TIIG AND TIIT LIKE :search");
+        $search = "%". $term . "%";
+        // Bind data
+        $this -> db -> bind(':search', $search);
+
+        $results = $this -> db -> resultSet();
+        $numRows = $this -> db -> rowCount();
+
+        if($numRows > 0) {
+            foreach($results as $row) {
+                echo "<div><p>". $row -> TIIT ."</p><span hidden id='tipid'>". $row -> TTID ."</span></div>";
+            }
+        } else {
+            echo "<p>No matches found</p>";
+        }
+    }
+
 }

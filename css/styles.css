@@ -2234,6 +2234,9 @@ li {
   display: flex;
   align-items: center;
   cursor: pointer;
+  border: none;
+  text-decoration: none;
+  outline: none;
 }
 .find-tips-container .category-chooser .category-box .category p {
   position: absolute;

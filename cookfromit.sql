@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 27 Lip 2020, 22:28
+-- Czas generowania: 04 Sie 2020, 18:19
 -- Wersja serwera: 10.4.11-MariaDB
 -- Wersja PHP: 7.4.1
 
@@ -41,6 +41,26 @@ CREATE TABLE `imre` (
 
 INSERT INTO `imre` (`RIID`, `RINA`, `RIAN`, `RIUR`) VALUES
 (1, 'Default ', 'Default recipe image', './public/recipes_img/testRecipe.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Struktura tabeli dla tabeli `imti`
+--
+
+CREATE TABLE `imti` (
+  `TIIG` int(11) NOT NULL,
+  `TINA` varchar(20) NOT NULL,
+  `TIAN` varchar(30) NOT NULL,
+  `TIUR` varchar(60) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Zrzut danych tabeli `imti`
+--
+
+INSERT INTO `imti` (`TIIG`, `TINA`, `TIAN`, `TIUR`) VALUES
+(1, 'Default', 'Default tip image', './public/tips_img/testTip.jpg');
 
 -- --------------------------------------------------------
 
@@ -489,6 +509,56 @@ INSERT INTO `stdr` (`STID`, `SCON`, `SINO`, `STRI`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Struktura tabeli dla tabeli `tica`
+--
+
+CREATE TABLE `tica` (
+  `TCID` int(1) NOT NULL,
+  `TCNA` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Zrzut danych tabeli `tica`
+--
+
+INSERT INTO `tica` (`TCID`, `TCNA`) VALUES
+(1, 'Cooking'),
+(2, 'Preparation'),
+(3, 'Kitchen DIY'),
+(4, 'Fresh Longer');
+
+-- --------------------------------------------------------
+
+--
+-- Struktura tabeli dla tabeli `tips`
+--
+
+CREATE TABLE `tips` (
+  `TTID` int(11) NOT NULL,
+  `TIIT` varchar(80) NOT NULL,
+  `TPRO` text NOT NULL,
+  `TSOL` text NOT NULL,
+  `TCAT` int(1) NOT NULL,
+  `TIMG` int(11) NOT NULL,
+  `TLIK` int(5) NOT NULL,
+  `TUSE` int(5) NOT NULL,
+  `TMTI` datetime NOT NULL,
+  `TCTI` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Zrzut danych tabeli `tips`
+--
+
+INSERT INTO `tips` (`TTID`, `TIIT`, `TPRO`, `TSOL`, `TCAT`, `TIMG`, `TLIK`, `TUSE`, `TMTI`, `TCTI`) VALUES
+(1, 'Test TIP 1', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 1, 1, 43, 54, '2020-08-04 17:20:16', '2020-08-04 17:20:16'),
+(2, 'Test TIP 2', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 4, 1, 63, 75, '2020-08-04 17:20:16', '2020-08-04 17:20:16'),
+(3, 'Test TIP 3', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 3, 1, 34, 65, '2020-08-04 17:22:14', '2020-08-04 17:22:14'),
+(4, 'Test TIP 4', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 2, 1, 56, 97, '2020-08-04 17:22:14', '2020-08-04 17:22:14');
+
+-- --------------------------------------------------------
+
+--
 -- Struktura tabeli dla tabeli `urti`
 --
 
@@ -577,6 +647,19 @@ INSERT INTO `uslr` (`URLI`, `UTRE`, `RETU`, `LDAT`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Struktura tabeli dla tabeli `uslt`
+--
+
+CREATE TABLE `uslt` (
+  `ULTI` int(11) NOT NULL,
+  `UTTI` int(8) NOT NULL,
+  `TITU` int(11) NOT NULL,
+  `LDAT` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
 -- Struktura tabeli dla tabeli `uspe`
 --
 
@@ -604,6 +687,12 @@ INSERT INTO `uspe` (`PEID`, `PENA`, `PESK`) VALUES
 --
 ALTER TABLE `imre`
   ADD PRIMARY KEY (`RIID`);
+
+--
+-- Indeksy dla tabeli `imti`
+--
+ALTER TABLE `imti`
+  ADD PRIMARY KEY (`TIIG`);
 
 --
 -- Indeksy dla tabeli `imus`
@@ -699,6 +788,20 @@ ALTER TABLE `stdr`
   ADD KEY `STRI` (`STRI`);
 
 --
+-- Indeksy dla tabeli `tica`
+--
+ALTER TABLE `tica`
+  ADD PRIMARY KEY (`TCID`);
+
+--
+-- Indeksy dla tabeli `tips`
+--
+ALTER TABLE `tips`
+  ADD PRIMARY KEY (`TTID`),
+  ADD KEY `TCAT` (`TCAT`),
+  ADD KEY `TIMG` (`TIMG`);
+
+--
 -- Indeksy dla tabeli `urti`
 --
 ALTER TABLE `urti`
@@ -724,6 +827,14 @@ ALTER TABLE `uslr`
   ADD KEY `RETU` (`RETU`);
 
 --
+-- Indeksy dla tabeli `uslt`
+--
+ALTER TABLE `uslt`
+  ADD PRIMARY KEY (`ULTI`),
+  ADD KEY `UTTI` (`UTTI`),
+  ADD KEY `TITU` (`TITU`);
+
+--
 -- Indeksy dla tabeli `uspe`
 --
 ALTER TABLE `uspe`
@@ -738,6 +849,12 @@ ALTER TABLE `uspe`
 --
 ALTER TABLE `imre`
   MODIFY `RIID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT dla tabeli `imti`
+--
+ALTER TABLE `imti`
+  MODIFY `TIIG` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT dla tabeli `imus`
@@ -818,6 +935,18 @@ ALTER TABLE `stdr`
   MODIFY `STID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
+-- AUTO_INCREMENT dla tabeli `tica`
+--
+ALTER TABLE `tica`
+  MODIFY `TCID` int(1) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT dla tabeli `tips`
+--
+ALTER TABLE `tips`
+  MODIFY `TTID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
 -- AUTO_INCREMENT dla tabeli `urti`
 --
 ALTER TABLE `urti`
@@ -834,6 +963,12 @@ ALTER TABLE `user`
 --
 ALTER TABLE `uslr`
   MODIFY `URLI` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT dla tabeli `uslt`
+--
+ALTER TABLE `uslt`
+  MODIFY `ULTI` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT dla tabeli `uspe`
@@ -896,6 +1031,13 @@ ALTER TABLE `stdr`
   ADD CONSTRAINT `stdr_ibfk_1` FOREIGN KEY (`STRI`) REFERENCES `reua` (`RUID`);
 
 --
+-- Ograniczenia dla tabeli `tips`
+--
+ALTER TABLE `tips`
+  ADD CONSTRAINT `tips_ibfk_1` FOREIGN KEY (`TCAT`) REFERENCES `tica` (`TCID`),
+  ADD CONSTRAINT `tips_ibfk_2` FOREIGN KEY (`TIMG`) REFERENCES `imti` (`TIIG`);
+
+--
 -- Ograniczenia dla tabeli `urti`
 --
 ALTER TABLE `urti`
@@ -916,6 +1058,13 @@ ALTER TABLE `user`
 ALTER TABLE `uslr`
   ADD CONSTRAINT `uslr_ibfk_1` FOREIGN KEY (`UTRE`) REFERENCES `user` (`USID`),
   ADD CONSTRAINT `uslr_ibfk_2` FOREIGN KEY (`RETU`) REFERENCES `reci` (`REID`);
+
+--
+-- Ograniczenia dla tabeli `uslt`
+--
+ALTER TABLE `uslt`
+  ADD CONSTRAINT `uslt_ibfk_1` FOREIGN KEY (`TITU`) REFERENCES `tips` (`TTID`),
+  ADD CONSTRAINT `uslt_ibfk_2` FOREIGN KEY (`UTTI`) REFERENCES `user` (`USID`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
