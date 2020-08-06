@@ -3,17 +3,17 @@
         <section class="recipe recipe-container">
             <div class="info-box">
                 <div class="container-first">
-                    <h1>Potatoes with peppers in sauces</h1>
-                    <h2>Author: Jakub Wirfel</h2>
+                    <h1><?php echo $reci -> RETI; ?></h1>
+                    <h2>Author: <?php echo $reci -> UNAM; ?></h2>
                     <div class="info-container">
                         <div class="icon-box">
                             <img src="public/assets/icons8593ae/speed.svg" alt="icon" class="first"/>
                         </div>
-                        <p>45 min</p>
+                        <p><?php echo $reci -> REPT; ?></p>
                         <div class="icon-box">
                             <img src="public/assets/icons8593ae/medium.svg" alt="icon"/>
                         </div>
-                        <p>Medium</p>
+                        <p><?php echo $reci -> DNAM; ?></p>
                         <div class="icon-box" id="like-button">
                             <svg id="like" class="likeUnactive" xmlns="http://www.w3.org/2000/svg" width="28.827" height="27.666" viewBox="0 0 28.827 27.666">
                                 <g transform="translate(0.5 0.5)">
@@ -30,11 +30,11 @@
                                 </g>
                             </svg>
                         </div>
-                        <p>1200</p>
+                        <p><?php echo $reci -> RELC; ?></p>
                         <div class="icon-box">
                             <img src="public/assets/icons8593ae/social.svg" alt="icon"/>
                         </div>
-                        <p>4</p>
+                        <p><?php echo $reci -> REAM; ?></p>
                     </div>
 
                 </div>
@@ -63,7 +63,7 @@
                 <div class="area">
                     <div class="container-first right">
                         <div class="img-box">
-                            <img src="https://specials-images.forbesimg.com/imageserve/5ea81a72228117000681b815/960x0.jpg?fit=scale" alt="dish image"/>
+                            <img src="<?php echo $reci -> RIUR; ?>" alt="<?php echo $reci -> RIAN; ?>"/>
                         </div>
                     </div>
                     <div class="steps-title">

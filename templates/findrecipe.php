@@ -70,7 +70,7 @@
             <h1>Three most popular dishes</h1>
             <div class="grid pagination-results">
             <?php foreach($recipes as $recipe): ?>
-                <a href="#">
+                <a href="recipe_view.php?reciId=<?php echo $recipe -> REID;?>">
                     <div class="recipe-card">
                         <div class="img-box">
                             <img src="<?php echo $recipe -> RIUR; ?>" alt='<?php echo $recipe -> RIAN; ?>'/>

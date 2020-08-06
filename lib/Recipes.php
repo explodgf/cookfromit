@@ -97,7 +97,7 @@ class Recipes {
         }
     }
     public function topRecipes() {
-        $this -> db -> query("SELECT RETI, REPT, RELC, RIUR, RIAN, DNAM
+        $this -> db -> query("SELECT REID, RETI, REPT, RELC, RIUR, RIAN, DNAM
                             FROM reci, imre, redi
                             WHERE REIM = RIID
                             AND REDI = DIID
@@ -120,5 +120,20 @@ class Recipes {
         $results = $this -> db -> resultSet();
 
         return $results;
+    }
+
+    public function selectRecipe($recipeId) {
+        $this -> db -> query("SELECT REID,RETI,REPT,DNAM, RELC, RECC,REVC,REAM,REIA,RECT,REMT,RIAN,RIUR,UNAM
+                            FROM reci r
+                            LEFT JOIN redi d ON r.REDI = d.DIID
+                            LEFT JOIN user u ON r.REAU = u.USID
+                            LEFT JOIN imre i ON r.REIM = i.RIID
+                            WHERE REID = :reid");
+
+        $this -> db -> bind(':reid', $recipeId);
+
+        $row = $this -> db -> single();
+
+        return $row;
     }
 }
