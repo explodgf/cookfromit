@@ -42,20 +42,22 @@
                     <h2>Ingredients</h2>
                 </div>
                 <div class="ingredients" id="scroll">
-                    <div class="box">
-                        <label class="checkbox">
-                            <input type="checkbox">
-                            <span class="checkmark"></span>
-                        </label>
-                        <div class="info">
-                            <div class="name">
-                                <p>Potatoes</p>
-                            </div>
-                            <div class="value">
-                                <p>2535 pieces</p>
+                    <?php foreach($ingredients as $ing):?>
+                        <div class="box">
+                            <label class="checkbox">
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                            </label>
+                            <div class="info">
+                                <div class="name">
+                                    <p><?php echo $ing -> IGNA; ?></p>
+                                </div>
+                                <div class="value">
+                                    <p><?php echo $ing -> IGAM ." " . $ing -> MENA ?></p>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    <?php endforeach;?>
                 </div>
             </div>
             <div class="line"></div>
@@ -70,14 +72,16 @@
                         <h2>Preparation step by step</h2>
                     </div>
                     <div class="steps" id="scroll">
-                        <div class="step">
-                            <div class="step-id">
-                                <span >Step 1</span>
+                        <?php foreach($steps as $step):?>
+                            <div class="step">
+                                <div class="step-id">
+                                    <span >Step <?php echo $step -> SINO+1; ?></span>
+                                </div>
+                                <div class="step-content">
+                                    <p><?php echo $step -> SCON; ?></p>
+                                </div>
                             </div>
-                            <div class="step-content">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, quasi expedita? Numquam, nobis tempora? Perspiciatis iusto non velit atque id illo. Iusto non rerum illo. Aliquam rerum officiis exercitationem veritatis.</p>
-                            </div>
-                        </div>
+                        <?php endforeach;?>
                     </div>
                 </div>
             </div>

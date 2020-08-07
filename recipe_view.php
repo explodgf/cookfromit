@@ -13,6 +13,8 @@
     if(isset($_GET["reciId"])) {
         $reciID = $_GET["reciId"];
         $template -> reci = $recipe -> selectRecipe($reciID);
+        $template -> ingredients = $recipe -> selectIngredients($reciID);
+        $template -> steps = $recipe -> selectSteps($reciID);
     }
 
     echo $template;

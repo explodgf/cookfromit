@@ -136,4 +136,31 @@ class Recipes {
 
         return $row;
     }
+
+    public function selectIngredients($recipeId) {
+        $this -> db -> query("SELECT i.IGNA,r.IGAM,m.MENA
+                            FROM rein r
+                            LEFT JOIN ingr i ON r.ITRE = i.IGID
+                            LEFT JOIN inme m ON i.IGMT = m.MEID
+                            WHERE r.RETI = :reti");
+
+        $this -> db -> bind(':reti', $recipeId);
+
+        $results = $this -> db -> resultSet();
+
+        return $results;
+    }
+
+    public function selectSteps($recipeId) {
+        $this -> db -> query("SELECT SCON, SINO
+                            FROM rstd
+                            WHERE STRE = :stre
+                            ORDER BY SINO ASC");
+
+        $this -> db -> bind(':stre', $recipeId);
+
+        $results = $this -> db -> resultSet();
+
+        return $results;
+    }
 }
