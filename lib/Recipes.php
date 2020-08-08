@@ -134,6 +134,8 @@ class Recipes {
 
         $row = $this -> db -> single();
 
+        $_SESSION['ReciS'] =  true;
+
         return $row;
     }
 
@@ -148,6 +150,8 @@ class Recipes {
 
         $results = $this -> db -> resultSet();
 
+        $_SESSION['IngS'] =  true;
+
         return $results;
     }
 
@@ -160,6 +164,8 @@ class Recipes {
         $this -> db -> bind(':stre', $recipeId);
 
         $results = $this -> db -> resultSet();
+
+        $_SESSION['StepS'] =  true;
 
         return $results;
     }
