@@ -111,7 +111,7 @@
             <div class="enter-comment">
                 <form method="POST">
                     <textarea name="comContent"></textarea>
-                    <input hidden name="reciId" value="<?php echo $reci -> REID; ?>"/>
+                    <input hidden id="reciId" name="reciId" value="<?php echo $reci -> REID; ?>"/>
                     <div class="submit-section">
                         <input type="submit" name="comment" value="Add comment"/>
                     </div>
@@ -132,4 +132,21 @@
             $('#like').addClass('likeUnactive');
         }
     })
+</script>
+<script>
+$(document).ready(function(){
+    var reci = $('#reciId').val();
+    <?php if(isset($_SESSION['userId'])):?>
+    var user = ' <?php echo $_SESSION['userId']; ?>';
+    <?php else: ?>
+    var user = null;
+    <?php endif;?>
+    $.get("helpers/like_helper.php", {reciId: reci, userId: user}).done(function(data){
+        if($.trim(data)=="true") {
+            $('#like').addClass('likeActive');
+        } else {
+            $('#like').addClass('likeUnactive');
+        };
+    });
+})
 </script>
