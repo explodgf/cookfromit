@@ -30,13 +30,12 @@
                                 </g>
                             </svg>
                         </div>
-                        <p><?php echo $reci -> RELC; ?></p>
+                        <p id="likecnt"></p>
                         <div class="icon-box">
                             <img src="public/assets/icons8593ae/social.svg" alt="icon"/>
                         </div>
                         <p><?php echo $reci -> REAM; ?></p>
                     </div>
-
                 </div>
                 <div class="ingredients-title">
                     <h2>Ingredients</h2>
@@ -123,29 +122,37 @@
 <?php include 'inc/footer.php';?>
 <script> </script> <!--BUG taransition fix for Chrome-->
 <script>
-    $('#like-button').click(function(){
-        if ($('#like').hasClass('likeUnactive')) {
-            $('#like').removeClass('likeUnactive');
-            $('#like').addClass('likeActive');
-        } else {
-            $('#like').removeClass('likeActive');
-            $('#like').addClass('likeUnactive');
-        }
-    })
-</script>
-<script>
 $(document).ready(function(){
     var reci = $('#reciId').val();
     <?php if(isset($_SESSION['userId'])):?>
     var user = ' <?php echo $_SESSION['userId']; ?>';
     <?php else: ?>
-    var user = null;
+        var user = null;
     <?php endif;?>
-    $.get("helpers/like_helper.php", {reciId: reci, userId: user}).done(function(data){
-        if($.trim(data)=="true") {
+    $.get("helpers/like_helper.php", {check: true, reciId: reci, userId: user}).done(function(data){
+        var myData = JSON.parse(data);
+        $('#likecnt').text(myData.cnt);
+        if(myData.checkUSLR == "true") {
             $('#like').addClass('likeActive');
         } else {
-            $('#like').addClass('likeUnactive');
+                $('#like').addClass('likeUnactive');
+                $('#like').on('click', function(){
+                var reciid = $('#reciId').val();
+                var userid = ' <?php echo $_SESSION['userId']; ?>';
+                $.ajax({
+                    url: 'helpers/like_helper.php',
+                    type: 'post',
+                    data: {
+                        'liked': 1,
+                        'reciId': reciid,
+                        'userId': userid
+                    },
+                    success: function(response){
+                        $('#likecnt').text(response);
+                        $('#like').addClass('likeActive');
+                    }
+                });
+            });
         };
     });
 })
