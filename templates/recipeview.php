@@ -125,7 +125,7 @@
 $(document).ready(function(){
     var reci = $('#reciId').val();
     <?php if(isset($_SESSION['userId'])):?>
-    var user = ' <?php echo $_SESSION['userId']; ?>';
+        var user = ' <?php echo $_SESSION['userId']; ?>';
     <?php else: ?>
         var user = null;
     <?php endif;?>
@@ -134,11 +134,11 @@ $(document).ready(function(){
         $('#likecnt').text(myData.cnt);
         if(myData.checkUSLR == "true") {
             $('#like').addClass('likeActive');
-        } else {
+        } else if(myData.checkUSLR != "true" && user) {
                 $('#like').addClass('likeUnactive');
                 $('#like').on('click', function(){
-                var reciid = $('#reciId').val();
-                var userid = ' <?php echo $_SESSION['userId']; ?>';
+                var reciid = reci;
+                var userid = user;
                 $.ajax({
                     url: 'helpers/like_helper.php',
                     type: 'post',
@@ -153,6 +153,9 @@ $(document).ready(function(){
                     }
                 });
             });
+        } else {
+            $('#like').addClass('likeUnactive');
+            $('#likecnt').text(myData.cnt);
         };
     });
 })
