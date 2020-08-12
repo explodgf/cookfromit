@@ -1,7 +1,6 @@
 <?php include_once 'config/init.php'; ?>
 
 <?php
-    unset($_SESSION['LikeCheck']);
     $user = new User;
     $recipe = new Recipes;
     $comments = new Comments;

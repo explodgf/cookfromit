@@ -3,13 +3,13 @@
         <section class="tip tip-container">
             <div class="info-box">
                 <div class="container-first">
-                    <h1>Potatoes with peppers in sauces</h1>
+                    <h1><?php echo $tip -> TIIT; ?></h1>
                     <div class="content-box">
                         <div class="title">
                             <h2>Problem:</h2>
                         </div>
                         <div class="content">
-                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Praesentium neque excepturi repellat cupiditate error quod nostrum, aliquid libero aperiam sint doloribus quos illo labore provident dolorum eligendi ipsam officia eum?</p>
+                            <p><?php echo $tip -> TPRO; ?></p>
                         </div>
                     </div>
                     <div class="content-box solution">
@@ -17,7 +17,7 @@
                             <h2>Solution:</h2>
                         </div>
                         <div class="content">
-                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Praesentium neque excepturi repellat cupiditate error quod nostrum, aliquid libero aperiam sint doloribus quos illo labore provident dolorum eligendi ipsam officia eum? lorem</p>
+                            <p><?php echo $tip -> TSOL; ?></p>
                         </div>
                     </div>
                 </div>
@@ -27,7 +27,7 @@
                 <div class="area">
                     <div class="container-first right">
                         <div class="img-box">
-                            <img src="https://specials-images.forbesimg.com/imageserve/5ea81a72228117000681b815/960x0.jpg?fit=scale" alt="dish image"/>
+                            <img src="<?php echo $tip -> TIUR; ?>" alt="<?php echo $tip -> TIAN; ?>"/>
                         </div>
                     </div>
                     <div class="useful-box">

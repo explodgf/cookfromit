@@ -38,4 +38,8 @@ class Comments {
             return false;
         }
     }
+
+    public function selectCommentsTip($id) {
+
+    }
 }

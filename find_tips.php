@@ -12,8 +12,9 @@
 
     if(isset($_POST['submit'])) {
         $catId = $_POST['submit'];
-
         $template -> tips = $tips -> searchByCategory($catId);
+    } else {
+        $template -> tips = $tips -> getAllTips();
     }
 
     echo $template;

@@ -72,7 +72,7 @@
             <h1>Tips & Tricks for you</h1>
             <div class="grid pagination-results">
                 <?php foreach($tips as $tip): ?>
-                    <a href="#?id=<?php echo $tip -> TTID; ?>">
+                    <a href="tip_view.php?tipId=<?php echo $tip -> TTID; ?>">
                         <div class="tip-card">
                             <div class="img-box">
                                 <img src="<?php echo $tip -> TIUR; ?>" alt="<?php echo $tip -> TIAN; ?>"/>
@@ -117,8 +117,8 @@ $(document).ready(function(){
     });
 
     $(document).on("click", ".result div", function(){
-        $(this).parents(".search-ing").find('input[type="text"]').val($('p',this).text());
-        $(this).parent(".result").empty();
+        tipid = $('#tipid', this).text();
+        window.location.href="tip_view.php?tipId="+tipid+"";
     });
 });
 </script>
