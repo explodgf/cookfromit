@@ -57,21 +57,24 @@
                 </div>
             </div>
             <div class="comments-container" id="scroll">
-                <div class="comment">
-                    <div class="user-avatar">
-                        <img src="https://www.w3schools.com/w3images/team2.jpg" alt="avatar"/>
+                <?php foreach($coments as $coment):?>
+                    <div class="comment">
+                        <div class="user-avatar">
+                            <img src="<?php echo $coment -> UIUR; ?>" alt="<?php echo $coment -> UIAN; ?>"/>
+                        </div>
+                        <div class="user-comment">
+                            <p><?php echo $coment -> UNAM; ?></p>
+                            <p class="content"><?php echo $coment -> CCON; ?></p>
+                        </div>
                     </div>
-                    <div class="user-comment">
-                        <p>Username</p>
-                        <p class="content">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fuga, nobis facere sapiente qui ratione cum fugiat totam autem omnis corrupti, rem voluptate et vitae, assumenda atque labore perferendis minus excepturi?</p>
-                    </div>
-                </div>
+                <?php endforeach;?>
             </div>
             <div class="enter-comment">
-                <form>
-                    <textarea></textarea>
+                <form method="POST">
+                    <textarea name="comContent"></textarea>
                     <div class="submit-section">
-                        <input type="submit" value="Add comment"/>
+                        <input hidden name="tipId" value="<?php echo $tip -> TTID; ?>"/>
+                        <input type="submit" name="comment" value="Add comment"/>
                     </div>
                 </form>
             </div>

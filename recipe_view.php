@@ -40,11 +40,16 @@
             $logs -> addLog(7, $ipId, "User ". $_SESSION['username'] . " add comment to recipe $recipeId");
             $_SESSION['message'] = 'You comment is being verified';
             $_SESSION['message_type'] = 'success';
+            exit();
         } else {
             $logs -> addLog(7, $ipId, "User ". $_SESSION['username'] . " add comment to recipe $recipeId in error");
             $_SESSION['message'] = 'Something went wrong';
             $_SESSION['message_type'] = 'error';
+            exit();
         }
+    } else {
+        $_SESSION['message'] = 'You must login';
+        $_SESSION['message_type'] = 'error';
     }
 
 ?>
