@@ -36,9 +36,19 @@
                 $message_type = $_SESSION['message_type'];
                 // Create Output
                 if ($message_type == 'error') {
-                    echo '<div class="alert alert-danger">' . $message . '</div>';
+                    echo '
+                    <div class="alert-box">
+                        <div class="alert error">
+                            <p>'. $message . '</p>
+                        </div>
+                    </div>';
                 } else {
-                    echo '<div class="alert alert-success">' . $message . '</div>';
+                    echo '
+                    <div class="alert-box">
+                        <div class="alert success">
+                            <p>'. $message . '</p>
+                        </div>
+                    </div>';
                 }
             }
             //Unste message

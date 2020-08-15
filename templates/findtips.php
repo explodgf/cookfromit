@@ -12,49 +12,49 @@
                     <h2>For faster and better cooking</h2>
                 </div>
             </div>
-            <div class="center-box">
+            <form class="center-box" method="POST">
                 <div class="category-chooser">
                     <div class="category-box">
-                        <div class="category left">
+                        <button type="submit" name="submit" class="category left" value="1">
                             <p>Faster and better cooking</p>
                             <h2>cooking</h2>
                             <div class="icon-box">
                                 <img src="public/assets/icons5A4E4D/cooking.svg" alt="cooking icon"/>
                             </div>
-                        </div>
+                        </button>
                     </div>
                     <div class="category-box" >
-                        <div class="category right">
+                        <button type="submit" name="submit" class="category right" value="2">
                             <h2>preparation</h2>
                             <div class="icon-box">
                                 <img src="public/assets/icons5A4E4D/cuting.svg" alt="cooking icon"/>
                             </div>
                             <p>Faster dish preparation</p>
-                        </div>
+                        </button>
                     </div>
                     <div class="category-box">
-                        <div class="category left">
+                        <button type="submit" name="submit" class="category left" value="3">
                             <h2>kitchen DIY</h2>
                             <div class="icon-box">
                                 <img src="public/assets/icons5A4E4D/toolbox.svg" alt="cooking icon"/>
                             </div>
                             <p>Create something to your kitchen</p>
-                        </div>
+                        </button>
                     </div>
                     <div class="category-box">
-                        <div class="category right">
+                        <button type="submit" name="submit" class="category right" value="4">
                             <h2>fresh longer</h2>
                             <div class="icon-box">
                                 <img src="public/assets/icons5A4E4D/vegetable.svg" alt="cooking icon"/>
                             </div>
                             <p>Tips for longer fresh food</p>
-                        </div>
+                        </button>
                     </div>
                 </div>
-            </div>
+            </form>
             <div class="center-box search-box">
                 <div class="search-tips">
-                    <input type="text" autocomplete="off" placeholder="Add some ingredients..." />
+                    <input type="text" autocomplete="off" placeholder="What are you loooking for?" />
                     <div class="result" id="scroll">
                         <!--<p>test</p>
                         <p>test</p>
@@ -71,18 +71,20 @@
         <section class="tips-grid">
             <h1>Tips & Tricks for you</h1>
             <div class="grid pagination-results">
-                <a href="#">
-                    <div class="tip-card">
-                        <div class="img-box">
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSS1x1gSB2Um_jNMDFL5F1rzsO2IWg4OIspYPhHs33h9wmMO-lb&usqp=CAU" alt="tip"/>
+                <?php foreach($tips as $tip): ?>
+                    <a href="tip_view.php?tipId=<?php echo $tip -> TTID; ?>">
+                        <div class="tip-card">
+                            <div class="img-box">
+                                <img src="<?php echo $tip -> TIUR; ?>" alt="<?php echo $tip -> TIAN; ?>"/>
+                            </div>
+                            <div class="title">
+                                <h3>
+                                    <?php echo $tip -> TIIT; ?>
+                                </h3>
+                            </div>
                         </div>
-                        <div class="title">
-                            <h3>
-                                Stowed Beries
-                            </h3>
-                        </div>
-                    </div>
-                </a>
+                    </a>
+                <?php endforeach;?>
             </div>
         </section>
         <div class="wave"></div>
@@ -99,4 +101,24 @@
             $(this).addClass('active');
         }
     });
+</script>
+<script>
+$(document).ready(function(){
+    $('.search-tips input[type="text"]').on("keyup input", function(){
+        var inputVal = $(this).val();
+        var resultDropdown = $(this).siblings(".result");
+        if(inputVal.length){
+            $.get("helpers/search_handler.php", {termTip: inputVal}).done(function(data){
+                resultDropdown.html(data);
+            });
+        } else{
+            resultDropdown.empty();
+        }
+    });
+
+    $(document).on("click", ".result div", function(){
+        tipid = $('#tipid', this).text();
+        window.location.href="tip_view.php?tipId="+tipid+"";
+    });
+});
 </script>

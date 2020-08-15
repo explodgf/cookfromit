@@ -5,15 +5,18 @@
         </div>
         <div class="items-box">
             <ul>
-                <a class="dropdown-holder" href="#" aria-haspopup="true"><li><div class="user-img"><img src="https://www.w3schools.com/w3images/team2.jpg" alt="user"/></div>Username<i class="fas fa-angle-down"></i></a>
+            <?php  if (isset($_SESSION['confirm']) && $_SESSION['confirm'] == 'start') : ?>
+                <a class="dropdown-holder" href="#" aria-haspopup="true"><li><div class="user-img"><img src="https://www.w3schools.com/w3images/team2.jpg" alt="user"/></div><?php echo $_SESSION['username'] ?><i class="fas fa-angle-down"></i></a>
                     <ul class="dropdown" aria-label="submenu">
                     <a href="userprofile.php"><li>My profile</li></a>
                     <a href="my_favorites_recipes.php"><li>Favorite recipes</li></a>
-                    <a href="#"><li class="last">Logout</li></a>
+                    <a href="<?php echo $_SERVER['PHP_SELF'] ?>?logout='1'"><li class="last">Logout</li></a>
                     </ul>
                 </li>
+            <?php else: ?>
                 <li><a href="#login">Sign in</a></li>
                 <li><a href="registration.php" class="border-last">Sign up</a></li>
+            <?php endif; ?>
                 <li><a class="menu-icon">
                     Menu
                     <div class="icon-box">
@@ -30,21 +33,21 @@
         <div class="modal-header">
             <h1>Login</h1>
         </div>
-            <form class="form-login" accept-charset="UTF-8">
+            <form class="form-login" accept-charset="UTF-8" method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
                 <label class="label-login">
-                    Username / email
+                    Username
                 </label>
                 <div class="field-wrap-login">
-                    <input class="input-login" type="text" required autocomplete="off"/>
+                    <input class="input-login" type="text" required autocomplete="off" name="user"/>
                 </div>
                 <label class="label-login">
                     Password
                 </label>
                 <div class="field-wrap-login">
-                    <input class="input-login" type="password" required autocomplete="off"/>
+                    <input class="input-login" type="password" required autocomplete="off" name="password"/>
                 </div>
                 <p class="forgot-login"><a href="#">Forgot Password?</a></p>
-                <button type="submit" class="button-login">Login</button>
+                <input type="submit" value="Login" class="button-login" name="login"/>
             </form>
     </div>
     <div class="modal-footer">

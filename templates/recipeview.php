@@ -3,17 +3,17 @@
         <section class="recipe recipe-container">
             <div class="info-box">
                 <div class="container-first">
-                    <h1>Potatoes with peppers in sauces</h1>
-                    <h2>Author: Jakub Wirfel</h2>
+                    <h1><?php echo $reci -> RETI; ?></h1>
+                    <h2>Author: <?php echo $reci -> UNAM; ?></h2>
                     <div class="info-container">
                         <div class="icon-box">
                             <img src="public/assets/icons8593ae/speed.svg" alt="icon" class="first"/>
                         </div>
-                        <p>45 min</p>
+                        <p><?php echo $reci -> REPT; ?></p>
                         <div class="icon-box">
                             <img src="public/assets/icons8593ae/medium.svg" alt="icon"/>
                         </div>
-                        <p>Medium</p>
+                        <p><?php echo $reci -> DNAM; ?></p>
                         <div class="icon-box" id="like-button">
                             <svg id="like" class="likeUnactive" xmlns="http://www.w3.org/2000/svg" width="28.827" height="27.666" viewBox="0 0 28.827 27.666">
                                 <g transform="translate(0.5 0.5)">
@@ -30,32 +30,33 @@
                                 </g>
                             </svg>
                         </div>
-                        <p>1200</p>
+                        <p id="likecnt"></p>
                         <div class="icon-box">
                             <img src="public/assets/icons8593ae/social.svg" alt="icon"/>
                         </div>
-                        <p>4</p>
+                        <p><?php echo $reci -> REAM; ?></p>
                     </div>
-
                 </div>
                 <div class="ingredients-title">
                     <h2>Ingredients</h2>
                 </div>
                 <div class="ingredients" id="scroll">
-                    <div class="box">
-                        <label class="checkbox">
-                            <input type="checkbox">
-                            <span class="checkmark"></span>
-                        </label>
-                        <div class="info">
-                            <div class="name">
-                                <p>Potatoes</p>
-                            </div>
-                            <div class="value">
-                                <p>2535 pieces</p>
+                    <?php foreach($ingredients as $ing):?>
+                        <div class="box">
+                            <label class="checkbox">
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                            </label>
+                            <div class="info">
+                                <div class="name">
+                                    <p><?php echo $ing -> IGNA; ?></p>
+                                </div>
+                                <div class="value">
+                                    <p><?php echo $ing -> IGAM ." " . $ing -> MENA ?></p>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    <?php endforeach;?>
                 </div>
             </div>
             <div class="line"></div>
@@ -63,21 +64,23 @@
                 <div class="area">
                     <div class="container-first right">
                         <div class="img-box">
-                            <img src="https://specials-images.forbesimg.com/imageserve/5ea81a72228117000681b815/960x0.jpg?fit=scale" alt="dish image"/>
+                            <img src="<?php echo $reci -> RIUR; ?>" alt="<?php echo $reci -> RIAN; ?>"/>
                         </div>
                     </div>
                     <div class="steps-title">
                         <h2>Preparation step by step</h2>
                     </div>
                     <div class="steps" id="scroll">
-                        <div class="step">
-                            <div class="step-id">
-                                <span >Step 1</span>
+                        <?php foreach($steps as $step):?>
+                            <div class="step">
+                                <div class="step-id">
+                                    <span >Step <?php echo $step -> SINO+1; ?></span>
+                                </div>
+                                <div class="step-content">
+                                    <p><?php echo $step -> SCON; ?></p>
+                                </div>
                             </div>
-                            <div class="step-content">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, quasi expedita? Numquam, nobis tempora? Perspiciatis iusto non velit atque id illo. Iusto non rerum illo. Aliquam rerum officiis exercitationem veritatis.</p>
-                            </div>
-                        </div>
+                        <?php endforeach;?>
                     </div>
                 </div>
             </div>
@@ -92,21 +95,24 @@
                 </div>
             </div>
             <div class="comments-container" id="scroll">
-                <div class="comment">
-                    <div class="user-avatar">
-                        <img src="https://www.w3schools.com/w3images/team2.jpg" alt="avatar"/>
+                <?php foreach($coments as $coment):?>
+                    <div class="comment">
+                        <div class="user-avatar">
+                            <img src="<?php echo $coment -> UIUR; ?>" alt="<?php echo $coment -> UIAN; ?>"/>
+                        </div>
+                        <div class="user-comment">
+                            <p><?php echo $coment -> UNAM; ?></p>
+                            <p class="content"><?php echo $coment -> CCON; ?></p>
+                        </div>
                     </div>
-                    <div class="user-comment">
-                        <p>Username</p>
-                        <p class="content">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fuga, nobis facere sapiente qui ratione cum fugiat totam autem omnis corrupti, rem voluptate et vitae, assumenda atque labore perferendis minus excepturi?</p>
-                    </div>
-                </div>
+                <?php endforeach;?>
             </div>
             <div class="enter-comment">
-                <form>
-                    <textarea></textarea>
+                <form method="POST">
+                    <textarea name="comContent"></textarea>
+                    <input hidden id="reciId" name="reciId" value="<?php echo $reci -> REID; ?>"/>
                     <div class="submit-section">
-                        <input type="submit" value="Add comment"/>
+                        <input type="submit" name="comment" value="Add comment"/>
                     </div>
                 </form>
             </div>
@@ -116,13 +122,41 @@
 <?php include 'inc/footer.php';?>
 <script> </script> <!--BUG taransition fix for Chrome-->
 <script>
-    $('#like-button').click(function(){
-        if ($('#like').hasClass('likeUnactive')) {
-            $('#like').removeClass('likeUnactive');
+$(document).ready(function(){
+    var reci = $('#reciId').val();
+    <?php if(isset($_SESSION['userId'])):?>
+        var user = ' <?php echo $_SESSION['userId']; ?>';
+    <?php else: ?>
+        var user = null;
+    <?php endif;?>
+    $.get("helpers/like_helper.php", {check: true, reciId: reci, userId: user}).done(function(data){
+        var myData = JSON.parse(data);
+        $('#likecnt').text(myData.cnt);
+        if(myData.checkUSLR == "true") {
             $('#like').addClass('likeActive');
+        } else if(myData.checkUSLR != "true" && user) {
+                $('#like').addClass('likeUnactive');
+                $('#like').on('click', function(){
+                var reciid = reci;
+                var userid = user;
+                $.ajax({
+                    url: 'helpers/like_helper.php',
+                    type: 'post',
+                    data: {
+                        'liked': 1,
+                        'reciId': reciid,
+                        'userId': userid
+                    },
+                    success: function(response){
+                        $('#likecnt').text(response);
+                        $('#like').addClass('likeActive');
+                    }
+                });
+            });
         } else {
-            $('#like').removeClass('likeActive');
             $('#like').addClass('likeUnactive');
-        }
-    })
+            $('#likecnt').text(myData.cnt);
+        };
+    });
+})
 </script>

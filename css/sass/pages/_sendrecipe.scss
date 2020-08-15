@@ -7,7 +7,7 @@
         .center-box {
             margin: 0 auto !important;
             height: auto;
-            width: 840px;
+            width: 55%;
             position: relative;
             .title {
                 display: flex;
@@ -93,6 +93,15 @@
                         width: 100%;
                         height: auto;
                         position: relative;
+                        display: flex;
+                        .ig {
+                            margin-right: 30px !important;
+                        }
+                        i {
+                            color: #F5F1F1;
+                            font-size: 1.3em;
+                            cursor: pointer;
+                        }
                         .result {
                             position: absolute;
                             z-index: 999;
@@ -125,12 +134,16 @@
                         flex-direction: column;
                         justify-content: center;
                         .ingredient {
-                            width: 80%;
-                            height: 50px;
+                            width: 100%;
+                            height: auto;
                             display: flex;
                             justify-content: space-between;
                             align-items: center;
-                            div {
+                            padding: 5px 0;
+                            input[type="text"] {
+                                text-align: center;
+                            }
+                            .trash {
                                 width: 50px;
                                 height: 100%;
                                 font-size: 1.5em;
@@ -146,7 +159,13 @@
                                 font-weight: 100;
                                 color: #DDA288;
                                 font-size: 1.5em;
-                                width: 300px;
+                                width: 90%;
+                                .amount {
+                                    margin: 0 5px !important;
+                                    font-size: 0.8em;
+                                    margin-bottom: -5px !important;
+                                    max-width: 50px;
+                                }
                             }
                             i {
                                 cursor: pointer;
@@ -160,25 +179,93 @@
                     }
                 }
                 .form-box-bottom {
-                    margin-top: 50px !important;
+                    margin: 50px 0 !important;
                     position: relative;
                     max-height: auto;
                     width: 100%;
                     padding: 0px 30px;
-                    .add-steps {
-                        margin-bottom: 10px;
+                    .step-add {
+                        width: 100%;
+                        height: 100px;
+                        position: relative;
+                        .button-add {
+                            cursor: pointer;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            position: absolute;
+                            background: #DDA288;
+                            color: #F5F1F1;
+                            font-size: 1.4em;
+                            width: 50px;
+                            height: 100%;
+                            top: 0;
+                            right: 0;
+                            z-index: 2;
+                            &:hover {
+                                transform: scale(1.05);
+                            }
+                        }
+                        .add-steps {
+                            resize: none;
+                            width: 100%;
+                            height: 100px;
+                            background: #7E675E;
+                            border: none;
+                            outline: none;
+                            padding: 20px;
+                            padding-right: 70px;
+                            font-family: 'Manjari', sans-serif;
+                            font-size: 1.1em;
+                            color: #F5F1F1;
+                            position: relative;
+                            &::-webkit-input-placeholder, &:-moz-placeholder,
+                            &:-moz-placeholder, &:-ms-input-placeholder, &::placeholder {
+                                color: #F5F1F1;
+                            }
+                            &::placeholder {
+                                color: #F5F1F1;
+                            }
+                        }
                     }
                     .step-box {
-                        display: flex;
-                        width: 100%;
-                        height: auto;
-                        font-family: 'Manjari', sans-serif;
-                        font-size: 1.2em;
-                        letter-spacing: 1px;
-                        color: #DDA288;
-                        padding: 20px 0px;
-                        span {
-                            padding-right: 20px;
+                            width: 100%;
+                            height: 100px;
+                            margin-top: 15px !important;
+                            position: relative;
+                        .step {
+                            resize: none;
+                            width: 100%;
+                            height: 100px;
+                            background: #7E675E;
+                            border: none;
+                            outline: none;
+                            padding: 20px 70px;
+                            font-family: 'Manjari', sans-serif;
+                            font-size: 1.1em;
+                            color: #F5F1F1;
+                            position: relative;
+                            &::-webkit-input-placeholder, &:-moz-placeholder,
+                            &:-moz-placeholder, &:-ms-input-placeholder, &::placeholder {
+                                color: #F5F1F1;
+                            }
+                            &::placeholder {
+                                color: #F5F1F1;
+                            }
+                        }
+                        .step-count {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            position: absolute;
+                            background: #DDA288;
+                            color: #F5F1F1;
+                            font-size: 1.4em;
+                            width: 50px;
+                            height: 100%;
+                            top: 0;
+                            left: 0;
+                            z-index: 2;
                         }
                     }
                 }

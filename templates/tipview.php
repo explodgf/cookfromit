@@ -3,13 +3,13 @@
         <section class="tip tip-container">
             <div class="info-box">
                 <div class="container-first">
-                    <h1>Potatoes with peppers in sauces</h1>
+                    <h1><?php echo $tip -> TIIT; ?></h1>
                     <div class="content-box">
                         <div class="title">
                             <h2>Problem:</h2>
                         </div>
                         <div class="content">
-                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Praesentium neque excepturi repellat cupiditate error quod nostrum, aliquid libero aperiam sint doloribus quos illo labore provident dolorum eligendi ipsam officia eum?</p>
+                            <p><?php echo $tip -> TPRO; ?></p>
                         </div>
                     </div>
                     <div class="content-box solution">
@@ -17,7 +17,7 @@
                             <h2>Solution:</h2>
                         </div>
                         <div class="content">
-                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Praesentium neque excepturi repellat cupiditate error quod nostrum, aliquid libero aperiam sint doloribus quos illo labore provident dolorum eligendi ipsam officia eum? lorem</p>
+                            <p><?php echo $tip -> TSOL; ?></p>
                         </div>
                     </div>
                 </div>
@@ -27,7 +27,7 @@
                 <div class="area">
                     <div class="container-first right">
                         <div class="img-box">
-                            <img src="https://specials-images.forbesimg.com/imageserve/5ea81a72228117000681b815/960x0.jpg?fit=scale" alt="dish image"/>
+                            <img src="<?php echo $tip -> TIUR; ?>" alt="<?php echo $tip -> TIAN; ?>"/>
                         </div>
                     </div>
                     <div class="useful-box">
@@ -57,21 +57,24 @@
                 </div>
             </div>
             <div class="comments-container" id="scroll">
-                <div class="comment">
-                    <div class="user-avatar">
-                        <img src="https://www.w3schools.com/w3images/team2.jpg" alt="avatar"/>
+                <?php foreach($coments as $coment):?>
+                    <div class="comment">
+                        <div class="user-avatar">
+                            <img src="<?php echo $coment -> UIUR; ?>" alt="<?php echo $coment -> UIAN; ?>"/>
+                        </div>
+                        <div class="user-comment">
+                            <p><?php echo $coment -> UNAM; ?></p>
+                            <p class="content"><?php echo $coment -> CCON; ?></p>
+                        </div>
                     </div>
-                    <div class="user-comment">
-                        <p>Username</p>
-                        <p class="content">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fuga, nobis facere sapiente qui ratione cum fugiat totam autem omnis corrupti, rem voluptate et vitae, assumenda atque labore perferendis minus excepturi?</p>
-                    </div>
-                </div>
+                <?php endforeach;?>
             </div>
             <div class="enter-comment">
-                <form>
-                    <textarea></textarea>
+                <form method="POST">
+                    <textarea name="comContent"></textarea>
                     <div class="submit-section">
-                        <input type="submit" value="Add comment"/>
+                        <input hidden name="tipId" value="<?php echo $tip -> TTID; ?>"/>
+                        <input type="submit" name="comment" value="Add comment"/>
                     </div>
                 </form>
             </div>

@@ -10,6 +10,7 @@
             </div>
         </div>
     </section>
+    <?php displayMessage();?>
 </body>
 </html>
 <script> </script>  <!--BUG taransition fix for Chrome-->
@@ -19,4 +20,9 @@
         $('.icon').toggleClass('iconOn');
         $('.menu').toggleClass('menuOn');
     })
+</script>
+<script>
+$(document).ready(function() {
+  $('.alert-box').delay(5000).fadeOut(1000); // 5 seconds x 1000 milisec = 5000 milisec
+});
 </script>
