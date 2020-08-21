@@ -30,10 +30,10 @@
             <div class="user-recipes-box" id="scroll">
                 <?php foreach($userRecipes as $recipe): ?>
                     <div class="user-recipe">
-                        <P><?php echo $recipe -> RUTI;?></P>
-                        <p><?php echo $recipe -> RUCC;?> comments</p>
-                        <p><?php echo $recipe -> RULC;?>likes</p>
-                        <p><?php echo $recipe -> RUVC;?> views</p>
+                        <P><?php echo $recipe -> RETI;?></P>
+                        <p><?php echo $recipe -> RECC;?> comments</p>
+                        <p><?php echo $recipe -> RELC;?>likes</p>
+                        <p><?php echo $recipe -> REVC;?> views</p>
                     </div>
                 <?php endforeach;?>
             </div>

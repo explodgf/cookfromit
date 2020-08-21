@@ -66,9 +66,9 @@ class User extends Validators {
     }
 
     public function getUserRecipes() {
-        $this -> db -> query("SELECT * FROM reua WHERE RUAU = :ruau");
+        $this -> db -> query("SELECT * FROM reci WHERE REAU = :reau");
 
-        $this -> db -> bind(':ruau', $_SESSION['userId']);
+        $this -> db -> bind(':reau', $_SESSION['userId']);
 
         $results = $this -> db -> resultSet();
 
