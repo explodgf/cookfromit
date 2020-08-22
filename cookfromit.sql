@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 04 Sie 2020, 18:19
+-- Czas generowania: 21 Sie 2020, 18:17
 -- Wersja serwera: 10.4.11-MariaDB
 -- Wersja PHP: 7.4.1
 
@@ -21,6 +21,89 @@ SET time_zone = "+00:00";
 --
 -- Baza danych: `cookfromit`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Struktura tabeli dla tabeli `core`
+--
+
+CREATE TABLE `core` (
+  `CRID` int(11) NOT NULL,
+  `RCID` int(11) NOT NULL,
+  `CUID` int(8) NOT NULL,
+  `CDAT` datetime NOT NULL,
+  `CCON` varchar(255) NOT NULL,
+  `CISU` int(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Zrzut danych tabeli `core`
+--
+
+INSERT INTO `core` (`CRID`, `RCID`, `CUID`, `CDAT`, `CCON`, `CISU`) VALUES
+(1, 1, 10000006, '2020-08-08 12:29:44', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 1),
+(2, 1, 10000015, '2020-08-04 12:29:44', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 1),
+(3, 2, 10000006, '2020-08-12 12:29:44', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 1),
+(4, 1, 10000006, '2020-08-05 12:29:44', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 1),
+(5, 2, 10000015, '2020-08-07 12:29:44', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 1),
+(6, 3, 10000015, '2020-08-02 12:29:44', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 1),
+(7, 4, 10000015, '2020-08-05 12:29:44', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 1),
+(8, 4, 10000006, '2020-08-18 12:29:44', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 1),
+(9, 4, 10000015, '2020-08-07 12:29:44', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 1),
+(10, 5, 10000006, '2020-08-03 12:29:44', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 1),
+(11, 6, 10000015, '2020-08-10 12:31:44', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 1),
+(12, 6, 10000006, '2020-08-03 12:31:44', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 1),
+(13, 6, 10000015, '2020-08-13 12:32:01', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 1),
+(14, 2, 10000006, '2020-08-04 12:32:01', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 1),
+(15, 2, 10000015, '2020-08-08 13:10:03', 'test2', 1),
+(16, 2, 10000006, '2020-08-08 13:57:37', 'test, test, test, test comment recipe test2 #1', 1),
+(17, 2, 10000006, '2020-08-08 13:58:12', 'test, test, test, test comment recipe test2 #1', 1),
+(18, 3, 10000006, '2020-08-08 13:58:48', 'test, test, test,test comment to recipe test3 #1', 1),
+(19, 3, 10000006, '2020-08-08 14:01:56', 'test, test, test,test comment to recipe test3 #1', 1),
+(20, 3, 10000006, '2020-08-08 14:02:02', 'test, test, test,test comment to recipe test3 #1', 1),
+(26, 1, 10000006, '2020-08-08 14:13:35', 'test,test,test,test comment recipe1 #1', 1),
+(27, 1, 10000006, '2020-08-08 14:15:24', 'test,test,test,test comment recipe1 #2', 1),
+(30, 1, 10000006, '2020-08-08 14:22:33', 'test,test,test,test comment recipe1 #3', 1),
+(31, 1, 10000006, '2020-08-08 14:24:37', 'test,test,test,test comment recipe1 #3', 1),
+(32, 2, 10000006, '2020-08-13 21:48:32', 'tseuy k,ohgdkfiopheth', 1),
+(33, 2, 10000006, '2020-08-13 21:48:56', 'gydgsl;gk,op [ikg;sdmkg;\'djn h dhdh', 0),
+(34, 3, 10000006, '2020-08-13 22:25:01', 'test test\r\ntest \r\ntetst', 0),
+(35, 3, 10000006, '2020-08-13 22:25:22', 'test test\r\ntest \r\ntetst', 0),
+(36, 3, 10000006, '2020-08-13 22:25:29', 'dupa dupa', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Struktura tabeli dla tabeli `coti`
+--
+
+CREATE TABLE `coti` (
+  `CTID` int(11) NOT NULL,
+  `TCID` int(11) NOT NULL,
+  `CUID` int(8) NOT NULL,
+  `CDAT` datetime NOT NULL,
+  `CCON` varchar(255) NOT NULL,
+  `CISU` int(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Zrzut danych tabeli `coti`
+--
+
+INSERT INTO `coti` (`CTID`, `TCID`, `CUID`, `CDAT`, `CCON`, `CISU`) VALUES
+(1, 1, 10000006, '2020-08-13 21:43:45', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ', 1),
+(2, 1, 10000006, '2020-08-14 21:43:45', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ', 1),
+(3, 1, 10000015, '2020-08-13 21:44:23', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ', 1),
+(4, 2, 10000006, '2020-08-11 21:44:23', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ', 1),
+(5, 2, 10000015, '2020-08-15 21:44:23', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ', 1),
+(6, 3, 10000006, '2020-08-11 21:44:23', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ', 1),
+(7, 3, 10000015, '2020-08-12 21:44:23', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ', 1),
+(8, 3, 10000006, '2020-08-13 21:44:23', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ', 1),
+(9, 3, 10000015, '2020-08-14 21:44:23', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ', 1),
+(10, 4, 10000006, '2020-08-13 21:44:23', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ', 1),
+(19, 3, 10000006, '2020-08-13 22:37:25', 'testjyjgmgh', 0),
+(20, 3, 10000006, '2020-08-13 22:40:57', 'tedtsbthty', 0);
 
 -- --------------------------------------------------------
 
@@ -80,7 +163,7 @@ CREATE TABLE `imus` (
 --
 
 INSERT INTO `imus` (`UIID`, `UINA`, `UIAN`, `UIUR`) VALUES
-(1, 'Default', 'Default user image', 'xxx'),
+(1, 'Default', 'Default user image', './public/user_img/default-user.jpg'),
 (3, 'test1', 'test1', 'http://127.0.0.1/phpmyadmin/tbl_change.php'),
 (4, 'test2', 'test2', 'http://127.0.0.1/phpmyadmin/tbl_change2.php');
 
@@ -282,7 +365,55 @@ INSERT INTO `logs` (`LOID`, `LTYP`, `LDAT`, `LIPA`, `LINF`) VALUES
 (10000158, 6, '2020-07-24 00:16:12', 43, 'Recipe 29 added by test'),
 (10000159, 3, '2020-07-27 20:19:00', 43, 'test login success'),
 (10000160, 4, '2020-07-27 20:31:02', 43, 'Logout success'),
-(10000161, 3, '2020-07-27 20:32:56', 43, 'test login success');
+(10000161, 3, '2020-07-27 20:32:56', 43, 'test login success'),
+(10000162, 3, '2020-08-08 13:56:02', 43, 'test login success'),
+(10000163, 7, '2020-08-08 13:57:38', 43, 'User  add comment to recipe 2'),
+(10000164, 7, '2020-08-08 13:58:12', 43, 'User test add comment to recipe 2'),
+(10000165, 7, '2020-08-08 13:58:48', 43, 'User test add comment to recipe 3'),
+(10000166, 7, '2020-08-08 14:01:56', 43, 'User test add comment to recipe 3'),
+(10000167, 7, '2020-08-08 14:02:02', 43, 'User test add comment to recipe 3'),
+(10000168, 7, '2020-08-08 14:02:11', 43, 'User test add comment to recipe 1'),
+(10000169, 7, '2020-08-08 14:22:33', 43, 'User test add comment to recipe 1'),
+(10000170, 7, '2020-08-08 14:24:37', 43, 'User test add comment to recipe 1'),
+(10000171, 7, '2020-08-08 14:28:06', 43, 'User test add comment to recipe 1'),
+(10000172, 3, '2020-08-10 19:42:16', 43, 'test login success'),
+(10000173, 4, '2020-08-10 19:53:53', 43, 'Logout success'),
+(10000174, 3, '2020-08-10 19:54:13', 43, 'test2 login in error'),
+(10000175, 3, '2020-08-10 19:54:55', 43, 'test2 login success'),
+(10000176, 4, '2020-08-10 20:19:19', 43, 'Logout success'),
+(10000177, 3, '2020-08-11 17:52:05', 43, 'test login success'),
+(10000178, 3, '2020-08-11 18:31:25', 43, 'test login success'),
+(10000179, 4, '2020-08-11 18:53:21', 43, 'Logout success'),
+(10000180, 3, '2020-08-11 18:54:38', 43, 'test login success'),
+(10000181, 3, '2020-08-12 18:35:33', 43, 'test login in error'),
+(10000182, 3, '2020-08-12 18:38:23', 43, 'test login success'),
+(10000183, 4, '2020-08-12 18:39:32', 43, 'Logout success'),
+(10000184, 3, '2020-08-12 18:51:40', 43, 'test login success'),
+(10000185, 4, '2020-08-12 18:52:54', 43, 'Logout success'),
+(10000186, 3, '2020-08-12 18:53:43', 43, 'test login success'),
+(10000187, 4, '2020-08-12 18:54:01', 43, 'Logout success'),
+(10000188, 3, '2020-08-12 19:15:11', 43, 'test login success'),
+(10000189, 4, '2020-08-12 19:18:09', 43, 'Logout success'),
+(10000190, 3, '2020-08-12 19:19:32', 43, 'test login success'),
+(10000191, 4, '2020-08-12 19:20:01', 43, 'Logout success'),
+(10000192, 3, '2020-08-12 19:21:09', 43, 'test login success'),
+(10000193, 3, '2020-08-13 21:47:55', 43, 'test login success'),
+(10000194, 7, '2020-08-13 21:48:32', 43, 'User test add comment to recipe 2'),
+(10000195, 7, '2020-08-13 21:48:56', 43, 'User test add comment to recipe 2'),
+(10000196, 4, '2020-08-13 21:50:21', 43, 'Logout success'),
+(10000197, 3, '2020-08-13 22:20:02', 43, 'test login success'),
+(10000198, 7, '2020-08-13 22:22:49', 43, 'User test add comment to recipe 2'),
+(10000199, 7, '2020-08-13 22:23:26', 43, 'User test add comment to recipe 2'),
+(10000200, 7, '2020-08-13 22:24:03', 43, 'User test add comment to recipe 3'),
+(10000201, 7, '2020-08-13 22:25:01', 43, 'User test add comment to recipe 3'),
+(10000202, 7, '2020-08-13 22:25:22', 43, 'User test add comment to recipe 3'),
+(10000203, 7, '2020-08-13 22:25:29', 43, 'User test add comment to recipe 3'),
+(10000204, 7, '2020-08-13 22:28:31', 43, 'User test add comment to recipe 1'),
+(10000205, 7, '2020-08-13 22:29:12', 43, 'User test add comment to recipe 1'),
+(10000206, 7, '2020-08-13 22:29:31', 43, 'User test add comment to recipe 1'),
+(10000207, 7, '2020-08-13 22:34:24', 43, 'User test add comment to recipe 2'),
+(10000208, 7, '2020-08-13 22:37:26', 43, 'User test add comment to recipe 3'),
+(10000209, 7, '2020-08-13 22:40:57', 43, 'User test add comment to recipe 3');
 
 -- --------------------------------------------------------
 
@@ -305,7 +436,8 @@ INSERT INTO `loty` (`TYID`, `TNAM`) VALUES
 (3, 'LOGIN'),
 (4, 'LOGOUT'),
 (5, 'REGISTRATION'),
-(6, 'ADD RECIPE');
+(6, 'ADD RECIPE'),
+(7, 'ADD COMMENT');
 
 -- --------------------------------------------------------
 
@@ -356,9 +488,9 @@ CREATE TABLE `reci` (
 --
 
 INSERT INTO `reci` (`REID`, `RETI`, `REAU`, `REPT`, `REDI`, `RELC`, `RECC`, `REVC`, `REAM`, `REIA`, `RECA`, `REIM`, `RECT`, `REMT`) VALUES
-(1, 'test1', 10000006, 40, 1, 43, 13, 64, 4, 2, 3, 1, '2020-07-15 23:11:58', '2020-07-15 23:11:58'),
-(2, 'test2', 10000015, 40, 3, 12, 6, 54, 4, 2, 3, 1, '2020-07-15 23:33:43', '2020-07-15 23:33:43'),
-(3, 'test3', 10000015, 68, 3, 15, 45, 3, 3, 4, 2, 1, '2020-07-24 00:20:19', '2020-07-24 00:20:19'),
+(1, 'test1', 10000006, 40, 1, 42, 13, 64, 4, 2, 3, 1, '2020-07-15 23:11:58', '2020-07-15 23:11:58'),
+(2, 'test2', 10000015, 40, 3, 23, 6, 54, 4, 2, 3, 1, '2020-07-15 23:33:43', '2020-07-15 23:33:43'),
+(3, 'test3', 10000015, 68, 3, 19, 45, 3, 3, 4, 2, 1, '2020-07-24 00:20:19', '2020-07-24 00:20:19'),
 (4, 'test4', 10000006, 57, 1, 64, 3, 2, 4, 3, 4, 1, '2020-07-24 00:20:19', '2020-07-24 00:20:19'),
 (5, 'test5', 10000006, 10, 1, 75, 4, 354, 2, 2, 2, 1, '2020-07-24 00:20:19', '2020-07-24 00:20:19'),
 (6, 'test6', 10000006, 30, 2, 64, 43, 456, 4, 5, 3, 1, '2020-07-24 00:20:19', '2020-07-24 00:20:19');
@@ -469,6 +601,48 @@ INSERT INTO `reua` (`RUID`, `RUTI`, `RUAU`, `RUPT`, `RUDI`, `RULC`, `RUCC`, `RUV
 (27, 'test3', 10000006, 65, 2, 0, 0, 0, 4, 3, 3, 1, '2020-07-24 00:13:49', '2020-07-24 00:13:49'),
 (28, 'test4', 10000006, 23, 2, 0, 0, 0, 4, 2, 1, 1, '2020-07-24 00:14:31', '2020-07-24 00:14:31'),
 (29, 'test5', 10000006, 32, 1, 0, 0, 0, 5, 4, 4, 1, '2020-07-24 00:16:12', '2020-07-24 00:16:12');
+
+-- --------------------------------------------------------
+
+--
+-- Struktura tabeli dla tabeli `rstd`
+--
+
+CREATE TABLE `rstd` (
+  `STID` int(11) NOT NULL,
+  `SCON` text NOT NULL,
+  `SINO` int(2) NOT NULL,
+  `STRE` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Zrzut danych tabeli `rstd`
+--
+
+INSERT INTO `rstd` (`STID`, `SCON`, `SINO`, `STRE`) VALUES
+(1, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ', 0, 1),
+(2, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ', 1, 1),
+(3, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ', 2, 1),
+(4, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ', 3, 1),
+(5, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ', 0, 2),
+(6, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ', 1, 2),
+(7, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ', 2, 2),
+(8, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ', 0, 3),
+(9, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ', 1, 3),
+(10, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ', 2, 3),
+(11, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ', 3, 3),
+(12, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ', 0, 4),
+(13, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ', 1, 4),
+(14, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ', 0, 5),
+(15, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ', 1, 5),
+(16, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ', 2, 5),
+(17, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ', 3, 5),
+(18, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ', 0, 6),
+(19, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ', 1, 6),
+(20, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ', 2, 6),
+(21, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ', 3, 6),
+(22, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ', 4, 6),
+(23, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ', 5, 6);
 
 -- --------------------------------------------------------
 
@@ -621,7 +795,7 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`USID`, `UNAM`, `UEMA`, `UPAS`, `USIP`, `UGRO`, `UJOD`, `UPRP`, `UNPR`, `UIMG`) VALUES
 (10000006, 'test', 'test@test', '13bade984aa416220470ca3f82bf5fb8', 34, 1, '2020-06-29', 1, 1, 1),
-(10000015, 'test2', 'test2@test', '13bade984aa416220470ca3f82bf5fb', 43, 1, '2020-06-29', 1, 1, 1);
+(10000015, 'test2', 'test2@test', '13bade984aa416220470ca3f82bf5fb8', 43, 1, '2020-06-29', 1, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -641,8 +815,7 @@ CREATE TABLE `uslr` (
 --
 
 INSERT INTO `uslr` (`URLI`, `UTRE`, `RETU`, `LDAT`) VALUES
-(1, 10000006, 1, '2020-07-15 23:21:25'),
-(2, 10000015, 2, '2020-07-15 23:35:26');
+(1, 10000006, 1, '2020-07-15 23:21:25');
 
 -- --------------------------------------------------------
 
@@ -681,6 +854,22 @@ INSERT INTO `uspe` (`PEID`, `PENA`, `PESK`) VALUES
 --
 -- Indeksy dla zrzutów tabel
 --
+
+--
+-- Indeksy dla tabeli `core`
+--
+ALTER TABLE `core`
+  ADD PRIMARY KEY (`CRID`),
+  ADD KEY `RCID` (`RCID`),
+  ADD KEY `CUID` (`CUID`);
+
+--
+-- Indeksy dla tabeli `coti`
+--
+ALTER TABLE `coti`
+  ADD PRIMARY KEY (`CTID`),
+  ADD KEY `TCID` (`TCID`),
+  ADD KEY `CUID` (`CUID`);
 
 --
 -- Indeksy dla tabeli `imre`
@@ -781,6 +970,13 @@ ALTER TABLE `reua`
   ADD KEY `RUAU` (`RUAU`);
 
 --
+-- Indeksy dla tabeli `rstd`
+--
+ALTER TABLE `rstd`
+  ADD PRIMARY KEY (`STID`),
+  ADD KEY `STRE` (`STRE`);
+
+--
 -- Indeksy dla tabeli `stdr`
 --
 ALTER TABLE `stdr`
@@ -845,6 +1041,18 @@ ALTER TABLE `uspe`
 --
 
 --
+-- AUTO_INCREMENT dla tabeli `core`
+--
+ALTER TABLE `core`
+  MODIFY `CRID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+
+--
+-- AUTO_INCREMENT dla tabeli `coti`
+--
+ALTER TABLE `coti`
+  MODIFY `CTID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+
+--
 -- AUTO_INCREMENT dla tabeli `imre`
 --
 ALTER TABLE `imre`
@@ -884,13 +1092,13 @@ ALTER TABLE `ipau`
 -- AUTO_INCREMENT dla tabeli `logs`
 --
 ALTER TABLE `logs`
-  MODIFY `LOID` int(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10000162;
+  MODIFY `LOID` int(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10000210;
 
 --
 -- AUTO_INCREMENT dla tabeli `loty`
 --
 ALTER TABLE `loty`
-  MODIFY `TYID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `TYID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT dla tabeli `reca`
@@ -929,6 +1137,12 @@ ALTER TABLE `reua`
   MODIFY `RUID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
+-- AUTO_INCREMENT dla tabeli `rstd`
+--
+ALTER TABLE `rstd`
+  MODIFY `STID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+
+--
 -- AUTO_INCREMENT dla tabeli `stdr`
 --
 ALTER TABLE `stdr`
@@ -962,7 +1176,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT dla tabeli `uslr`
 --
 ALTER TABLE `uslr`
-  MODIFY `URLI` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `URLI` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT dla tabeli `uslt`
@@ -979,6 +1193,20 @@ ALTER TABLE `uspe`
 --
 -- Ograniczenia dla zrzutów tabel
 --
+
+--
+-- Ograniczenia dla tabeli `core`
+--
+ALTER TABLE `core`
+  ADD CONSTRAINT `core_ibfk_1` FOREIGN KEY (`CUID`) REFERENCES `user` (`USID`),
+  ADD CONSTRAINT `core_ibfk_2` FOREIGN KEY (`RCID`) REFERENCES `reci` (`REID`);
+
+--
+-- Ograniczenia dla tabeli `coti`
+--
+ALTER TABLE `coti`
+  ADD CONSTRAINT `coti_ibfk_1` FOREIGN KEY (`CUID`) REFERENCES `user` (`USID`),
+  ADD CONSTRAINT `coti_ibfk_2` FOREIGN KEY (`TCID`) REFERENCES `tips` (`TTID`);
 
 --
 -- Ograniczenia dla tabeli `ingr`
@@ -1023,6 +1251,12 @@ ALTER TABLE `reua`
   ADD CONSTRAINT `reua_ibfk_2` FOREIGN KEY (`RUDI`) REFERENCES `redi` (`DIID`),
   ADD CONSTRAINT `reua_ibfk_3` FOREIGN KEY (`RUIM`) REFERENCES `imre` (`RIID`),
   ADD CONSTRAINT `reua_ibfk_4` FOREIGN KEY (`RUAU`) REFERENCES `user` (`USID`);
+
+--
+-- Ograniczenia dla tabeli `rstd`
+--
+ALTER TABLE `rstd`
+  ADD CONSTRAINT `rstd_ibfk_1` FOREIGN KEY (`STRE`) REFERENCES `reci` (`REID`);
 
 --
 -- Ograniczenia dla tabeli `stdr`

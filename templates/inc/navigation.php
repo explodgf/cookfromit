@@ -105,15 +105,6 @@
                 <i class="fas fa-long-arrow-alt-right"></i>
             </div>
         </a>
-        <a class="item-box" href="decider.php">
-            <div class="num">
-                <span>05</span>
-            </div>
-            <div class="content">
-                <h1>Decider</h1>
-                <i class="fas fa-long-arrow-alt-right"></i>
-            </div>
-        </a>
     </div>
     <div class="modal-footer">
         <div class="footer-box">
