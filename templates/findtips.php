@@ -92,33 +92,5 @@
 </main>
 <?php include 'inc/footer.php';?>
 <script> </script> <!--BUG taransition fix for Chrome-->
-<script>
-    $(".category").click(function() {
-        if ($(this).hasClass("active")) {
-            $(this).removeClass("active");
-        } else {
-            $(".active").removeClass("active");
-            $(this).addClass('active');
-        }
-    });
-</script>
-<script>
-$(document).ready(function(){
-    $('.search-tips input[type="text"]').on("keyup input", function(){
-        var inputVal = $(this).val();
-        var resultDropdown = $(this).siblings(".result");
-        if(inputVal.length){
-            $.get("helpers/search_handler.php", {termTip: inputVal}).done(function(data){
-                resultDropdown.html(data);
-            });
-        } else{
-            resultDropdown.empty();
-        }
-    });
-
-    $(document).on("click", ".result div", function(){
-        tipid = $('#tipid', this).text();
-        window.location.href="tip_view.php?tipId="+tipid+"";
-    });
-});
-</script>
+<script src="js/buttons.js"></script>
+<script src="js/searchTips.js"></script>
