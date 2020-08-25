@@ -28,7 +28,7 @@
         }
     }
 
-    if(isset($_POST['comment'])) {
+    if(isset($_POST['comment']) && isset($_SESSION['userId'])) {
         $userId = $_SESSION['userId'];
         $recipeId = trim($_POST['reciId']);
         $comment = trim($_POST['comContent']);
@@ -47,9 +47,5 @@
             $_SESSION['message_type'] = 'error';
             exit();
         }
-    } else {
-        $_SESSION['message'] = 'You must login';
-        $_SESSION['message_type'] = 'error';
     }
-
 ?>

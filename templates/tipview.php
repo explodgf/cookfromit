@@ -69,6 +69,7 @@
                     </div>
                 <?php endforeach;?>
             </div>
+            <?php if(isset($_SESSION['userId'])):?>
             <div class="enter-comment">
                 <form method="POST">
                     <textarea name="comContent"></textarea>
@@ -78,6 +79,7 @@
                     </div>
                 </form>
             </div>
+            <?php endif; ?>
         </section>
         <div class="wave"></div>
     </main>
